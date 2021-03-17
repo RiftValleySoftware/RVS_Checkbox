@@ -22,10 +22,21 @@
 
 import UIKit
 
-//// Color Declarations
-let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
 
-//// Oval Drawing
-let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 900, height: 900))
-fillColor.setFill()
-ovalPath.fill()
+import UIKit
+
+/* ###################################################################################################################################### */
+// MARK: - Clear (No State) Image -
+/* ###################################################################################################################################### */
+/**
+ */
+class RVS_Checkbox: UIImage {
+    //// Color Declarations
+    let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
+    
+    override func draw(in rect: CGRect) {
+        let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 900, height: 900))
+        fillColor.setFill()
+        ovalPath.fill()
+    }
+}
