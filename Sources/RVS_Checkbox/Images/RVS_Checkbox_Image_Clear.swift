@@ -22,21 +22,24 @@
 
 import UIKit
 
-
-import UIKit
-
 /* ###################################################################################################################################### */
 // MARK: - Clear (No State) Image -
 /* ###################################################################################################################################### */
 /**
+ This is the "clear" (blank circle) image. In a two-state checkbox, it is also the "Off" value image.
  */
-class RVS_Checkbox: UIImage {
-    //// Color Declarations
-    let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-    
-    override func draw(in rect: CGRect) {
-        let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 900, height: 900))
-        fillColor.setFill()
-        ovalPath.fill()
+class RVS_Checkbox_Image_Clear: RVS_Checkbox_Image {
+    /* ################################################################## */
+    /**
+     This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
+     */
+    override var asImage: UIImage! {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let img = renderer.image { ctx in
+            let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 900, height: 900))
+            myFillColor.setFill()
+            ovalPath.fill()
+        }
+        return img
     }
 }
