@@ -90,7 +90,7 @@ open class RVS_Checkbox: UIControl {
         
         switch inState {
             case .clear:
-                ret = clearImage?.withTintColor(color)
+                ret = (useOffImageForClear && !isThreeState ? offImage : clearImage)?.withTintColor(color)
             case .on:
                 ret = onImage?.withTintColor(color)
             case .off:
@@ -132,14 +132,6 @@ open class RVS_Checkbox: UIControl {
     /* ################################################################## */
     /**
      */
-    public var isOn: Bool {
-        get { .on == checkboxState }
-        set { checkboxState = .on }
-    }
-
-    /* ################################################################## */
-    /**
-     */
     public var nextState: States { _nextState }
 
     /* ################################################################## */
@@ -161,20 +153,6 @@ open class RVS_Checkbox: UIControl {
     /* ################################################################## */
     /**
      */
-    @IBInspectable open var isThreeState: Bool = false {
-        didSet {
-            if !isThreeState,
-               .off == checkboxState {
-                checkboxState = .clear
-            }
-            
-            setNeedsDisplay()
-        }
-    }
-
-    /* ################################################################## */
-    /**
-     */
     @IBInspectable open var onImage: UIImage! = RVS_Checkbox_Image_On()
 
     /* ################################################################## */
@@ -186,18 +164,58 @@ open class RVS_Checkbox: UIControl {
     /**
      */
     @IBInspectable open var clearImage: UIImage! = RVS_Checkbox_Image_Clear()
-    
+
     /* ################################################################## */
     /**
      */
-    public func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool) {
-        setState(inIsOn ? .on : .off, animated: inIsAnimated)
+    @IBInspectable open var isThreeState: Bool = false {
+        didSet {
+            if !isThreeState,
+               .off == checkboxState {
+                checkboxState = .clear
+            }
+            
+            _drawingImage = nil
+            setNeedsDisplay()
+        }
     }
 
     /* ################################################################## */
     /**
      */
-    public func setState(_ inState: States, animated inIsAnimated: Bool) {
+    @IBInspectable public var isOn: Bool {
+        get { .on == checkboxState }
+        set { checkboxState = .on }
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    @IBInspectable public var useOffImageForClear: Bool = false {
+        didSet {
+            _drawingImage = nil
+            setNeedsDisplay()
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    public func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool = false) {
+        setState(inIsOn ? .on : .off, animated: inIsAnimated)
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    public func clear(animated inIsAnimated: Bool = false) {
+        setState(.clear, animated: inIsAnimated)
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    public func setState(_ inState: States, animated inIsAnimated: Bool = false) {
         if inIsAnimated {
             _drawingImage = image(forState: checkboxState)?.withTintColor(tintColor.withAlphaComponent(0.75))
             setNeedsDisplay()

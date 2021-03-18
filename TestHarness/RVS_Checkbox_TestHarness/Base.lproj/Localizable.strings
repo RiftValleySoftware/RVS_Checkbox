@@ -21,4 +21,5 @@
 */
 "SLUG-STANDARD-STATE"   = "Off/On";
 "SLUG-THREE-STATE"      = "Off/Clear/On";
+"SLUG-USE-OFF-IMAGE"    = "Use Off Image For Clear";
 

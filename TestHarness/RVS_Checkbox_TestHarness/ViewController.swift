@@ -33,12 +33,17 @@ class ViewController: UIViewController {
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var standardLabel: UILabel!
+    @IBOutlet weak var checkboxObject: RVS_Checkbox!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var standardLabelButton: UIButton!
 
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var threeStateLabel: UILabel!
+    @IBOutlet weak var threeStateLabelButton: UIButton!
 
     /* ################################################################## */
     /**
@@ -48,13 +53,53 @@ class ViewController: UIViewController {
     /* ################################################################## */
     /**
      */
-    @IBOutlet weak var checkboxObject: RVS_Checkbox!
+    @IBAction func standardLabelButtonHit(_: Any) {
+        stateSwitch.setOn(false, animated: true)
+        stateSwitchChanged(stateSwitch)
+   }
     
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func threeStateLabelButtonHit(_: Any) {
+        stateSwitch.setOn(true, animated: true)
+        stateSwitchChanged(stateSwitch)
+    }
+
     /* ################################################################## */
     /**
      */
     @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isThreeState = inSwitch.isOn
+        standardLabelButton?.isEnabled = inSwitch.isOn
+        threeStateLabelButton?.isEnabled = !inSwitch.isOn
+        useOffImageSwitch?.isEnabled = !inSwitch.isOn
+        useOffImageLabelButton?.isEnabled = !inSwitch.isOn
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var useOffImageSwitch: UISwitch!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var useOffImageLabelButton: UIButton!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func useOffImageLabelButtonHit(_: Any) {
+        useOffImageSwitch.setOn(!useOffImageSwitch.isOn, animated: true)
+        useOffImageSwitchChanged(useOffImageSwitch)
+   }
+
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
+        checkboxObject?.useOffImageForClear = inSwitch.isOn
     }
 
     /* ################################################################## */
@@ -62,8 +107,9 @@ class ViewController: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        standardLabel?.text = (standardLabel?.text ?? "").localizedVariant
-        threeStateLabel?.text = (threeStateLabel?.text ?? "").localizedVariant
+        standardLabelButton?.setTitle((standardLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        threeStateLabelButton?.setTitle((threeStateLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        useOffImageLabelButton?.setTitle((useOffImageLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         checkboxObject?.draw(view.bounds)
     }
 }

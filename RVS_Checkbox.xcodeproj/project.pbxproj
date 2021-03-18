@@ -10,12 +10,8 @@
 		D468535825FFAEA200380E41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
 		D468536025FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */; };
 		D468536125FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */; };
-		D46FD86A26037ADB001DA113 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
-		D46FD86F26037B23001DA113 /* RVS_Checkbox_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */; };
-		D46FD87026037B23001DA113 /* RVS_Checkbox_Image_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */; };
-		D46FD87126037B23001DA113 /* RVS_Checkbox_Image_On.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */; };
-		D46FD87226037B23001DA113 /* RVS_Checkbox_Image_Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */; };
 		D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */; };
+		D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */; };
 		D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
 		D4F51234260287B500216A69 /* RVS_Checkbox_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */; };
 		D4F5123A260287CC00216A69 /* RVS_Checkbox_Image_On.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */; };
@@ -26,6 +22,16 @@
 		D4FD204625FF910300884043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204525FF910300884043 /* Assets.xcassets */; };
 		D4FD204925FF910300884043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204725FF910300884043 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D46FD87F2603B4E1001DA113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FD201125FF90C200884043 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4970C2025FF997A00B97CC4;
+			remoteInfo = RVS_Checkbox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D4FD207C25FF918200884043 /* Embed Frameworks */ = {
@@ -79,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */,
 				D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +242,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D46FD8802603B4E1001DA113 /* PBXTargetDependency */,
 			);
 			name = RVS_Checkbox_TestHarness;
 			packageProductDependencies = (
@@ -334,16 +342,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FD204125FF910200884043 /* ViewController.swift in Sources */,
-				D46FD86A26037ADB001DA113 /* RVS_Checkbox.swift in Sources */,
-				D46FD87026037B23001DA113 /* RVS_Checkbox_Image_Off.swift in Sources */,
-				D46FD87226037B23001DA113 /* RVS_Checkbox_Image_Clear.swift in Sources */,
-				D46FD86F26037B23001DA113 /* RVS_Checkbox_Image.swift in Sources */,
 				D4FD203D25FF910200884043 /* AppDelegate.swift in Sources */,
-				D46FD87126037B23001DA113 /* RVS_Checkbox_Image_On.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D46FD8802603B4E1001DA113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4970C2025FF997A00B97CC4 /* RVS_Checkbox */;
+			targetProxy = D46FD87F2603B4E1001DA113 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D468535625FFAEA200380E41 /* Localizable.strings */ = {
