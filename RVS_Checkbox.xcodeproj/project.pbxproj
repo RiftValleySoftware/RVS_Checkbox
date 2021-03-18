@@ -8,14 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D468535825FFAEA200380E41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
-		D468536025FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */; };
-		D468536125FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */; };
 		D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */; };
 		D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */; };
 		D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
-		D4F51234260287B500216A69 /* RVS_Checkbox_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */; };
-		D4F5123A260287CC00216A69 /* RVS_Checkbox_Image_On.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */; };
-		D4FD202925FF90C200884043 /* RVS_CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD202825FF90C200884043 /* RVS_CheckboxTests.swift */; };
 		D4FD203D25FF910200884043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* AppDelegate.swift */; };
 		D4FD204125FF910200884043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* ViewController.swift */; };
 		D4FD204425FF910200884043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204225FF910200884043 /* Main.storyboard */; };
@@ -48,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		D468535725FFAEA200380E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_Image_Off.swift; sourceTree = "<group>"; };
-		D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_Image_Clear.swift; sourceTree = "<group>"; };
 		D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRVS_Checkbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox.swift; sourceTree = "<group>"; };
 		D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -59,11 +52,6 @@
 		D4970C3825FF9AB700B97CC4 /* CODEOWNERS */ = {isa = PBXFileReference; lastKnownFileType = text; path = CODEOWNERS; sourceTree = "<group>"; };
 		D4970C3925FF9ABF00B97CC4 /* jazzy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.command; sourceTree = "<group>"; };
 		D4970C4225FF9C9D00B97CC4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../RVS_GeneralObserver/LICENSE; sourceTree = "<group>"; };
-		D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_Image.swift; sourceTree = "<group>"; };
-		D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_Image_On.swift; sourceTree = "<group>"; };
-		D4FD202325FF90C200884043 /* RVS_CheckboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_CheckboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4FD202825FF90C200884043 /* RVS_CheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_CheckboxTests.swift; sourceTree = "<group>"; };
-		D4FD202A25FF90C200884043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_Checkbox_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FD203C25FF910200884043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4FD204025FF910200884043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,13 +62,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D4FD202025FF90C200884043 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D4FD203725FF910200884043 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,17 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D468535B25FFB7FB00380E41 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */,
-				D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */,
-				D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */,
-				D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		D46FD86226037589001DA113 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */,
-				D468535B25FFB7FB00380E41 /* Images */,
 			);
 			path = RVS_Checkbox;
 			sourceTree = "<group>";
@@ -139,7 +108,6 @@
 				D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */,
 				D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */,
 				D4970C2A25FF99B400B97CC4 /* Sources */,
-				D4FD207025FF915700884043 /* Tests */,
 				D4FD207125FF916300884043 /* TestHarness */,
 				D4FD201B25FF90C200884043 /* Products */,
 				D46FD86226037589001DA113 /* Frameworks */,
@@ -149,20 +117,10 @@
 		D4FD201B25FF90C200884043 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4FD202325FF90C200884043 /* RVS_CheckboxTests.xctest */,
 				D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness.app */,
 				D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D4FD202725FF90C200884043 /* RVS_CheckboxTests */ = {
-			isa = PBXGroup;
-			children = (
-				D4FD202825FF90C200884043 /* RVS_CheckboxTests.swift */,
-				D4FD202A25FF90C200884043 /* Info.plist */,
-			);
-			path = RVS_CheckboxTests;
 			sourceTree = "<group>";
 		};
 		D4FD203B25FF910200884043 /* RVS_Checkbox_TestHarness */ = {
@@ -177,14 +135,6 @@
 				D4FD204A25FF910300884043 /* Info.plist */,
 			);
 			path = RVS_Checkbox_TestHarness;
-			sourceTree = "<group>";
-		};
-		D4FD207025FF915700884043 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				D4FD202725FF90C200884043 /* RVS_CheckboxTests */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		D4FD207125FF916300884043 /* TestHarness */ = {
@@ -212,23 +162,6 @@
 			productName = RVS_Checkbox;
 			productReference = D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		D4FD202225FF90C200884043 /* RVS_CheckboxTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D4FD203125FF90C200884043 /* Build configuration list for PBXNativeTarget "RVS_CheckboxTests" */;
-			buildPhases = (
-				D4FD201F25FF90C200884043 /* Sources */,
-				D4FD202025FF90C200884043 /* Frameworks */,
-				D4FD202125FF90C200884043 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RVS_CheckboxTests;
-			productName = RVS_CheckboxTests;
-			productReference = D4FD202325FF90C200884043 /* RVS_CheckboxTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D4FD203925FF910200884043 /* RVS_Checkbox_TestHarness */ = {
 			isa = PBXNativeTarget;
@@ -264,9 +197,6 @@
 					D4970C2025FF997A00B97CC4 = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					D4FD202225FF90C200884043 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					D4FD203925FF910200884043 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -289,20 +219,12 @@
 			projectRoot = "";
 			targets = (
 				D4FD203925FF910200884043 /* RVS_Checkbox_TestHarness */,
-				D4FD202225FF90C200884043 /* RVS_CheckboxTests */,
 				D4970C2025FF997A00B97CC4 /* RVS_Checkbox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D4FD202125FF90C200884043 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D4FD203825FF910200884043 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,19 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F51234260287B500216A69 /* RVS_Checkbox_Image.swift in Sources */,
-				D468536125FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift in Sources */,
 				D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */,
-				D4F5123A260287CC00216A69 /* RVS_Checkbox_Image_On.swift in Sources */,
-				D468536025FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4FD201F25FF90C200884043 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4FD202925FF90C200884043 /* RVS_CheckboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -522,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -531,42 +441,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D4FD203225FF90C200884043 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = RVS_CheckboxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-CheckboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D4FD203325FF90C200884043 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = RVS_CheckboxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-CheckboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -625,15 +499,6 @@
 			buildConfigurations = (
 				D4FD202C25FF90C200884043 /* Debug */,
 				D4FD202D25FF90C200884043 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D4FD203125FF90C200884043 /* Build configuration list for PBXNativeTarget "RVS_CheckboxTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D4FD203225FF90C200884043 /* Debug */,
-				D4FD203325FF90C200884043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
