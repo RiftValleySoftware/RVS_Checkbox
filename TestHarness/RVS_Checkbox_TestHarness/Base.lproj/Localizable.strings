@@ -19,3 +19,6 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
+"SLUG-STANDARD-STATE"   = "Off/On";
+"SLUG-THREE-STATE"      = "Off/Clear/On";
+

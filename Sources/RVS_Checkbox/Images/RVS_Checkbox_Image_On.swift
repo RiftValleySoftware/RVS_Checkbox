@@ -34,7 +34,7 @@ class RVS_Checkbox_Image_On: RVS_Checkbox_Image {
      This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
      */
     override var asImage: UIImage! {
-        let renderer = UIGraphicsImageRenderer(size: size)
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 900, height: 900))
         let img = renderer.image { ctx in
             let bezierPath = UIBezierPath()
             bezierPath.move(to: CGPoint(x: 450, y: 0))

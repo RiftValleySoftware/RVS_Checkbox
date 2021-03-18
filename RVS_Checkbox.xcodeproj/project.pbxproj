@@ -10,6 +10,12 @@
 		D468535825FFAEA200380E41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
 		D468536025FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */; };
 		D468536125FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */; };
+		D46FD86A26037ADB001DA113 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
+		D46FD86F26037B23001DA113 /* RVS_Checkbox_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */; };
+		D46FD87026037B23001DA113 /* RVS_Checkbox_Image_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */; };
+		D46FD87126037B23001DA113 /* RVS_Checkbox_Image_On.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */; };
+		D46FD87226037B23001DA113 /* RVS_Checkbox_Image_Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468535E25FFB7FB00380E41 /* RVS_Checkbox_Image_Clear.swift */; };
+		D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */; };
 		D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
 		D4F51234260287B500216A69 /* RVS_Checkbox_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51233260287B500216A69 /* RVS_Checkbox_Image.swift */; };
 		D4F5123A260287CC00216A69 /* RVS_Checkbox_Image_On.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F51239260287CC00216A69 /* RVS_Checkbox_Image_On.swift */; };
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,13 @@
 				D468535D25FFB7FB00380E41 /* RVS_Checkbox_Image_Off.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		D46FD86226037589001DA113 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D4970C2A25FF99B400B97CC4 /* Sources */ = {
@@ -121,6 +135,7 @@
 				D4FD207025FF915700884043 /* Tests */,
 				D4FD207125FF916300884043 /* TestHarness */,
 				D4FD201B25FF90C200884043 /* Products */,
+				D46FD86226037589001DA113 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +237,9 @@
 			dependencies = (
 			);
 			name = RVS_Checkbox_TestHarness;
+			packageProductDependencies = (
+				D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */,
+			);
 			productName = RVS_Checkbox_TestHarness;
 			productReference = D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +273,9 @@
 				Base,
 			);
 			mainGroup = D4FD201025FF90C200884043;
+			packageReferences = (
+				D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+			);
 			productRefGroup = D4FD201B25FF90C200884043 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,7 +334,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FD204125FF910200884043 /* ViewController.swift in Sources */,
+				D46FD86A26037ADB001DA113 /* RVS_Checkbox.swift in Sources */,
+				D46FD87026037B23001DA113 /* RVS_Checkbox_Image_Off.swift in Sources */,
+				D46FD87226037B23001DA113 /* RVS_Checkbox_Image_Clear.swift in Sources */,
+				D46FD86F26037B23001DA113 /* RVS_Checkbox_Image.swift in Sources */,
 				D4FD203D25FF910200884043 /* AppDelegate.swift in Sources */,
+				D46FD87126037B23001DA113 /* RVS_Checkbox_Image_On.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = RVS_Checkbox_TestHarness/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestHarness/RVS_Checkbox_TestHarness/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P53V4JS928;
-				INFOPLIST_FILE = RVS_Checkbox_TestHarness/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestHarness/RVS_Checkbox_TestHarness/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,6 +637,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4FD201125FF90C200884043 /* Project object */;
 }

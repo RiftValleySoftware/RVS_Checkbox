@@ -34,7 +34,7 @@ class RVS_Checkbox_Image_Clear: RVS_Checkbox_Image {
      This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
      */
     override var asImage: UIImage! {
-        let renderer = UIGraphicsImageRenderer(size: size)
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 900, height: 900))
         let img = renderer.image { ctx in
             let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 900, height: 900))
             myFillColor.setFill()

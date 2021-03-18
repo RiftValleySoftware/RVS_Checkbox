@@ -21,6 +21,8 @@
 */
 
 import UIKit
+import RVS_Checkbox
+import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - Main View Controller -
@@ -31,7 +33,37 @@ class ViewController: UIViewController {
     /* ################################################################## */
     /**
      */
+    @IBOutlet weak var standardLabel: UILabel!
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var threeStateLabel: UILabel!
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var stateSwitch: UISwitch!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var checkboxObject: RVS_Checkbox!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
+        checkboxObject?.isThreeState = inSwitch.isOn
+    }
+
+    /* ################################################################## */
+    /**
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        standardLabel?.text = (standardLabel?.text ?? "").localizedVariant
+        threeStateLabel?.text = (threeStateLabel?.text ?? "").localizedVariant
+        checkboxObject?.draw(view.bounds)
     }
 }
