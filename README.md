@@ -7,19 +7,29 @@ This project is a robust, Swift-only, high-quality, "drop-in replacement" for th
 
 ## WHAT PROBLEM DOES THIS SOLVE?
 The classic `UISwitch`:
+
 ![Icon](img/UISwitch.png)
-Is a great UI element, and is used in place of the classic ["checkbox"](https://developer.apple.com/documentation/appkit/nsbutton) for Mac: 
+
+Is a great UI element, and is used in place of the classic ["checkbox"](https://developer.apple.com/documentation/appkit/nsbutton) for Mac:
+
 ![Icon](img/CheckBoxes_Selected.png)
+
 Which doesn't actually work as well, in the "fat finger" world of iOS UI.
 ### So, What's the Problem?
 The issue is that the `UISwitch` is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
 
 Because of the horizontal aspect of the control, it is fairly "natural" to have the label to the left:
+
 ![Icon](img/UISwitchLabels-Left.png)
+
 ...or the right:
+
 ![Icon](img/UISwitchLabels-Right.png)
+
 But it looks "awkward" to have it below the switch:
+
 ![Icon](img/UISwitchLabels-Bottom.png)
+
 This is especially true, if you use "label buttons," like I do (run the test harness, to see them in action).
 It is also a bit "weird," as the slider appearance seems to ask for a swipe gesture, as opposed to a tap gesture (which is really what we want). That means that the gesture also requires some "mental runway."
 The `RVS_Checkbox` allows a square aspect, and a directionless (tap) action, like a regular checkbox.
@@ -66,3 +76,11 @@ Here are what the images looks like (the color is controlled by the [`tintColor`
     </tr>
     </tbody>
 </table>
+
+The "DEFAULT" and "SF SYMBOLS" images are "baked into" the class, and the "USER-PROVIDED" images are three arbitrary images that were added in the storyboard (you can see these in the test harness).
+
+The images will resize with the control, and will scale to fill (so the control needs to be sized to the aspect ratio of the images, for undistorted display).
+
+## INSTALLATION
+
+The control is provided as a [Swift Package Manager](https://swift.org/package-manager/) package, a [Pod](https://cocoapods.org), and can be installed using [Carthage](https://github.com/Carthage/Carthage).

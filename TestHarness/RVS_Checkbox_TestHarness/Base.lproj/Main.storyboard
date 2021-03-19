@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -23,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="44" width="374" height="568"/>
+                                <rect key="frame" x="20" y="44" width="374" height="640"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
@@ -225,8 +224,24 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="Tint-6"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="7PS-TM-Q1w"/>
-                                            <constraint firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="jV0-t8-bcW"/>
+                                            <constraint firstAttribute="height" constant="64" id="pFs-wd-zlg"/>
+                                            <constraint firstAttribute="width" constant="64" id="pX8-bz-Rfx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="Biohazard"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="offImage" value="Radiation"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="clearImage" value="Clear"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isThreeState" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz5-2b-sOw" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                        <rect key="frame" x="123" y="576" width="128" height="64"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Tint-6"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="GFk-Cd-3B1"/>
+                                            <constraint firstAttribute="width" constant="128" id="gfs-Ss-KDs"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="Biohazard"/>
@@ -237,9 +252,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="BsS-dE-zbU" firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="UPI-vt-ony"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

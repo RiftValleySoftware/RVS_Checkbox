@@ -33,6 +33,7 @@ import UIKit
  All images are drawn template mode, using the control tintColor.
  Like the UISwitch class, you can specifically call setOn(_:animated:), and it will animate the transition. You can also call setClear(animated:), if in three-state mode.
  */
+@IBDesignable
 open class RVS_Checkbox: UIControl {
     /* ###################################################################################################################################### */
     // MARK: -
