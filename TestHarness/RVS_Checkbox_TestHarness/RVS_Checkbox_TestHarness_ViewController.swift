@@ -306,16 +306,15 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
             var onImage: UIImage?
 
             switch imageIndex {
-                case 1:
-                    checkboxObject?.isUsingSFSymbols = true
-                case 2:
-                    onImage = UIImage(named: "TestImage-2")
-                    clearImage = UIImage(named: "TestImage-1")
-                    offImage = UIImage(named: "TestImage-0")
-                    fallthrough
-                default:
-                    checkboxObject?.isUsingSFSymbols = false
-                    break
+            case 1:
+                checkboxObject?.isUsingSFSymbols = true
+            case 2:
+                onImage = UIImage(named: "TestImage-2")
+                clearImage = UIImage(named: "TestImage-1")
+                offImage = UIImage(named: "TestImage-0")
+                fallthrough
+            default:
+                checkboxObject?.isUsingSFSymbols = false
             }
             
             checkboxObject?.offImage = offImage
