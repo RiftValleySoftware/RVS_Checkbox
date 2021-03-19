@@ -1,5 +1,7 @@
 # RVS_Checkbox Change Log
 
-## 1.0.0.0000
+## 1.0.0.3000
 
-- **TBD**
+- **March 19, 2021**
+
+- Initial release.

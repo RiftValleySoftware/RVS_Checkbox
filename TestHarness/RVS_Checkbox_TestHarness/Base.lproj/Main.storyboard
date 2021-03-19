@@ -14,7 +14,7 @@
         <!--Checkbox Test Harness View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Direct_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +223,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-dE-zbU" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
                                         <rect key="frame" x="155" y="504" width="64" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="Tint-6"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="7PS-TM-Q1w"/>
                                             <constraint firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="jV0-t8-bcW"/>
@@ -286,6 +286,9 @@
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.5" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint-6">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

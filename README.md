@@ -1,3 +1,3 @@
-![Icon](icon.png)
+![Icon](img/icon.png)
 
 # RVS_Checkbox

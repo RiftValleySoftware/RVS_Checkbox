@@ -32,6 +32,7 @@ import RVS_Generic_Swift_Toolbox
 class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /* ################################################################## */
     /**
+     The main checkbox instance to be tested.
      */
     @IBOutlet weak var checkboxObject: RVS_Checkbox!
     
@@ -269,6 +270,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
                     tintSelectorSegmentedSwitch.setImage(image.withRenderingMode(.alwaysOriginal), forSegmentAt: index)
                 }
             }
+            
+            // Select red, so it stands out.
+            tintSelectorSegmentedSwitch.selectedSegmentIndex = tintSelectorSegmentedSwitch.numberOfSegments - 2
         }
 
         setUpUI()

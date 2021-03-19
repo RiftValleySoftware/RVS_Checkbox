@@ -31,13 +31,17 @@ import UIKit
 class RVS_Checkbox_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate {
     /* ################################################################## */
     /**
+     The required Window property.
      */
     var window: UIWindow?
 
     /* ################################################################## */
     /**
+     Called when the app starts up.
+     
+     - parameter inApplication: The application instance (ignored)
+     - parameter didFinishLaunchingWithOptions: Options from the launch (also ignored)
+     - returns: True (always).
      */
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        return true
-    }
+    func application(_ inApplication: UIApplication, didFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { true }
 }
