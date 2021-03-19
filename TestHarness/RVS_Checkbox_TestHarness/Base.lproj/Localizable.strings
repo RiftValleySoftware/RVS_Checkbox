@@ -19,12 +19,13 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
 */
-"SLUG-STANDARD-STATE"   =   "Off/On";
-"SLUG-THREE-STATE"      =   "Off/Clear/On";
+"SLUG-STANDARD-STATE"   =   "Two-State";
+"SLUG-THREE-STATE"      =   "Three-State";
 "SLUG-USE-OFF-IMAGE"    =   "Use Off Image For Clear";
-"SLUG-ANIMATED"         =   "Animated";
+"SLUG-ANIMATED"         =   "Animated        ";
 "SLUG-OFF"              =   "OFF";
 "SLUG-CLEAR"            =   "CLEAR";
 "SLUG-ON"               =   "ON";
 "SLUG-ENABLED"          =   "Enabled";
+"SLUG-CUSTOM-HEADER"    =   "Custom Image (Storyboard) Example:";
 

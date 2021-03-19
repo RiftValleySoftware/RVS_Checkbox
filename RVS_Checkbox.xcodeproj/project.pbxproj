@@ -11,8 +11,8 @@
 		D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */; };
 		D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */; };
 		D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
-		D4FD203D25FF910200884043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* AppDelegate.swift */; };
-		D4FD204125FF910200884043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* ViewController.swift */; };
+		D4FD203D25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */; };
+		D4FD204125FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */; };
 		D4FD204425FF910200884043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204225FF910200884043 /* Main.storyboard */; };
 		D4FD204625FF910300884043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204525FF910300884043 /* Assets.xcassets */; };
 		D4FD204925FF910300884043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204725FF910300884043 /* LaunchScreen.storyboard */; };
@@ -53,8 +53,8 @@
 		D4970C3925FF9ABF00B97CC4 /* jazzy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.command; sourceTree = "<group>"; };
 		D4970C4225FF9C9D00B97CC4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../RVS_GeneralObserver/LICENSE; sourceTree = "<group>"; };
 		D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_Checkbox_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4FD203C25FF910200884043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4FD204025FF910200884043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox_TestHarness_ViewController.swift; sourceTree = "<group>"; };
 		D4FD204325FF910200884043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4FD204525FF910300884043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4FD204825FF910300884043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		D4FD203B25FF910200884043 /* RVS_Checkbox_TestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				D4FD203C25FF910200884043 /* AppDelegate.swift */,
-				D4FD204025FF910200884043 /* ViewController.swift */,
+				D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */,
+				D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */,
 				D4FD204225FF910200884043 /* Main.storyboard */,
 				D4FD204525FF910300884043 /* Assets.xcassets */,
 				D468535625FFAEA200380E41 /* Localizable.strings */,
@@ -251,8 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FD204125FF910200884043 /* ViewController.swift in Sources */,
-				D4FD203D25FF910200884043 /* AppDelegate.swift in Sources */,
+				D4FD204125FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift in Sources */,
+				D4FD203D25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

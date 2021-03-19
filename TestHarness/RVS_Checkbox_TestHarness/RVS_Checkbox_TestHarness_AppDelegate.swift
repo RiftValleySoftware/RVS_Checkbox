@@ -28,7 +28,7 @@ import UIKit
 /**
  */
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class RVS_Checkbox_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate {
     /* ################################################################## */
     /**
      */

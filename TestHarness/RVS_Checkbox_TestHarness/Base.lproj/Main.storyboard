@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Checkbox Test Harness View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RVS_Checkbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,13 +25,31 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
                                 <rect key="frame" x="20" y="44" width="374" height="568"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
+                                        <segments>
+                                            <segment title="X √"/>
+                                            <segment title="">
+                                                <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="" image="TestImage-2"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                        <connections>
+                                            <action selector="imageSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAt-ye-1Aj"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-h9-cEo">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="72" width="374" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-eg-w9Y">
                                                 <rect key="frame" x="0.0" y="17" width="171.5" height="30"/>
                                                 <state key="normal" title="SLUG-STANDARD-STATE">
                                                     <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="standardLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PV-km-UPl"/>
@@ -48,6 +66,9 @@
                                                 <state key="normal" title="SLUG-THREE-STATE">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="threeStateLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssF-cm-OA1"/>
                                                 </connections>
@@ -60,93 +81,8 @@
                                             <constraint firstAttribute="trailing" secondItem="yOf-Mt-tfX" secondAttribute="trailing" id="ilj-Qs-CLg"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-C1-8IB">
-                                        <rect key="frame" x="77" y="72" width="220" height="64"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-SI-n9X">
-                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="useOffImageSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="k9O-bi-U77"/>
-                                                </connections>
-                                            </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-Dw-GHh">
-                                                <rect key="frame" x="57" y="17" width="163" height="30"/>
-                                                <state key="normal" title="SLUG-USE-OFF-IMAGE">
-                                                    <color key="titleColor" name="AccentColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="useOffImageLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ob-br-awk"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Z5X-Dw-GHh" secondAttribute="trailing" id="YS5-fF-M6e"/>
-                                            <constraint firstItem="Z5X-Dw-GHh" firstAttribute="leading" secondItem="eXS-SI-n9X" secondAttribute="trailing" constant="8" symbolic="YES" id="u3B-tO-4VZ"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NAe-Ih-RRm">
-                                        <rect key="frame" x="102" y="144" width="170" height="64"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
-                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="enabledSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="N6D-RH-Ncf"/>
-                                                </connections>
-                                            </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-HU-W79">
-                                                <rect key="frame" x="57" y="17" width="113" height="30"/>
-                                                <state key="normal" title="SLUG-ENABLED">
-                                                    <color key="titleColor" name="AccentColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="enabledSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igy-mP-Gyi"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="CTp-HU-W79" firstAttribute="leading" secondItem="q6a-wX-FrB" secondAttribute="trailing" constant="8" symbolic="YES" id="0NF-DZ-dLS"/>
-                                            <constraint firstAttribute="trailing" secondItem="CTp-HU-W79" secondAttribute="trailing" id="Ju2-zO-RU7"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goN-l8-EUH">
-                                        <rect key="frame" x="98" y="216" width="178" height="64"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
-                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="animatedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g2a-0j-ZA1"/>
-                                                </connections>
-                                            </switch>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-4x-DS8">
-                                                <rect key="frame" x="57" y="17" width="121" height="30"/>
-                                                <state key="normal" title="SLUG-ANIMATED">
-                                                    <color key="titleColor" name="AccentColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="animatedSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B13-7C-ugg"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="zki-4x-DS8" firstAttribute="leading" secondItem="vyc-CW-dFG" secondAttribute="trailing" constant="8" symbolic="YES" id="977-HN-5SW"/>
-                                            <constraint firstAttribute="trailing" secondItem="zki-4x-DS8" secondAttribute="trailing" id="cme-QM-lu9"/>
-                                        </constraints>
-                                    </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
-                                        <rect key="frame" x="33" y="288" width="308" height="65"/>
-                                        <segments>
-                                            <segment title="SLUG-OFF"/>
-                                            <segment title="SLUG-CLEAR"/>
-                                            <segment title="SLUG-ON"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="selectedSegmentTintColor" name="AccentColor"/>
-                                        <connections>
-                                            <action selector="valueChangeSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0dX-pK-19c"/>
-                                        </connections>
-                                    </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="15.5" y="360" width="343" height="65"/>
+                                        <rect key="frame" x="15.5" y="144" width="343" height="65"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
@@ -177,38 +113,133 @@
                                             <action selector="tintSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3b9-sz-SEk"/>
                                         </connections>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
-                                        <rect key="frame" x="0.0" y="432" width="374" height="65"/>
-                                        <segments>
-                                            <segment title="X √"/>
-                                            <segment title="">
-                                                <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="" image="TestImage-2"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="selectedSegmentTintColor" name="AccentColor"/>
-                                        <connections>
-                                            <action selector="imageSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAt-ye-1Aj"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-p0-4oB">
+                                        <rect key="frame" x="0.0" y="216" width="374" height="64"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="phe-Vk-I3J" secondAttribute="height" multiplier="1:1" id="ZBF-MG-poF"/>
+                                                    <constraint firstAttribute="width" constant="64" id="jxa-KE-mix"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Tfj-D6-oWh"/>
+                                                    <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qL7-RS-1KA"/>
+                                                    <action selector="touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iUD-az-qOu"/>
+                                                    <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="gIq-A4-Jae"/>
+                                                    <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gr5-DR-98g"/>
+                                                </connections>
+                                            </view>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
+                                                <rect key="frame" x="80" y="0.0" width="294" height="65"/>
+                                                <segments>
+                                                    <segment title="SLUG-OFF"/>
+                                                    <segment title="SLUG-CLEAR"/>
+                                                    <segment title="SLUG-ON"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                                <connections>
+                                                    <action selector="valueChangeSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0dX-pK-19c"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-C1-8IB">
+                                        <rect key="frame" x="77" y="288" width="220" height="64"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-SI-n9X">
+                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="useOffImageSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="k9O-bi-U77"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-Dw-GHh">
+                                                <rect key="frame" x="57" y="17" width="163" height="30"/>
+                                                <state key="normal" title="SLUG-USE-OFF-IMAGE">
+                                                    <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="useOffImageLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ob-br-awk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Z5X-Dw-GHh" secondAttribute="trailing" id="YS5-fF-M6e"/>
+                                            <constraint firstItem="Z5X-Dw-GHh" firstAttribute="leading" secondItem="eXS-SI-n9X" secondAttribute="trailing" constant="8" symbolic="YES" id="u3B-tO-4VZ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goN-l8-EUH">
+                                        <rect key="frame" x="9" y="360" width="356" height="64"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
+                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="animatedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g2a-0j-ZA1"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-4x-DS8">
+                                                <rect key="frame" x="57" y="17" width="121" height="30"/>
+                                                <state key="normal" title="SLUG-ANIMATED">
+                                                    <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="animatedSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B13-7C-ugg"/>
+                                                </connections>
+                                            </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
+                                                <rect key="frame" x="186" y="16.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="enabledSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="N6D-RH-Ncf"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-HU-W79">
+                                                <rect key="frame" x="243" y="17" width="113" height="30"/>
+                                                <state key="normal" title="SLUG-ENABLED">
+                                                    <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="enabledSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igy-mP-Gyi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-CUSTOM-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7w-2n-L7t">
+                                        <rect key="frame" x="85" y="432" width="204" height="64"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-dE-zbU" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
                                         <rect key="frame" x="155" y="504" width="64" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" systemColor="systemPurpleColor"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="4yy-8V-ssa"/>
-                                            <constraint firstAttribute="width" secondItem="phe-Vk-I3J" secondAttribute="height" multiplier="1:1" id="6GH-dW-ajS"/>
+                                            <constraint firstAttribute="width" constant="64" id="7PS-TM-Q1w"/>
+                                            <constraint firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="jV0-t8-bcW"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Tfj-D6-oWh"/>
-                                            <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qL7-RS-1KA"/>
-                                            <action selector="touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iUD-az-qOu"/>
-                                            <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="gIq-A4-Jae"/>
-                                            <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gr5-DR-98g"/>
-                                        </connections>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="Biohazard"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="offImage" value="Radiation"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="clearImage" value="Clear"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isThreeState" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="BsS-dE-zbU" firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="UPI-vt-ony"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -227,6 +258,7 @@
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
                         <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
+                        <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
                         <outlet property="enabledSwitch" destination="q6a-wX-FrB" id="c3c-Nu-Cmc"/>
                         <outlet property="enabledSwitchLabelButton" destination="CTp-HU-W79" id="mE9-fK-gvT"/>
                         <outlet property="imageSelectorSegmentedSwitch" destination="o5b-o8-qQT" id="sUa-lJ-Bkt"/>
@@ -245,6 +277,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Biohazard" width="348" height="348"/>
+        <image name="Clear" width="348" height="348"/>
+        <image name="Radiation" width="348" height="348"/>
         <image name="TestImage-2" width="256" height="256"/>
         <image name="background-gradient" width="1" height="1000"/>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
@@ -254,9 +289,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -29,7 +29,7 @@ import RVS_Generic_Swift_Toolbox
 /* ###################################################################################################################################### */
 /**
  */
-class ViewController: UIViewController {
+class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /* ################################################################## */
     /**
      */
@@ -95,6 +95,11 @@ class ViewController: UIViewController {
      */
     @IBOutlet weak var imageSelectorSegmentedSwitch: UISegmentedControl!
 
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var customHeaderLabel: UILabel!
+    
     /* ################################################################## */
     /**
      */
@@ -238,6 +243,7 @@ class ViewController: UIViewController {
         useOffImageLabelButton?.setTitle((useOffImageLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         animatedSwitchLabelButton?.setTitle((animatedSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         enabledSwitchLabelButton?.setTitle((enabledSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        customHeaderLabel?.text = (customHeaderLabel?.text ?? "ERROR").localizedVariant
         
         if let valueChangedSegmentedSwitch = valueChangedSegmentedSwitch {
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)

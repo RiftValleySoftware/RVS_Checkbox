@@ -31,8 +31,8 @@ jazzy   --readme ./README.md \
         --title RVS_Checkbox\ Public\ API\ Doumentation \
         --min_acl public \
         --module RVS_Checkbox \
-        --theme jony \
-        --build-tool-arguments -scheme,RVS_Checkbox
+        --theme fullwidth \
+        -b -scheme,RVS_Checkbox
 cp icon.png docs/icon.png
 
 cd "${CWD}"
