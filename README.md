@@ -50,7 +50,7 @@ Here are what the images looks like (the color is controlled by the [`tintColor`
         <td><strong>ON</strong></td>
         <td><img src="img/OnDefault.png" /></td>
         <td><img src="img/SFOn.png" /></td>
-        <td><img src="img/Biohazard.png" /></td>
+        <td><img src="img/BioHazard.png" /></td>
     </tr>
     <tr>
         <td><strong>OFF</strong></td>
