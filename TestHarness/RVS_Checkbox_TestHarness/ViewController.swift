@@ -59,7 +59,17 @@ class ViewController: UIViewController {
     /**
      */
     @IBOutlet weak var useOffImageLabelButton: UIButton!
-
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var enabledSwitch: UISwitch!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var enabledSwitchLabelButton: UIButton!
+    
     /* ################################################################## */
     /**
      */
@@ -106,12 +116,39 @@ class ViewController: UIViewController {
      */
     @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isThreeState = inSwitch.isOn
-        standardLabelButton?.isEnabled = inSwitch.isOn
-        threeStateLabelButton?.isEnabled = !inSwitch.isOn
-        useOffImageSwitch?.isEnabled = !inSwitch.isOn
-        useOffImageLabelButton?.isEnabled = !inSwitch.isOn
-        valueChangedSegmentedSwitch?.setEnabled(inSwitch.isOn, forSegmentAt: RVS_Checkbox.States.off.rawValue + 1)
         setSegmentedSwitch()
+        setUpUI()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func useOffImageLabelButtonHit(_: Any) {
+        useOffImageSwitch.setOn(!(useOffImageSwitch?.isOn ?? true), animated: true)
+        useOffImageSwitchChanged(useOffImageSwitch)
+   }
+
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
+        checkboxObject?.useOffImageForClear = inSwitch.isOn
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func enabledSwitchChanged(_ inSwitch: UISwitch) {
+        checkboxObject?.isEnabled = inSwitch.isOn
+        setUpUI()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func enabledSwitchLabelButtonHit(_: Any) {
+        enabledSwitch.setOn(!(enabledSwitch?.isOn ?? true), animated: true)
+        enabledSwitchChanged(enabledSwitch)
     }
 
     /* ################################################################## */
@@ -139,21 +176,6 @@ class ViewController: UIViewController {
             print("ERROR! Value (\(value)) is out of range.")
         }
     }
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBAction func useOffImageLabelButtonHit(_: Any) {
-        useOffImageSwitch.setOn(!useOffImageSwitch.isOn, animated: true)
-        useOffImageSwitchChanged(useOffImageSwitch)
-   }
-
-    /* ################################################################## */
-    /**
-     */
-    @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
-        checkboxObject?.useOffImageForClear = inSwitch.isOn
-    }
 
     /* ################################################################## */
     /**
@@ -166,7 +188,7 @@ class ViewController: UIViewController {
     /**
      */
     @IBAction func imageSelectorSegmentedSwitchChanged(_ sender: UISegmentedControl) {
-        setSelectedImage()
+        setUpUI()
     }
 
     /* ################################################################## */
@@ -215,6 +237,8 @@ class ViewController: UIViewController {
         threeStateLabelButton?.setTitle((threeStateLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         useOffImageLabelButton?.setTitle((useOffImageLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         animatedSwitchLabelButton?.setTitle((animatedSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        enabledSwitchLabelButton?.setTitle((enabledSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        
         if let valueChangedSegmentedSwitch = valueChangedSegmentedSwitch {
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.label], for: .normal)
@@ -241,11 +265,23 @@ class ViewController: UIViewController {
             }
         }
 
-        if let imageSelectorSegmentedSwitch = imageSelectorSegmentedSwitch {
-            imageSelectorSegmentedSwitch.selectedSegmentIndex = checkboxObject?.isUsingSFSymbols ?? false ? 1 : 0
-        }
-        
+        setUpUI()
+        setImageSelectorSwitch()
         setSegmentedSwitch()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func setUpUI() {
+        enabledSwitch?.isOn = checkboxObject?.isEnabled ?? false
+        useOffImageSwitch?.isOn = checkboxObject?.useOffImageForClear ?? false
+        
+        standardLabelButton?.isEnabled = stateSwitch?.isOn ?? false
+        threeStateLabelButton?.isEnabled = !(stateSwitch?.isOn ?? false)
+        
+        valueChangedSegmentedSwitch?.setEnabled(stateSwitch?.isOn ?? false, forSegmentAt: RVS_Checkbox.States.off.rawValue + 1)
+        
         setSelectedTint()
         setSelectedImage()
     }
@@ -275,6 +311,9 @@ class ViewController: UIViewController {
             checkboxObject?.offImage = offImage
             checkboxObject?.clearImage = clearImage
             checkboxObject?.onImage = onImage
+            
+            useOffImageSwitch?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true)
+            useOffImageLabelButton?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true)
         }
     }
     
@@ -293,5 +332,12 @@ class ViewController: UIViewController {
      */
     func setSegmentedSwitch() {
         valueChangedSegmentedSwitch?.selectedSegmentIndex = (checkboxObject?.value ?? 1) + 1
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func setImageSelectorSwitch() {
+        imageSelectorSegmentedSwitch?.selectedSegmentIndex = checkboxObject?.isUsingSFSymbols ?? false ? 1 : 0
     }
 }

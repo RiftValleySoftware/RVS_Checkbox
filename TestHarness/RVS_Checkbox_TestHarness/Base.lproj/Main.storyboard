@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="44" width="374" height="496"/>
+                                <rect key="frame" x="20" y="44" width="374" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-h9-cEo">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
@@ -84,8 +84,32 @@
                                             <constraint firstItem="Z5X-Dw-GHh" firstAttribute="leading" secondItem="eXS-SI-n9X" secondAttribute="trailing" constant="8" symbolic="YES" id="u3B-tO-4VZ"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NAe-Ih-RRm">
+                                        <rect key="frame" x="102" y="144" width="170" height="64"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
+                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="enabledSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="N6D-RH-Ncf"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-HU-W79">
+                                                <rect key="frame" x="57" y="17" width="113" height="30"/>
+                                                <state key="normal" title="SLUG-ENABLED">
+                                                    <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="enabledSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igy-mP-Gyi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CTp-HU-W79" firstAttribute="leading" secondItem="q6a-wX-FrB" secondAttribute="trailing" constant="8" symbolic="YES" id="0NF-DZ-dLS"/>
+                                            <constraint firstAttribute="trailing" secondItem="CTp-HU-W79" secondAttribute="trailing" id="Ju2-zO-RU7"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goN-l8-EUH">
-                                        <rect key="frame" x="98" y="144" width="178" height="64"/>
+                                        <rect key="frame" x="98" y="216" width="178" height="64"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
                                                 <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
@@ -109,7 +133,7 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
-                                        <rect key="frame" x="33" y="216" width="308" height="65"/>
+                                        <rect key="frame" x="33" y="288" width="308" height="65"/>
                                         <segments>
                                             <segment title="SLUG-OFF"/>
                                             <segment title="SLUG-CLEAR"/>
@@ -122,7 +146,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="15.5" y="288" width="343" height="65"/>
+                                        <rect key="frame" x="15.5" y="360" width="343" height="65"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
@@ -154,7 +178,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
-                                        <rect key="frame" x="0.0" y="360" width="374" height="65"/>
+                                        <rect key="frame" x="0.0" y="432" width="374" height="65"/>
                                         <segments>
                                             <segment title="X √"/>
                                             <segment title="">
@@ -169,7 +193,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
-                                        <rect key="frame" x="155" y="432" width="64" height="64"/>
+                                        <rect key="frame" x="155" y="504" width="64" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
                                         <constraints>
@@ -203,6 +227,8 @@
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
                         <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
+                        <outlet property="enabledSwitch" destination="q6a-wX-FrB" id="c3c-Nu-Cmc"/>
+                        <outlet property="enabledSwitchLabelButton" destination="CTp-HU-W79" id="mE9-fK-gvT"/>
                         <outlet property="imageSelectorSegmentedSwitch" destination="o5b-o8-qQT" id="sUa-lJ-Bkt"/>
                         <outlet property="standardLabelButton" destination="Gxu-eg-w9Y" id="emg-p9-cm4"/>
                         <outlet property="stateSwitch" destination="Uqx-16-VTp" id="8cy-zz-AOY"/>

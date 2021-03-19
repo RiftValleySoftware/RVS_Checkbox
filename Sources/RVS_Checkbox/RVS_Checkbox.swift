@@ -56,6 +56,12 @@ open class RVS_Checkbox: UIControl {
     /* ################################################################################################################################## */
     /* ################################################################## */
     /**
+     This is the transparency for a "tracking" control.
+     */
+    private static let _sDimmedAlpha = CGFloat(0.5)
+    
+    /* ################################################################## */
+    /**
      This is the image to use when actually drawing the control.
      */
     private var _drawingImage: UIImage?
@@ -82,6 +88,24 @@ open class RVS_Checkbox: UIControl {
         }
         
         return ret
+    }
+    
+    /* ################################################################## */
+    /**
+     This will remove the color from an image.
+     
+     - parameter source: The image to be desaturated.
+     - returns: A desaturated image. Nil, if the operation failed.
+     */
+    private static func _desaturate(source: UIImage) -> UIImage? {
+        // Create a desaturated CIImage, by using the filter.
+        let filteredImage = CIImage(image: source)?.applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey: 0])
+
+        // Convert that to a CGImage, so we can put it back into a UIImage.
+        guard let newImage = filteredImage,
+              let desaturated = CIContext(options: nil).createCGImage(newImage, from: newImage.extent) else { return nil }
+
+        return UIImage(cgImage: desaturated)
     }
 
     /* ################################################################## */
@@ -111,6 +135,11 @@ open class RVS_Checkbox: UIControl {
                 ret = offImage?.withTintColor(color)
         }
         
+        if !isEnabled,
+           let image = ret {
+            ret = Self._desaturate(source: image)
+        }
+        
         return ret
     }
 
@@ -126,7 +155,7 @@ open class RVS_Checkbox: UIControl {
         _drawingImage = nil
         setNeedsDisplay()
     }
-    
+
     /* ################################################################################################################################## */
     // MARK: - Open to the Public -
     /* ################################################################################################################################## */
@@ -258,7 +287,7 @@ extension RVS_Checkbox {
             let state = !isThreeState && .off == inState ? .clear : inState
             var finalImage: UIImage?
             if let tint = tintColor {
-                _drawingImage = _image(forState: checkboxState)?.withTintColor(tint.withAlphaComponent(0.75))
+                _drawingImage = _image(forState: checkboxState)?.withTintColor(tint.withAlphaComponent(Self._sDimmedAlpha))
                 finalImage = _image(forState: state)?.withTintColor(tint)
             } else {
                 _drawingImage = _image(forState: checkboxState)
@@ -289,8 +318,18 @@ extension RVS_Checkbox {
         get { super.tintColor }
         set {
             super.tintColor = newValue
-            _drawingImage = nil
-            setNeedsDisplay()
+            _refresh()
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    override open var isEnabled: Bool {
+        get { super.isEnabled }
+        set {
+            super.isEnabled = newValue
+            _refresh()
         }
     }
     
@@ -299,7 +338,8 @@ extension RVS_Checkbox {
      */
     override open func draw(_ inRect: CGRect) {
         if let currentImage = _drawingImage ?? _image(forState: checkboxState) {
-            currentImage.draw(in: inRect, blendMode: .normal, alpha: isTracking && isTouchInside ? 0.75 : 1.0)
+            let alpha = (isTracking && isTouchInside) || !isEnabled ? Self._sDimmedAlpha : 1.0
+            currentImage.draw(in: inRect, blendMode: .normal, alpha: alpha)
         }
     }
     
