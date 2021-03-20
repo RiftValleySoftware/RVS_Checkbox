@@ -13,7 +13,7 @@
         <!--Checkbox Test Harness View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Direct_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Carthage_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-p0-4oB">
                                         <rect key="frame" x="0.0" y="216" width="374" height="64"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox_TestHarness__Carthage_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -219,16 +219,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-AA-Fo0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="R97-an-hLy">
                                         <rect key="frame" x="117" y="504" width="140" height="64"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-x3-BHZ" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-dE-zbU" customClass="RVS_Checkbox" customModule="RVS_Checkbox_TestHarness__Carthage_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="Tint-6"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="TiJ-zZ-0j0"/>
-                                                    <constraint firstAttribute="width" secondItem="1tR-x3-BHZ" secondAttribute="height" multiplier="1:1" id="UM1-uQ-Snp"/>
+                                                    <constraint firstAttribute="width" secondItem="BsS-dE-zbU" secondAttribute="height" multiplier="1:1" id="bC6-SR-mHa"/>
+                                                    <constraint firstAttribute="height" constant="64" id="pFs-wd-zlg"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="Biohazard"/>
@@ -238,13 +238,13 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-YB-wnq" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz5-2b-sOw" customClass="RVS_Checkbox" customModule="RVS_Checkbox_TestHarness__Carthage_" customModuleProvider="target">
                                                 <rect key="frame" x="76" y="0.0" width="64" height="64"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="Tint-6"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="1lR-gE-V8q"/>
-                                                    <constraint firstAttribute="width" secondItem="yG4-YB-wnq" secondAttribute="height" multiplier="1:1" id="jbi-1J-h0A"/>
+                                                    <constraint firstAttribute="height" constant="64" id="GFk-Cd-3B1"/>
+                                                    <constraint firstAttribute="width" secondItem="lz5-2b-sOw" secondAttribute="height" multiplier="1:1" id="Wpi-xG-qCn"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="TestImage-2"/>
@@ -256,25 +256,25 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="yG4-YB-wnq" firstAttribute="height" secondItem="ac4-AA-Fo0" secondAttribute="height" id="Qik-SQ-3Jf"/>
-                                            <constraint firstItem="1tR-x3-BHZ" firstAttribute="height" secondItem="ac4-AA-Fo0" secondAttribute="height" id="Sq4-53-DYX"/>
-                                            <constraint firstAttribute="height" constant="64" id="gjr-Xh-5rJ"/>
+                                            <constraint firstItem="BsS-dE-zbU" firstAttribute="height" secondItem="R97-an-hLy" secondAttribute="height" id="DcO-Oy-X1i"/>
+                                            <constraint firstItem="lz5-2b-sOw" firstAttribute="height" secondItem="R97-an-hLy" secondAttribute="height" id="HVu-mN-fbO"/>
+                                            <constraint firstAttribute="height" constant="64" id="lVO-3r-Gms"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DYNAMIC-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ov-ak-cTo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DYNAMIC-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-Bd-nLp">
                                         <rect key="frame" x="82" y="576" width="210" height="64"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th6-R0-mtf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-a3-s9W">
                                         <rect key="frame" x="0.0" y="648" width="374" height="64"/>
                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Th6-R0-mtf" secondAttribute="trailing" id="OEA-Zs-guQ"/>
-                                    <constraint firstItem="Th6-R0-mtf" firstAttribute="leading" secondItem="EJm-MP-JeU" secondAttribute="leading" id="khb-uy-WAM"/>
+                                    <constraint firstItem="LLA-a3-s9W" firstAttribute="leading" secondItem="EJm-MP-JeU" secondAttribute="leading" id="9dX-eN-cqW"/>
+                                    <constraint firstAttribute="trailing" secondItem="LLA-a3-s9W" secondAttribute="trailing" id="pD0-uR-vFj"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -295,8 +295,8 @@
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
                         <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
                         <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
-                        <outlet property="dynamicContainer" destination="Th6-R0-mtf" id="n25-on-CYW"/>
-                        <outlet property="dynamicHeaderLabel" destination="7ov-ak-cTo" id="hrt-dY-YaX"/>
+                        <outlet property="dynamicContainer" destination="LLA-a3-s9W" id="UDc-ze-Abv"/>
+                        <outlet property="dynamicHeaderLabel" destination="TAI-Bd-nLp" id="B8L-rh-oC0"/>
                         <outlet property="enabledSwitch" destination="q6a-wX-FrB" id="c3c-Nu-Cmc"/>
                         <outlet property="enabledSwitchLabelButton" destination="CTp-HU-W79" id="mE9-fK-gvT"/>
                         <outlet property="imageSelectorSegmentedSwitch" destination="o5b-o8-qQT" id="sUa-lJ-Bkt"/>

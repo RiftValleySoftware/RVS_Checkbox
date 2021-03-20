@@ -21,8 +21,10 @@
 */
 
 import UIKit
-import RVS_Checkbox
 import RVS_Generic_Swift_Toolbox
+#if !CARTHAGE
+    import RVS_Checkbox
+#endif
 
 /* ###################################################################################################################################### */
 // MARK: - Main View Controller -
@@ -30,6 +32,12 @@ import RVS_Generic_Swift_Toolbox
 /**
  */
 class RVS_Checkbox_TestHarness_ViewController: UIViewController {
+    /* ################################################################## */
+    /**
+     This is the last item in the vertical stack view that will hold the dynamic checkboxes.
+     */
+    @IBOutlet weak var dynamicContainer: UIView!
+    
     /* ################################################################## */
     /**
      The main checkbox instance to be tested.
@@ -100,6 +108,11 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /**
      */
     @IBOutlet weak var customHeaderLabel: UILabel!
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var dynamicHeaderLabel: UILabel!
     
     /* ################################################################## */
     /**
@@ -245,7 +258,8 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
         animatedSwitchLabelButton?.setTitle((animatedSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         enabledSwitchLabelButton?.setTitle((enabledSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         customHeaderLabel?.text = (customHeaderLabel?.text ?? "ERROR").localizedVariant
-        
+        dynamicHeaderLabel?.text = (dynamicHeaderLabel?.text ?? "ERROR").localizedVariant
+
         if let valueChangedSegmentedSwitch = valueChangedSegmentedSwitch {
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.label], for: .normal)
@@ -278,6 +292,51 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
         setUpUI()
         setImageSelectorSwitch()
         setSegmentedSwitch()
+        setUpDynamicCheckBoxes()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func setUpDynamicCheckBoxes() {
+        if let dynamicContainer = dynamicContainer {
+            let centerDynamicCheckbox = RVS_Checkbox()
+            dynamicContainer.addSubview(centerDynamicCheckbox)
+            centerDynamicCheckbox.backgroundColor = .clear
+            centerDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            centerDynamicCheckbox.isUsingSFSymbols = true
+            centerDynamicCheckbox.isThreeState = true
+            
+            centerDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+            centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0).isActive = true
+            centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
+            centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
+
+            let leftDynamicCheckbox = RVS_Checkbox()
+            dynamicContainer.addSubview(leftDynamicCheckbox)
+            leftDynamicCheckbox.backgroundColor = .clear
+            leftDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            leftDynamicCheckbox.isThreeState = true
+
+            leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+            leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8).isActive = true
+            leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
+            leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
+
+            let rightDynamicCheckbox = RVS_Checkbox()
+            dynamicContainer.addSubview(rightDynamicCheckbox)
+            rightDynamicCheckbox.backgroundColor = .clear
+            rightDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            rightDynamicCheckbox.offImage = UIImage(named: "TestImage-0")
+            rightDynamicCheckbox.clearImage = UIImage(named: "TestImage-1")
+            rightDynamicCheckbox.onImage = UIImage(named: "TestImage-2")
+            rightDynamicCheckbox.isThreeState = true
+
+            rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+            rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8).isActive = true
+            rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
+            rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        }
     }
     
     /* ################################################################## */
