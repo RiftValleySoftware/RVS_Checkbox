@@ -7,6 +7,7 @@
     - [WHAT PROBLEM DOES THIS SOLVE?](#WHATPROBLEM)
         - [So, What's the Problem?](#WHATSTHEPROBLEM)
         - [Why Does the RVS_Checkbox Solve This Problem?](#WHY)
+    - [REQUIREMENTS](#REQUIREMENTS)
     - [DEPENDENCIES](#DEPENDENCIES)
     - [INSTALLATION](#INSTALLATION)
         - [Swift Package Manager](#SPM)
@@ -16,12 +17,21 @@
         - [AFTER INCLUDING THE PACKAGE OR LIBRARY](#AFTER)
         - [Carthage](#CARTHAGE)
         - [Directly Accessing the GitHub Repo](#GITHUBREPO)
+    - [DOCUMENTATION](#DOCUMENTATION)
+    - [USAGE](#USAGE)
+        - [Setup](#SETUP)
+            - [Interface Builder](#IB)
+            - [Dynamic Instantiation](#DYNAMIC)
 
 ## <a id="INTRO"></a>INTRODUCTION
 This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as `UISwitch`.
 
+It is implemented as [a single source file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift), with no dependencies.
+
+Integrating into your application is as simple as adding a [UIView](https://developer.apple.com/documentation/uikit/uiview) in [Interface Builder](https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/), and specifying it to be [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox), or creating an instance of [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox).
+
 ## <a id="WHATPROBLEM"></a>WHAT PROBLEM DOES THIS SOLVE?
-The classic `UISwitch`:
+The classic [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch):
 
 ![The Standard UISwitch Control](img/UISwitch.png)
 
@@ -31,10 +41,9 @@ Is a great UI element, and is used in place of the classic ["checkbox"](https://
 
 Which doesn't actually work as well, in the "fat finger" world of iOS UI.
 ### <a id="WHATSTHEPROBLEM"></a>So, What's the Problem?
-The issue is that the `UISwitch` is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
+The issue is that the [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
 
 Because of the horizontal aspect of the control, it is fairly "natural" to have the label to the left:
-
 ![A Switch, With the Label on the Left](img/UISwitchLabels-Left.png)
 
 ...or the right:
@@ -49,7 +58,7 @@ This is especially true, if you use "label buttons," like I do (run the test har
 It is also a bit "weird," as the slider appearance seems to ask for a swipe gesture, as opposed to a tap gesture (which is really what we want). That means that the gesture also requires some "mental runway."
 The `RVS_Checkbox` allows a square aspect, and a directionless (tap) action, like a regular checkbox.
 
-`UISwitch` also has a strictly "binary" action. If you have three choices, you are expected to use a [`UISegmentedControl`](https://developer.apple.com/documentation/uikit/uisegmentedcontrol), which is actually quite sensible. Apple obviously put a lot of research into their UI paradygm, and there's a good reason for this. Mobile interfaces are a compromise, at best.
+[`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) also has a strictly "binary" action. If you have three choices, you are expected to use a [`UISegmentedControl`](https://developer.apple.com/documentation/uikit/uisegmentedcontrol), which is actually quite sensible. Apple obviously put a lot of research into their UI paradygm, and there's a good reason for this. Mobile interfaces are a compromise, at best.
 
 ### <a id="WHY"></a>Why Does the RVS_Checkbox Solve This Problem?
 Glad you asked. The `RVS_Checkbox` comes with two "built-in" appearances: A default, circular checkbox, and a fairly "classic" appearance that uses the built-in [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) to mimic the way the Mac checkboxes appear.
@@ -58,7 +67,7 @@ You can also add your own images.
 
 Images are simple. They are always rendered in ["template" mode](https://developer.apple.com/documentation/uikit/uiimage/renderingmode/alwaystemplate), so they are "silhouettes," and are colored by the control's tint.
 
-Additionally, `RVS_Checkbox` brings the "three-state" checkbox that is found in the Mac, to iOS. That means it is possible to have an "OFF," "ON," and "indeterminate" mode (I call it "CLEAR"). The default appearence is the circular checkbox, and the default mode is "binary," like UISwitch.
+Additionally, `RVS_Checkbox` brings the "three-state" checkbox that is found in the Mac, to iOS. That means it is possible to have an "OFF," "ON," and "indeterminate" mode (I call it "CLEAR"). The default appearence is the circular checkbox, and the default mode is "binary," like [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
 
 Here are what the images looks like (the color is controlled by the [`tintColor` property](https://developer.apple.com/documentation/uikit/uiview/1622467-tintcolor) of the control):
 <table style="text-align:center">
@@ -95,6 +104,12 @@ Here are what the images looks like (the color is controlled by the [`tintColor`
 The "DEFAULT" and "SF SYMBOLS" images are "baked into" the class, and the "USER-PROVIDED" images are three arbitrary images that were added in the storyboard (you can see these in the test harness).
 
 The images will resize with the control, and will scale to fill (so the control needs to be sized to the aspect ratio of the images, for undistorted display).
+
+## <a id="REQUIREMENTS"></a>REQUIREMENTS
+
+`RVS_Checkbox` is an [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)-only [UIKit](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html), designed for use by [Swift](https://swift.org) language applications.
+
+It is designed for native Swift iOS application development.
 
 ## <a id="DEPENDENCIES"></a>DEPENDENCIES
 
@@ -174,6 +189,8 @@ It will creat a directory at the same level as the Cartfile, called "`Carthage`.
 
 The GitHub repo is [`https://github.com/RiftValleySoftware/RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox).
 
+The Git clone URI is [`git@github.com:RiftValleySoftware/RVS_Checkbox.git`](git@github.com:RiftValleySoftware/RVS_Checkbox.git) (SSH), or [`https://github.com/RiftValleySoftware/RVS_Checkbox.git`](https://github.com/RiftValleySoftware/RVS_Checkbox.git) (HTTPS).
+
 You can access the repo directly, and clone it, or add it as [a Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your project.
 
 If you do this, be aware that you only need to add one single file to your project; [the `RVS_Checkbox.swift` file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift).
@@ -181,3 +198,104 @@ If you do this, be aware that you only need to add one single file to your proje
 It is advisable to directly integrate this file into your project, as opposed to building a library. It is only one source file, and integrating it will be easiest all around.
 
 If we integrate directly, then there is no need to import the module. The `RVS_Checkbox` class will be directly available in the module namespace.
+
+## <a id="DOCUMENTATION"></a>DOCUMENTATION
+
+This README provides the principal documentation, but there is also [a code documentation site](https://riftvalleysoftware.github.io/RVS_Checkbox/) that may be helpful in implementing `RVS_Checkbox`.
+
+## <a id="USAGE"></a>USAGE
+
+In order to use `RVS_Checkbox`, we need to either add it in [Interface Builder](https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/), or create the instance programmatically.
+
+### <a id="SETUP"></a>Setup
+
+#### <a id="IB"></a>Interface Builder
+
+If we are using [Interface Builder](https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/) to implement our instance of `RVS_Checkbox`, we start by opening our View Controller up in IB, and pressing the "+" button, in the upper, right corner:
+
+![The Add New Element Button](img/00-IB.png)
+
+This will open a modal screen, allowing us to select the type of element we wish to add.
+
+We should select a generic[`UIView` (View)](https://developer.apple.com/documentation/uikit/uiview) object:
+
+![Add View](img/01-IB.png)
+
+Drag that into the View Controller (1), and arrange it the way that you like. Then select it, and select the Identity Inspector tab. Once that has been selected, enter `RVS_Checkbox` as the object class (2).
+
+If we used Swift Package Manager or CocoaPods to add the class, we should set the "`Module`" field to "`RVS_Checkbox`." (3) Otherwise, we should check the "`Inherit Module From Target`" checkbox, and let the app module be chosen.
+
+![Set Class and Module](img/02-IB.png)
+
+Finally, we should select the Properties Inspector, and set the various inspectable properties to the ones we want to see:
+
+![Set Class Properties](img/03-IB.png)
+
+> **_NOTE:_**  As of the writing of this guide, the `IBDesignable` support seems to have issues rendering the control (See the "`Designables Build Failed`" message). I'll be seeing what I can do to address this. It does not prevent the control from working; all it does is prevent it from previewing.
+
+#### <a id="DYNAMIC"></a>Dynamic Instantiation
+
+Dynamic instantiation isn't difficult. Simply create an instance of `RVS_Checkbox`, in the same way we would `UIView`:
+
+```
+/* ################################################################## */
+/**
+ This sets up the three checkboxes along the bottom of the screen.
+ 
+ We set up a center box, using SF Symbols, then add one to its right, using the default, and one to its left, using some custom images.
+ 
+ We use programmatic Auto-Layout for this.
+ */
+func setUpDynamicCheckBoxes() {
+    if let dynamicContainer = dynamicContainer {    // Make sure we have the container.
+        let centerDynamicCheckbox = RVS_Checkbox()  // Create the instance
+        dynamicContainer.addSubview(centerDynamicCheckbox)  // Add it to the container.
+        centerDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
+        centerDynamicCheckbox.tintColor = checkboxObject?.tintColor // We steal the tint color from the IB-instantiated checkbox.
+        centerDynamicCheckbox.isUsingSFSymbols = true
+        centerDynamicCheckbox.isThreeState = true
+        centerDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+                                    centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0),
+                                    centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                    centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    ])
+        
+        let leftDynamicCheckbox = RVS_Checkbox()
+        dynamicContainer.addSubview(leftDynamicCheckbox)
+        leftDynamicCheckbox.backgroundColor = .clear
+        leftDynamicCheckbox.tintColor = checkboxObject?.tintColor
+        leftDynamicCheckbox.isThreeState = true
+        leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+                                    leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8),
+                                    leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                    leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    ])
+        
+        let rightDynamicCheckbox = RVS_Checkbox()
+        dynamicContainer.addSubview(rightDynamicCheckbox)
+        rightDynamicCheckbox.backgroundColor = .clear
+        rightDynamicCheckbox.tintColor = checkboxObject?.tintColor
+        rightDynamicCheckbox.offImage = UIImage(named: "TestImage-0")
+        rightDynamicCheckbox.clearImage = UIImage(named: "TestImage-1")
+        rightDynamicCheckbox.onImage = UIImage(named: "TestImage-2")
+        rightDynamicCheckbox.isThreeState = true
+        rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+                                    rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8),
+                                    rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                    rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    ])
+    }
+}
+```
+
+The above code snippet was taken [directly from the Test Harness project](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/RVS_Checkbox_TestHarness_ViewController.swift#L318). It shows how we create the three dynamically-instantiated checkboxes on the bottom of the screen.
+
+That results in this display:
+
+![The Dynamic Display](img/00-Dynamic.png)

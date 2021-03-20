@@ -317,32 +317,41 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     This sets up the three checkboxes along the bottom of the screen.
+     
+     We set up a center box, using SF Symbols, then add one to its right, using the default, and one to its left, using some custom images.
+     
+     We use programmatic Auto-Layout for this.
      */
     func setUpDynamicCheckBoxes() {
-        if let dynamicContainer = dynamicContainer {
-            let centerDynamicCheckbox = RVS_Checkbox()
-            dynamicContainer.addSubview(centerDynamicCheckbox)
-            centerDynamicCheckbox.backgroundColor = .clear
-            centerDynamicCheckbox.tintColor = checkboxObject?.tintColor
+        if let dynamicContainer = dynamicContainer {    // Make sure we have the container.
+            let centerDynamicCheckbox = RVS_Checkbox()  // Create the instance
+            dynamicContainer.addSubview(centerDynamicCheckbox)  // Add it to the container.
+            centerDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
+            centerDynamicCheckbox.tintColor = checkboxObject?.tintColor // We steal the tint color from the IB-instantiated checkbox.
             centerDynamicCheckbox.isUsingSFSymbols = true
             centerDynamicCheckbox.isThreeState = true
-            
             centerDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
-            centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0).isActive = true
-            centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
-            centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
 
+            NSLayoutConstraint.activate([
+                                        centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0),
+                                        centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                        centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        ])
+            
             let leftDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addSubview(leftDynamicCheckbox)
             leftDynamicCheckbox.backgroundColor = .clear
             leftDynamicCheckbox.tintColor = checkboxObject?.tintColor
             leftDynamicCheckbox.isThreeState = true
-
             leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
-            leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8).isActive = true
-            leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
-            leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
-
+            
+            NSLayoutConstraint.activate([
+                                        leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8),
+                                        leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                        leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        ])
+            
             let rightDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addSubview(rightDynamicCheckbox)
             rightDynamicCheckbox.backgroundColor = .clear
@@ -351,11 +360,13 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
             rightDynamicCheckbox.clearImage = UIImage(named: "TestImage-1")
             rightDynamicCheckbox.onImage = UIImage(named: "TestImage-2")
             rightDynamicCheckbox.isThreeState = true
-
             rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
-            rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8).isActive = true
-            rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64).isActive = true
-            rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64).isActive = true
+            
+            NSLayoutConstraint.activate([
+                                        rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8),
+                                        rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
+                                        rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        ])
         }
     }
     
