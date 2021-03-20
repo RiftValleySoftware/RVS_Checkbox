@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D468535825FFAEA200380E41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
-		D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */; };
 		D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4970C2125FF997A00B97CC4 /* libRVS_Checkbox.a */; };
 		D4970C2D25FF99B400B97CC4 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
 		D4E8A21B2604E1EB0098B673 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */; };
@@ -17,8 +16,9 @@
 		D4E8A2202604E1F00098B673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204725FF910300884043 /* LaunchScreen.storyboard */; };
 		D4E8A2232604E1F70098B673 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
 		D4E8A2262604E1FB0098B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204525FF910300884043 /* Assets.xcassets */; };
-		D4E8A22C2604E2A00098B673 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4E8A22B2604E2A00098B673 /* RVS-Generic-Swift-Toolbox */; };
-		D4E8A22F2604E2F60098B673 /* RVS-Checkbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4E8A22E2604E2F60098B673 /* RVS-Checkbox */; };
+		D4FB6AC126053A36004F7EEB /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB6AC026053A36004F7EEB /* RVS-Generic-Swift-Toolbox */; };
+		D4FB6AC326053A62004F7EEB /* RVS-Checkbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB6AC226053A62004F7EEB /* RVS-Checkbox */; };
+		D4FB6AC526053A68004F7EEB /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB6AC426053A68004F7EEB /* RVS-Generic-Swift-Toolbox */; };
 		D4FD203D25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */; };
 		D4FD204125FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */; };
 		D4FD204425FF910200884043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204225FF910200884043 /* Main.storyboard */; };
@@ -64,8 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4E8A22C2604E2A00098B673 /* RVS-Generic-Swift-Toolbox in Frameworks */,
-				D4E8A22F2604E2F60098B673 /* RVS-Checkbox in Frameworks */,
+				D4FB6AC526053A68004F7EEB /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D4FB6AC326053A62004F7EEB /* RVS-Checkbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FB6AC126053A36004F7EEB /* RVS-Generic-Swift-Toolbox in Frameworks */,
 				D46FD87E2603B4E1001DA113 /* libRVS_Checkbox.a in Frameworks */,
-				D46FD8772603AB94001DA113 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +189,8 @@
 			);
 			name = "RVS_Checkbox_TestHarness (SPM)";
 			packageProductDependencies = (
-				D4E8A22B2604E2A00098B673 /* RVS-Generic-Swift-Toolbox */,
-				D4E8A22E2604E2F60098B673 /* RVS-Checkbox */,
+				D4FB6AC226053A62004F7EEB /* RVS-Checkbox */,
+				D4FB6AC426053A68004F7EEB /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = "RVS_Checkbox_TestHarness (SPM)";
 			productReference = D4E8A1E02604E1BB0098B673 /* RVS_Checkbox_TestHarness (SPM).app */;
@@ -212,7 +212,7 @@
 			);
 			name = "RVS_Checkbox_TestHarness (Direct)";
 			packageProductDependencies = (
-				D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */,
+				D4FB6AC026053A36004F7EEB /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_Checkbox_TestHarness;
 			productReference = D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness (Direct).app */;
@@ -248,8 +248,8 @@
 			);
 			mainGroup = D4FD201025FF90C200884043;
 			packageReferences = (
-				D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
-				D4E8A22D2604E2F60098B673 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */,
+				D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */,
+				D4FB6ABA26053A24004F7EEB /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
 			);
 			productRefGroup = D4FD201B25FF90C200884043 /* Products */;
 			projectDirPath = "";
@@ -687,7 +687,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+		D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Checkbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		D4FB6ABA26053A24004F7EEB /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
@@ -695,31 +703,23 @@
 				minimumVersion = 1.5.2;
 			};
 		};
-		D4E8A22D2604E2F60098B673 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Checkbox.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D46FD8762603AB94001DA113 /* RVS-Generic-Swift-Toolbox */ = {
+		D4FB6AC026053A36004F7EEB /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			package = D4FB6ABA26053A24004F7EEB /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D4E8A22B2604E2A00098B673 /* RVS-Generic-Swift-Toolbox */ = {
+		D4FB6AC226053A62004F7EEB /* RVS-Checkbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D46FD8752603AB94001DA113 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
-		};
-		D4E8A22E2604E2F60098B673 /* RVS-Checkbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D4E8A22D2604E2F60098B673 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */;
+			package = D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */;
 			productName = "RVS-Checkbox";
+		};
+		D4FB6AC426053A68004F7EEB /* RVS-Generic-Swift-Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4FB6ABA26053A24004F7EEB /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
