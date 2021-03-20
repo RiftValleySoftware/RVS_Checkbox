@@ -2,10 +2,25 @@
 
 # RVS_Checkbox
 
-## INTRODUCTION
+- **Table of Contents**
+    - [INTRODUCTION](#INTRO)
+    - [WHAT PROBLEM DOES THIS SOLVE?](#WHATPROBLEM)
+        - [So, What's the Problem?](#WHATSTHEPROBLEM)
+        - [Why Does the RVS_Checkbox Solve This Problem?](#WHY)
+    - [DEPENDENCIES](#DEPENDENCIES)
+    - [INSTALLATION](#INSTALLATION)
+        - [Swift Package Manager](#SPM)
+            - [Adding the Package Directly to One Target](#SINGLETARGET)
+            - [Adding the Package Directly to Another Target](#ADDITIONALTARGET)
+        - [CocoaPods](#COCOAPODS)
+        - [AFTER INCLUDING THE PACKAGE OR LIBRARY](#AFTER)
+        - [Carthage](#CARTHAGE)
+        - [Directly Accessing the GitHub Repo](#GITHUBREPO)
+
+## <a id="INTRO"></a>INTRODUCTION
 This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as `UISwitch`.
 
-## WHAT PROBLEM DOES THIS SOLVE?
+## <a id="WHATPROBLEM"></a>WHAT PROBLEM DOES THIS SOLVE?
 The classic `UISwitch`:
 
 ![The Standard UISwitch Control](img/UISwitch.png)
@@ -15,7 +30,7 @@ Is a great UI element, and is used in place of the classic ["checkbox"](https://
 ![The Standard Mac Checkbox Control](img/CheckBoxes_Selected.png)
 
 Which doesn't actually work as well, in the "fat finger" world of iOS UI.
-### So, What's the Problem?
+### <a id="WHATSTHEPROBLEM"></a>So, What's the Problem?
 The issue is that the `UISwitch` is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
 
 Because of the horizontal aspect of the control, it is fairly "natural" to have the label to the left:
@@ -36,7 +51,7 @@ The `RVS_Checkbox` allows a square aspect, and a directionless (tap) action, lik
 
 `UISwitch` also has a strictly "binary" action. If you have three choices, you are expected to use a [`UISegmentedControl`](https://developer.apple.com/documentation/uikit/uisegmentedcontrol), which is actually quite sensible. Apple obviously put a lot of research into their UI paradygm, and there's a good reason for this. Mobile interfaces are a compromise, at best.
 
-### Why Does the RVS_Checkbox Solve This Problem?
+### <a id="WHY"></a>Why Does the RVS_Checkbox Solve This Problem?
 Glad you asked. The `RVS_Checkbox` comes with two "built-in" appearances: A default, circular checkbox, and a fairly "classic" appearance that uses the built-in [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) to mimic the way the Mac checkboxes appear.
 
 You can also add your own images.
@@ -81,31 +96,21 @@ The "DEFAULT" and "SF SYMBOLS" images are "baked into" the class, and the "USER-
 
 The images will resize with the control, and will scale to fill (so the control needs to be sized to the aspect ratio of the images, for undistorted display).
 
-## DEPENDENCIES
+## <a id="DEPENDENCIES"></a>DEPENDENCIES
 
 There are no dependencies for the module. If you will be running [the test harness](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness), you will need to load [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), as well. Again, **THIS IS NOT NECESSARY TO USE THE PACKAGE. IT IS ONLY FOR THE TEST HARNESS!**
 
-## INSTALLATION
+## <a id="INSTALLATION"></a>INSTALLATION
 
 The control is provided as a [Swift Package Manager](https://swift.org/package-manager/) package, a [CocoaPod](https://cocoapods.org), and can be installed using [Carthage](https://github.com/Carthage/Carthage). You can also simply drag [the project](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/RVS_Checkbox.xcodeproj) into your own project, straight from a local repo, or even just include [the single source file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift) (I like to keep the number of source files to a minimum for these types of projects).
 
-## GitHub Repo
-
-The GitHub repo is [`https://github.com/RiftValleySoftware/RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox).
-
-You can access the repo directly, and clone it, or add it as [a Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your project.
-
-If you do this, be aware that you only need to add one single file to your project; [the `RVS_Checkbox.swift` file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift).
-
-If you are directly integrating the file into your project, you do not need to import a module.
-
-## Swift Package Manager
+### <a id="SPM"></a>Swift Package Manager
 
 The repo that you should include with SPM, is [`git@github.com:RiftValleySoftware/RVS_Checkbox.git`](git@github.com:RiftValleySoftware/RVS_Checkbox.git).
 
 Either by directly editing the [`Package.swift`](https://swift.org/package-manager/#importing-dependencies) file, or by using the project GUI, add the package:
 
-#### ADDING THE URI DIRECTLY TO ONE TARGET:
+#### <a id="SINGLETARGET"></a>Adding the Package Directly to One Target:
 
 ![Step 1: Add A Package](img/00-Package.png)
 
@@ -123,7 +128,7 @@ Step 3: Enter the current version (if you used the URI, then this is already set
 
 Step 4: Add the package to your target. You can only add the package to one target, at this point.
 
-#### ADDING THE PACKAGE TO ANOTHER TARGET:
+#### <a id="ADDITIONALTARGET"></a>Adding the Package to Another Target:
 
 If you have the package imported, you now have it available like any other framework, and you can add it manually to any target, using the General Tab:
 
@@ -135,11 +140,11 @@ Step 5: Adding the package to a target in the General Tab.
 
 Step 6: Selecting the imported framework.
 
-## CocoaPods
+### <a id="COCOAPODS"></a>CocoaPods
 
 The Pod URI is [`https://cocoapods.org/pods/RVS_Checkbox`](https://cocoapods.org/pods/RVS_Checkbox).
 
-### AFTER INCLUDING THE PACKAGE OR LIBRARY
+### <a id="AFTER"></a>AFTER INCLUDING THE PACKAGE OR LIBRARY
 
 At this point, you will need to import the module in the Swift source files that will be accessing it:
 
@@ -147,7 +152,7 @@ At this point, you will need to import the module in the Swift source files that
 import RVS_Checkbox
 ```
 
-## Carthage
+### <a id="CARTHAGE"></a>Carthage
 
 If you are using Carthage, then you should add the following line to your Cartfile:
 
@@ -155,6 +160,24 @@ If you are using Carthage, then you should add the following line to your Cartfi
 github "RiftValleySoftware/RVS_Checkbox"
 ```
 
-It is advisable to directly integrate the file into your project, as opposed to building a library. It is only one source file, and integrating it will be easiest all around.
+Then, open Terminal, and navigate to the top of the `RVS_Checkbox` directory, and type this into Terminal:
 
-If we integrate, then there is no need to import the module. The file will be directly available in the module namespace.
+```
+carthage update
+```
+
+It will creat a directory at the same level as the Cartfile, called "`Carthage`." Inside of this directory, will be another directory, called "`Checkouts`." Inside of that directory, will be another one, called "`RVS_Checkbox`." You want to go into "`Sources/RVS_Checkout`," and access the `RVS_Checkbox.swift` file. Drag this into your project, and associate it with your app build target.
+
+![The Carthage Checkouts Directory](img/Checkouts.png)
+
+### <a id="GITHUBREPO"></a>Directly Accessing the GitHub Repo
+
+The GitHub repo is [`https://github.com/RiftValleySoftware/RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox).
+
+You can access the repo directly, and clone it, or add it as [a Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to your project.
+
+If you do this, be aware that you only need to add one single file to your project; [the `RVS_Checkbox.swift` file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift).
+
+It is advisable to directly integrate this file into your project, as opposed to building a library. It is only one source file, and integrating it will be easiest all around.
+
+If we integrate directly, then there is no need to import the module. The `RVS_Checkbox` class will be directly available in the module namespace.

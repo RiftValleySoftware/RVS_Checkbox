@@ -22,7 +22,6 @@
 
 import UIKit
 
-#if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 /* ###################################################################################################################################### */
 // MARK: - Three-State UIKit Checkbox -
 /* ###################################################################################################################################### */
@@ -32,11 +31,13 @@ import UIKit
  The class can use the SFSymbols checkbox symbols, but these are a bit awkward for UIKit (which is why UIKit doesn't use them), so we have three dynamically-generated "artisanal" images that can be used to
  implement a round checkbox, which is friendlier for fat fingers.
  You can also supply three images to use for the control (or only two, if you are sticking with the "two-state" version).
- All images are drawn template mode, using the control tintColor.
- Like the UISwitch class, you can specifically call setOn(_:animated:), and it will animate the transition. You can also call setClear(animated:), if in three-state mode.
+ All images are drawn template mode, using the control `tintColor`.
+ Like the UISwitch class, you can specifically call `setOn(_:animated:)`, and it will animate the transition. You can also call `setClear(animated:)`, if in three-state mode.
+ This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting `useHaptics` to false.
  */
 @IBDesignable
 open class RVS_Checkbox: UIControl {
+    #if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
     /* ###################################################################################################################################### */
     // MARK: -
     // MARK: - INTERNAL DEFAULT DYNAMIC IMAGES
@@ -333,7 +334,7 @@ open class RVS_Checkbox: UIControl {
      The SFSymbol Configuration (large).
      */
     private static let _sSFConfig = UIImage.SymbolConfiguration(scale: .large)
-
+    
     /* ################################################################## */
     // MARK: Instance Properties
     /* ################################################################## */
@@ -347,6 +348,12 @@ open class RVS_Checkbox: UIControl {
      This is used in three-state mode, to determine which direction the toggle should go, from clear.
      */
     private var _previousState: States = .clear
+    
+    /* ################################################################## */
+    /**
+     This will provide haptic/audio feedback for opening and closing the control.
+     */
+    private var _selectionFeedbackGenerator: UISelectionFeedbackGenerator?
 
     /* ################################################################## */
     // MARK: Instance Computed Properties
@@ -413,6 +420,11 @@ open class RVS_Checkbox: UIControl {
         }
         
         _drawingImage = nil
+        if useHaptics {
+            _selectionFeedbackGenerator = _selectionFeedbackGenerator ?? UISelectionFeedbackGenerator()
+            _selectionFeedbackGenerator?.prepare()
+        }
+        
         setNeedsDisplay()
     }
 
@@ -451,9 +463,17 @@ open class RVS_Checkbox: UIControl {
      This holds the control's current state (before any changes).
      */
     open var checkboxState: States = .clear {
-        didSet { _refresh() }
+        didSet {
+            _selectionFeedbackGenerator?.selectionChanged()
+            _refresh()
+        }
     }
 
+    /* ################################################################################################################################## */
+    // MARK: -
+    // MARK: - PUBLIC INSPECTABLE STORED PROPERTIES -
+    // MARK: -
+    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This is the image to be displayed in an "ON" state.
@@ -503,6 +523,24 @@ open class RVS_Checkbox: UIControl {
     @IBInspectable open var useOffImageForClear: Bool = false {
         didSet { _refresh() }
     }
+
+    /* ################################################################## */
+    /**
+     If this is true (default), then the control will use subtle haptics. These will not happen for programmatic set; only for direct UI interaction.
+     */
+    @IBInspectable open var useHaptics: Bool = true {
+        didSet {
+            if useHaptics {
+                _selectionFeedbackGenerator = _selectionFeedbackGenerator ?? UISelectionFeedbackGenerator()
+                _selectionFeedbackGenerator?.prepare()
+                _selectionFeedbackGenerator?.selectionChanged()
+            } else {
+                _selectionFeedbackGenerator = nil
+            }
+            _refresh()
+        }
+    }
+    #endif
 }
 
 /* ###################################################################################################################################### */
@@ -544,6 +582,11 @@ extension RVS_Checkbox {
      */
     open var isOff: Bool { isThreeState ? .off == checkboxState : .on != checkboxState }
 
+    /* ################################################################################################################################## */
+    // MARK: -
+    // MARK: - PUBLIC INSPECTABLE COMPUTED PROPERTIES -
+    // MARK: -
+    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This returns true, if the control is in ON state.
@@ -608,8 +651,12 @@ extension RVS_Checkbox {
                               duration: Self._sTransitionDelay,
                               options: .transitionCrossDissolve,
                               animations: { [weak self] in self?._drawingImage = finalImage },
-                              completion: { [weak self] _ in self?.checkboxState = inState })
+                              completion: { [weak self] _ in
+                                self?._selectionFeedbackGenerator = nil // This makes sure we don't get haptic feedback for the set (copies UISwitch behavior).
+                                self?.checkboxState = inState
+                              })
         } else {
+            _selectionFeedbackGenerator = nil // This makes sure we don't get haptic feedback for the set (copies UISwitch behavior).
             checkboxState = inState
         }
     }
@@ -740,4 +787,3 @@ extension RVS_Checkbox {
         setNeedsDisplay()
     }
 }
-#endif

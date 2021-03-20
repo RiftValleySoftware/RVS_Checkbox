@@ -68,7 +68,17 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /**
      */
     @IBOutlet weak var useOffImageLabelButton: UIButton!
-    
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var useHapticsSwitch: UISwitch!
+
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var useHapticsSwitchLabelButton: UIButton!
+
     /* ################################################################## */
     /**
      */
@@ -157,6 +167,21 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /* ################################################################## */
     /**
      */
+    @IBAction func useHapticsSwitchChanged(_ inSwitch: UISwitch) {
+        checkboxObject?.useHaptics = inSwitch.isOn
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBAction func useHapticsLabelButtonHit(_: Any) {
+        useHapticsSwitch.setOn(!(useHapticsSwitch?.isOn ?? true), animated: true)
+        useHapticsSwitchChanged(useHapticsSwitch)
+    }
+
+    /* ################################################################## */
+    /**
+     */
     @IBAction func enabledSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isEnabled = inSwitch.isOn
         setUpUI()
@@ -168,12 +193,6 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     @IBAction func enabledSwitchLabelButtonHit(_: Any) {
         enabledSwitch.setOn(!(enabledSwitch?.isOn ?? true), animated: true)
         enabledSwitchChanged(enabledSwitch)
-    }
-
-    /* ################################################################## */
-    /**
-     */
-    @IBAction func animatedSwitchChanged(_ inSwitch: UISwitch) {
     }
 
     /* ################################################################## */
@@ -257,6 +276,7 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
         useOffImageLabelButton?.setTitle((useOffImageLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         animatedSwitchLabelButton?.setTitle((animatedSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         enabledSwitchLabelButton?.setTitle((enabledSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
+        useHapticsSwitchLabelButton?.setTitle((useHapticsSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         customHeaderLabel?.text = (customHeaderLabel?.text ?? "ERROR").localizedVariant
         dynamicHeaderLabel?.text = (dynamicHeaderLabel?.text ?? "ERROR").localizedVariant
 

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4FD203925FF910200884043"
+               BlueprintIdentifier = "D44742C82606573500239670"
                BuildableName = "RVS_Checkbox_TestHarness (Direct).app"
                BlueprintName = "RVS_Checkbox_TestHarness (Direct)"
                ReferencedContainer = "container:RVS_Checkbox.xcodeproj">
@@ -44,12 +44,19 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4FD203925FF910200884043"
+            BlueprintIdentifier = "D44742C82606573500239670"
             BuildableName = "RVS_Checkbox_TestHarness (Direct).app"
             BlueprintName = "RVS_Checkbox_TestHarness (Direct)"
             ReferencedContainer = "container:RVS_Checkbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "CARTHAGE"
+            value = "1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -61,7 +68,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4FD203925FF910200884043"
+            BlueprintIdentifier = "D44742C82606573500239670"
             BuildableName = "RVS_Checkbox_TestHarness (Direct).app"
             BlueprintName = "RVS_Checkbox_TestHarness (Direct)"
             ReferencedContainer = "container:RVS_Checkbox.xcodeproj">

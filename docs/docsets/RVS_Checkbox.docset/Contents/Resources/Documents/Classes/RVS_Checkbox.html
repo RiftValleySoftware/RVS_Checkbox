@@ -71,16 +71,19 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">RVS_Checkbox</span> <span class="p">:</span> <span class="kt">UIControl</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">RVS_Checkbox</span> <span class="p">:</span> <span class="kt">UIControl</span></code></pre>
 
                 </div>
               </div>
             <p>This class provides a simple Swift-only module that implements a &ldquo;checkbox&rdquo; to replace the standard UISwitch.
 The switch can behave exactly like a standard UISwitch, but also has a &ldquo;three-state&rdquo; option, where it has definitely off, definitely on, and clear, which is a sort of &ldquo;undefined&rdquo; state. Default is two-state (like UISwitch).
-The class can use the SFSymbols checkbox symbols, but these are a bit awkward for UIKit (which is why UIKit doesn&rsquo;t use them), so we have three dynamically-generated &ldquo;artisanal&rdquo; images that can be used to implement a round checkbox, which is friendlier for fat fingers.
+The class can use the SFSymbols checkbox symbols, but these are a bit awkward for UIKit (which is why UIKit doesn&rsquo;t use them), so we have three dynamically-generated &ldquo;artisanal&rdquo; images that can be used to
+implement a round checkbox, which is friendlier for fat fingers.
 You can also supply three images to use for the control (or only two, if you are sticking with the &ldquo;two-state&rdquo; version).
-All images are drawn template mode, using the control tintColor.
-Like the UISwitch class, you can specifically call setOn(_:animated:), and it will animate the transition. You can also call setClear(animated:), if in three-state mode.</p>
+All images are drawn template mode, using the control <code>tintColor</code>.
+Like the UISwitch class, you can specifically call <code>setOn(_:animated:)</code>, and it will animate the transition. You can also call <code>setClear(animated:)</code>, if in three-state mode.
+This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting <code>useHaptics</code> to false.</p>
 
           </div>
         </section>
@@ -344,6 +347,34 @@ This is ignored in three-state mode, or SFSymbols mode (which already does that)
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)useHaptics"></a>
+                    <a name="//apple_ref/swift/Property/useHaptics" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)useHaptics">useHaptics</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If this is true (default), then the control will use subtle haptics. These will not happen for programmatic set; only for direct UI interaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">useHaptics</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:12RVS_CheckboxAAC5valueSivp"></a>
                     <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
                     <a class="token" href="#/s:12RVS_CheckboxAAC5valueSivp">value</a>
@@ -387,14 +418,15 @@ This is ignored in three-state mode, or SFSymbols mode (which already does that)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns true, if the control is currently in &ldquo;CLEAR&rdquo; state (which is also off, for two-state).</p>
+                        <p>This returns true, if the control is currently in &ldquo;CLEAR&rdquo; state (which is also off, for two-state).
+READ-ONLY</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">isClear</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">isClear</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -414,14 +446,15 @@ This is ignored in three-state mode, or SFSymbols mode (which already does that)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns true, if the control is in &ldquo;OFF&rdquo; state (three state), or either &ldquo;off&rdquo; or &ldquo;clear&rdquo; (two-state).</p>
+                        <p>This returns true, if the control is in &ldquo;OFF&rdquo; state (three state), or either &ldquo;off&rdquo; or &ldquo;clear&rdquo; (two-state).
+READ-ONLY</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">isOff</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">isOff</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -441,7 +474,8 @@ This is ignored in three-state mode, or SFSymbols mode (which already does that)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This returns true, if the control is in ON state.</p>
+                        <p>This returns true, if the control is in ON state.
+If explicitly set to false, the checkbox is set to OFF (or CLEAR for two  state).</p>
 
                       </div>
                       <div class="declaration">
@@ -1017,7 +1051,7 @@ If the touch ends inside the control, the value is changed, and messages are sen
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2021-03-19)</p>
+      <p>&copy; 2021 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2021-03-20)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

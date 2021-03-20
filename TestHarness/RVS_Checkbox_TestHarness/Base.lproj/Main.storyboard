@@ -13,7 +13,7 @@
         <!--Checkbox Test Harness View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Direct_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Framework_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,16 +146,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-C1-8IB">
-                                        <rect key="frame" x="77" y="288" width="220" height="64"/>
+                                        <rect key="frame" x="0.0" y="288" width="374" height="64"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-SI-n9X">
-                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="16.5" width="48.5" height="31"/>
                                                 <connections>
                                                     <action selector="useOffImageSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="k9O-bi-U77"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-Dw-GHh">
-                                                <rect key="frame" x="57" y="17" width="163" height="30"/>
+                                                <rect key="frame" x="54.5" y="17" width="154.5" height="30"/>
                                                 <state key="normal" title="SLUG-USE-OFF-IMAGE">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -166,9 +166,21 @@
                                                     <action selector="useOffImageLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ob-br-awk"/>
                                                 </connections>
                                             </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FrX-hF-MrD">
+                                                <rect key="frame" x="217" y="16.5" width="49" height="31"/>
+                                                <connections>
+                                                    <action selector="useHapticsSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rDV-NB-asz"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooi-nj-Qbj">
+                                                <rect key="frame" x="272" y="17" width="102" height="30"/>
+                                                <state key="normal" title="SLUG-HAPTICS"/>
+                                                <connections>
+                                                    <action selector="useHapticsLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rs-FR-ngD"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Z5X-Dw-GHh" secondAttribute="trailing" id="YS5-fF-M6e"/>
                                             <constraint firstItem="Z5X-Dw-GHh" firstAttribute="leading" secondItem="eXS-SI-n9X" secondAttribute="trailing" constant="8" symbolic="YES" id="u3B-tO-4VZ"/>
                                         </constraints>
                                     </stackView>
@@ -177,9 +189,6 @@
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
                                                 <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="animatedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g2a-0j-ZA1"/>
-                                                </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-4x-DS8">
                                                 <rect key="frame" x="57" y="17" width="121" height="30"/>
@@ -304,6 +313,8 @@
                         <outlet property="stateSwitch" destination="Uqx-16-VTp" id="8cy-zz-AOY"/>
                         <outlet property="threeStateLabelButton" destination="yOf-Mt-tfX" id="w7q-Fj-Icy"/>
                         <outlet property="tintSelectorSegmentedSwitch" destination="VgL-Fb-Tkz" id="hnx-tm-wbd"/>
+                        <outlet property="useHapticsSwitch" destination="FrX-hF-MrD" id="j1W-Ye-CPr"/>
+                        <outlet property="useHapticsSwitchLabelButton" destination="Ooi-nj-Qbj" id="Yw8-ZY-qug"/>
                         <outlet property="useOffImageLabelButton" destination="Z5X-Dw-GHh" id="d5c-V6-3ho"/>
                         <outlet property="useOffImageSwitch" destination="eXS-SI-n9X" id="1It-CW-Z8a"/>
                         <outlet property="valueChangedSegmentedSwitch" destination="ZeP-XU-KER" id="ebz-Iq-VYF"/>

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4520D77260652CE0020C060"
-               BuildableName = "RVS_Checkbox.framework"
-               BlueprintName = "RVS_Checkbox"
+               BlueprintIdentifier = "D4FD203925FF910200884043"
+               BuildableName = "RVS_Checkbox_TestHarness (Framework).app"
+               BlueprintName = "RVS_Checkbox_TestHarness (Framework)"
                ReferencedContainer = "container:RVS_Checkbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D4FD203925FF910200884043"
+            BuildableName = "RVS_Checkbox_TestHarness (Framework).app"
+            BlueprintName = "RVS_Checkbox_TestHarness (Framework)"
+            ReferencedContainer = "container:RVS_Checkbox.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4520D77260652CE0020C060"
-            BuildableName = "RVS_Checkbox.framework"
-            BlueprintName = "RVS_Checkbox"
+            BlueprintIdentifier = "D4FD203925FF910200884043"
+            BuildableName = "RVS_Checkbox_TestHarness (Framework).app"
+            BlueprintName = "RVS_Checkbox_TestHarness (Framework)"
             ReferencedContainer = "container:RVS_Checkbox.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

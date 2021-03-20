@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 1.1.0.2000
+
+- **TBD**
+
+- Changed main project to dylib.
+
 ## 1.0.3.2000
 
 - **March 20, 2021**
