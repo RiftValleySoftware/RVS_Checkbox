@@ -319,8 +319,8 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     /**
      This sets up the three checkboxes along the bottom of the screen.
      
-     We set up a center box, using SF Symbols, then add one to its right, using the default, and one to its left, using some custom images.
-     
+     We set up a center box, using SF Symbols, then add one to its left, using the default, and one to its right, using some custom images.
+
      We use programmatic Auto-Layout for this.
      */
     func setUpDynamicCheckBoxes() {
