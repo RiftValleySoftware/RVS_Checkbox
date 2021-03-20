@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
     spec.description        = 'The RVS_Checkbox is a Swift shared framework designed to allow easy implementation of a powerful, robust, simple, and highly-usable checkbox control.'
     spec.version            = '1.0.2'
     spec.platform           = :ios, '13.0'
-    spec.homepage           = 'https://cocoapods.org/pods/RVS_Checkbox''
+    spec.homepage           = 'https://cocoapods.org/pods/RVS_Checkbox'
     spec.social_media_url   = 'https://twitter.com/GrtRiftValley'
     spec.author             = { 'The Great Rift Valley Software Company' => 'chris@riftvalleysoftware.com' }
     spec.documentation_url  = 'https://riftvalleysoftware.github.io/RVS_Checkbox/'
