@@ -137,6 +137,8 @@ Step 6: Selecting the imported framework.
 
 ## CocoaPods
 
+The Pod URI is [`https://cocoapods.org/pods/RVS_Checkbox`](https://cocoapods.org/pods/RVS_Checkbox).
+
 ## Carthage
 
 At this point, you will need to import the module in the Swift source files that will be accessing it:

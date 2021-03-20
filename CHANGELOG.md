@@ -1,8 +1,12 @@
 # RVS_Checkbox Change Log
 
-## 1.0.2.2000
+## 1.0.3.2000
 
 - **TBD**
+
+## 1.0.2.2000
+
+- **March 19, 2021**
 
 - Tweaks to the Podspec.
 - Continued work on the documentation.
