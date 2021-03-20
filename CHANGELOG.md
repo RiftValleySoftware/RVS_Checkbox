@@ -2,7 +2,7 @@
 
 ## 1.0.3.2000
 
-- **TBD**
+- **March 20, 2021**
 
 - Added a Carthage example target to the test harness.
 - Added dynamically-created examples to the test harness.
