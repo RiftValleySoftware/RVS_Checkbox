@@ -83,7 +83,7 @@ The images will resize with the control, and will scale to fill (so the control 
 
 ## DEPENDENCIES
 
-There are no dependencies for the module. If you will be running [the test harness](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness), you will need to load [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), as well.
+There are no dependencies for the module. If you will be running [the test harness](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness), you will need to load [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), as well. Again, **THIS IS NOT NECESSARY TO USE THE PACKAGE. IT IS ONLY FOR THE TEST HARNESS!**
 
 ## INSTALLATION
 
@@ -139,10 +139,22 @@ Step 6: Selecting the imported framework.
 
 The Pod URI is [`https://cocoapods.org/pods/RVS_Checkbox`](https://cocoapods.org/pods/RVS_Checkbox).
 
-## Carthage
+### AFTER INCLUDING THE PACKAGE OR LIBRARY
 
 At this point, you will need to import the module in the Swift source files that will be accessing it:
 
 ```
 import RVS_Checkbox
 ```
+
+## Carthage
+
+If you are using Carthage, then you should add the following line to your Cartfile:
+
+```
+github "RiftValleySoftware/RVS_Checkbox"
+```
+
+It is advisable to directly integrate the file into your project, as opposed to building a library. It is only one source file, and integrating it will be easiest all around.
+
+If we integrate, then there is no need to import the module. The file will be directly available in the module namespace.
