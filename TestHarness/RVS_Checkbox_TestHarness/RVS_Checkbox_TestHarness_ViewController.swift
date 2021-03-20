@@ -325,6 +325,10 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
      */
     func setUpDynamicCheckBoxes() {
         if let dynamicContainer = dynamicContainer {    // Make sure we have the container.
+            let gap: CGFloat = 8
+            let dynamicControlSize: CGFloat = 64
+            let testImageFormat = "TestImage-%d"
+
             let centerDynamicCheckbox = RVS_Checkbox()  // Create the instance
             dynamicContainer.addSubview(centerDynamicCheckbox)  // Add it to the container.
             centerDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
@@ -335,8 +339,8 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
             NSLayoutConstraint.activate([
                                         centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0),
-                                        centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                        centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                        centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                         ])
             
             let leftDynamicCheckbox = RVS_Checkbox()
@@ -347,25 +351,25 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
             leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                                        leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8),
-                                        leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                        leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -gap),
+                                        leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                        leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                         ])
             
             let rightDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addSubview(rightDynamicCheckbox)
             rightDynamicCheckbox.backgroundColor = .clear
             rightDynamicCheckbox.tintColor = checkboxObject?.tintColor
-            rightDynamicCheckbox.offImage = UIImage(named: "TestImage-0")
-            rightDynamicCheckbox.clearImage = UIImage(named: "TestImage-1")
-            rightDynamicCheckbox.onImage = UIImage(named: "TestImage-2")
+            rightDynamicCheckbox.offImage = UIImage(named: String(format: testImageFormat, 0))
+            rightDynamicCheckbox.clearImage = UIImage(named: String(format: testImageFormat, 1))
+            rightDynamicCheckbox.onImage = UIImage(named: String(format: testImageFormat, 2))
             rightDynamicCheckbox.isThreeState = true
             rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                                        rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8),
-                                        rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                        rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                        rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: gap),
+                                        rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                        rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                         ])
         }
     }

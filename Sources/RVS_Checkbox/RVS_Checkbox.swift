@@ -60,12 +60,6 @@ open class RVS_Checkbox: UIControl {
          */
         var myFillColor: UIColor = .label
         
-        /* ################################################################## */
-        /**
-         This is the rendering mode. It is ignored for the default, but is available for subclasses.
-         */
-        var myRenderingMode: UIImage.RenderingMode = .automatic
-        
         /* ################################################################################################################################## */
         // MARK: - Overrides of Base Class Methods -
         /* ################################################################################################################################## */
@@ -101,19 +95,6 @@ open class RVS_Checkbox: UIControl {
             return asImage ?? super.withTintColor(inTintColor)
         }
 
-        /* ################################################################## */
-        /**
-         This returns the image, but tinted (in the default, this always colors the image completely), and also with the supplied rendering mode (in the default, this is ignored).
-          
-         - parameter inTintColor: The color to use for tinting.
-         - parameter renderingMode: The rendering mode (ignored, in the default).
-          - returns: The image, but tinted (using the supplied color).
-         */
-        override func withTintColor(_ inTintColor: UIColor, renderingMode inRenderingMode: UIImage.RenderingMode) -> UIImage {
-            myRenderingMode = inRenderingMode
-            return withTintColor(inTintColor)
-        }
-
         /* ################################################################################################################################## */
         // MARK: - Subclasses MUST Override This -
         /* ################################################################################################################################## */
@@ -121,7 +102,7 @@ open class RVS_Checkbox: UIControl {
         /**
          This needs to be overridden.
          
-         This supplies a rendered image. It will use the myFillColor and myRenderingMode values (default ignores myRenderingMode, as it is always template, and default myFillColor is label color).
+         This supplies a rendered image. It will use the myFillColor value (default myFillColor is label color).
          */
         var asImage: UIImage! { preconditionFailure("This Computed Property Must be Overridden by Subclasses!" ) }
     }
@@ -135,7 +116,7 @@ open class RVS_Checkbox: UIControl {
     class RVS_Checkbox_Image_Clear: RVS_Checkbox_Image {
         /* ################################################################## */
         /**
-         This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
+         This supplies a rendered image. It will use the myFillColor.
          */
         override var asImage: UIImage! {
             let renderer = UIGraphicsImageRenderer(size: CGSize(width: 900, height: 900))
@@ -157,7 +138,7 @@ open class RVS_Checkbox: UIControl {
     class RVS_Checkbox_Image_On: RVS_Checkbox_Image {
         /* ################################################################## */
         /**
-         This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
+         This supplies a rendered image. It will use the myFillColor.
          */
         override var asImage: UIImage! {
             let renderer = UIGraphicsImageRenderer(size: CGSize(width: 900, height: 900))
@@ -232,7 +213,7 @@ open class RVS_Checkbox: UIControl {
     class RVS_Checkbox_Image_Off: RVS_Checkbox_Image {
         /* ################################################################## */
         /**
-         This supplies a rendered image. It will use the myFillColor and ignores myRenderingMode.
+         This supplies a rendered image. It will use the myFillColor.
          */
         override var asImage: UIImage! {
             let renderer = UIGraphicsImageRenderer(size: CGSize(width: 900, height: 900))

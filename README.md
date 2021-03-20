@@ -22,6 +22,7 @@
         - [Setup](#SETUP)
             - [Interface Builder](#IB)
             - [Dynamic Instantiation](#DYNAMIC)
+        - [Options](#OPTIONS)
 
 ## <a id="INTRO"></a>INTRODUCTION
 This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as `UISwitch`.
@@ -243,11 +244,15 @@ Dynamic instantiation isn't difficult. Simply create an instance of `RVS_Checkbo
  This sets up the three checkboxes along the bottom of the screen.
  
  We set up a center box, using SF Symbols, then add one to its left, using the default, and one to its right, using some custom images.
- 
+
  We use programmatic Auto-Layout for this.
  */
 func setUpDynamicCheckBoxes() {
     if let dynamicContainer = dynamicContainer {    // Make sure we have the container.
+        let gap: CGFloat = 8
+        let dynamicControlSize: CGFloat = 64
+        let testImageFormat = "TestImage-%d"
+
         let centerDynamicCheckbox = RVS_Checkbox()  // Create the instance
         dynamicContainer.addSubview(centerDynamicCheckbox)  // Add it to the container.
         centerDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
@@ -258,8 +263,8 @@ func setUpDynamicCheckBoxes() {
 
         NSLayoutConstraint.activate([
                                     centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0),
-                                    centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                    centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                    centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                     ])
         
         let leftDynamicCheckbox = RVS_Checkbox()
@@ -270,25 +275,25 @@ func setUpDynamicCheckBoxes() {
         leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                                    leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -8),
-                                    leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                    leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -gap),
+                                    leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                    leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                     ])
         
         let rightDynamicCheckbox = RVS_Checkbox()
         dynamicContainer.addSubview(rightDynamicCheckbox)
         rightDynamicCheckbox.backgroundColor = .clear
         rightDynamicCheckbox.tintColor = checkboxObject?.tintColor
-        rightDynamicCheckbox.offImage = UIImage(named: "TestImage-0")
-        rightDynamicCheckbox.clearImage = UIImage(named: "TestImage-1")
-        rightDynamicCheckbox.onImage = UIImage(named: "TestImage-2")
+        rightDynamicCheckbox.offImage = UIImage(named: String(format: testImageFormat, 0))
+        rightDynamicCheckbox.clearImage = UIImage(named: String(format: testImageFormat, 1))
+        rightDynamicCheckbox.onImage = UIImage(named: String(format: testImageFormat, 2))
         rightDynamicCheckbox.isThreeState = true
         rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                                    rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: 8),
-                                    rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: 64),
-                                    rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: 64)
+                                    rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: gap),
+                                    rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                                    rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
                                     ])
     }
 }
@@ -299,3 +304,25 @@ The above code snippet was taken [directly from the Test Harness project](https:
 That results in this display:
 
 ![The Dynamic Display](img/00-Dynamic.png)
+
+### <a id="OPTIONS"></a>Options
+
+There are a number of options available, for customizing the way that the control works.
+
+These are available, both in [Interface Builder](https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/), or programmatically.
+
+#### <a id="THREE-STATE"></a> Three-State
+
+The control can operate in two modes:
+
+##### <a id="THREE-STATE-OFF"></a> Two-State (Default)
+
+This is the default operation of the checkbox. It has two states: OFF or ON (0 or 1, in value).
+
+If we set the `useThreeState` checkbox option to ON, then the control has three states: OFF (-1), CLEAR (0), and ON (1). CLEAR can be used as an "indeterminate" state, and is selected between the other two states, when continually actuating the control (OFF-CLEAR-ON, or ON-CLEAR-OFF). 
+
+![The Three-State Option in Interface Builder](Option-ThreeState)
+
+#### <a id="IMAGES"></a>Images
+
+It is possible to override the built-in images, and add your own.
