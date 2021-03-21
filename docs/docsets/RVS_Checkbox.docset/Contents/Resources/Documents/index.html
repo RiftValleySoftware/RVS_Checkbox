@@ -92,7 +92,6 @@
 <li><a href="#SINGLETARGET">Adding the Package Directly to One Target</a></li>
 <li><a href="#ADDITIONALTARGET">Adding the Package Directly to Another Target</a></li>
 </ul></li>
-<li><a href="#COCOAPODS">CocoaPods</a></li>
 <li><a href="#AFTER">AFTER INCLUDING THE PACKAGE OR LIBRARY</a></li>
 <li><a href="#CARTHAGE">Carthage</a></li>
 <li><a href="#GITHUBREPO">Directly Accessing the GitHub Repo</a></li>
@@ -226,7 +225,7 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 <p>There are no dependencies for the module. If you will be running <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness">the test harness</a>, you will need to load <a href="https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox">the RVS_Generic_Swift_Toolbox project</a>, as well. Again, <strong>THIS IS NOT NECESSARY TO USE THE PACKAGE. IT IS ONLY FOR THE TEST HARNESS!</strong></p>
 <h2 id='a-id-installation-a-installation' class='heading'><a id="INSTALLATION"></a>INSTALLATION</h2>
 
-<p>The control is provided as a <a href="https://swift.org/package-manager/">Swift Package Manager</a> package, a <a href="https://cocoapods.org">CocoaPod</a>, and can be installed using <a href="https://github.com/Carthage/Carthage">Carthage</a>. You can also simply drag <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/RVS_Checkbox.xcodeproj">the project</a> into your own project, straight from a local repo, or even just include <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift">the single source file</a> (I like to keep the number of source files to a minimum for these types of projects).</p>
+<p>The control is provided as a <a href="https://swift.org/package-manager/">Swift Package Manager</a> package, and can be installed using <a href="https://github.com/Carthage/Carthage">Carthage</a>. You can also simply drag <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/RVS_Checkbox.xcodeproj">the project</a> into your own project, straight from a local repo, or even just include <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift">the single source file</a> (I like to keep the number of source files to a minimum for these types of projects).</p>
 <h3 id='a-id-spm-a-swift-package-manager' class='heading'><a id="SPM"></a>Swift Package Manager</h3>
 
 <p>The repo that you should include with SPM, is <a href="git@github.com:RiftValleySoftware/RVS_Checkbox.git"><code>git@github.com:RiftValleySoftware/RVS_Checkbox.git</code></a>.</p>
@@ -260,9 +259,6 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 <p><img src="img/05-Package.png" alt="Step 6: Selecting the Framework"></p>
 
 <p>Step 6: Selecting the imported framework.</p>
-<h3 id='a-id-cocoapods-a-cocoapods' class='heading'><a id="COCOAPODS"></a>CocoaPods</h3>
-
-<p>The Pod URI is <a href="https://cocoapods.org/pods/RVS_Checkbox"><code>https://cocoapods.org/pods/RVS_Checkbox</code></a>.</p>
 <h3 id='a-id-after-a-after-including-the-package-or-library' class='heading'><a id="AFTER"></a>AFTER INCLUDING THE PACKAGE OR LIBRARY</h3>
 
 <p>At this point, you will need to import the module in the Swift source files that will be accessing it:</p>
@@ -315,7 +311,7 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 
 <p>Drag that into the View Controller (1), and arrange it the way that you like. Then select it, and select the Identity Inspector tab. Once that has been selected, enter <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> as the object class (2).</p>
 
-<p>If we used Swift Package Manager or CocoaPods to add the class, we should set the &ldquo;<code>Module</code>&rdquo; field to &ldquo;<code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code>.&rdquo; (3) Otherwise, we should check the &ldquo;<code>Inherit Module From Target</code>&rdquo; checkbox, and let the app module be chosen.</p>
+<p>If we used Swift Package Manager to add the class, we should set the &ldquo;<code>Module</code>&rdquo; field to &ldquo;<code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code>.&rdquo; (3) Otherwise, we should check the &ldquo;<code>Inherit Module From Target</code>&rdquo; checkbox, and let the app module be chosen.</p>
 
 <p><img src="img/02-IB.png" alt="Set Class and Module"></p>
 
