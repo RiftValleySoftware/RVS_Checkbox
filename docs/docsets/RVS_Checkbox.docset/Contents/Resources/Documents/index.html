@@ -117,6 +117,13 @@
 <li><a href="#STATE">Checkbox State</a></li>
 </ul></li>
 <li><a href="#NOT-SUPPORTED">NOT SUPPORTED</a></li>
+<li><a href="#TEST">THE TEST HARNESS APP</a>
+
+<ul>
+<li><a href="#TARGETS">App Build Targets</a></li>
+<li><a href="#SCHEMES">App Run Schemes</a></li>
+<li><a href="#TEST-DEP">Dependencies and Requirements</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -126,7 +133,7 @@
 
 <p>It is implemented as <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift">a single source file</a>, with no dependencies.</p>
 
-<p>Integrating into your application is as simple as adding a <a href="https://developer.apple.com/documentation/uikit/uiview">UIView</a> in <a href="https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/">Interface Builder</a>, and specifying it to be <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a>, or creating an instance of <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a>.</p>
+<p>Integrating into your application is as simple as adding a <a href="https://developer.apple.com/documentation/uikit/uiview"><code>UIView</code></a> in <a href="https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/">Interface Builder</a>, and specifying it to be <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a>, or creating an instance of <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a>.</p>
 <h2 id='a-id-whatproblem-a-what-problem-does-this-solve' class='heading'><a id="WHATPROBLEM"></a>WHAT PROBLEM DOES THIS SOLVE?</h2>
 
 <p>The classic <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>:</p>
@@ -206,7 +213,7 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 <p>The images will resize with the control, and will scale to fill (so the control needs to be sized to the aspect ratio of the images, for undistorted display).</p>
 <h2 id='a-id-requirements-a-requirements' class='heading'><a id="REQUIREMENTS"></a>REQUIREMENTS</h2>
 
-<p><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> is an <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>-only <a href="https://developer.apple.com/documentation/uikit">UIKit</a>/<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html">Cocoa Touch</a> <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html">framework</a>, designed for use by <a href="https://swift.org">Swift</a> language applications.</p>
+<p><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> is an <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>-only <a href="https://developer.apple.com/documentation/uikit"><code>UIKit</code></a>/<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html">Cocoa Touch</a> <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html">framework</a>, designed for use by <a href="https://swift.org">Swift</a> language applications.</p>
 
 <p>It is designed for native Swift iOS application development.</p>
 <h2 id='a-id-dependencies-a-dependencies' class='heading'><a id="DEPENDENCIES"></a>DEPENDENCIES</h2>
@@ -374,7 +381,7 @@ func setUpDynamicCheckBoxes() {
 }
 </code></pre>
 
-<p>The above code snippet was taken <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/RVS_Checkbox_TestHarness_ViewController.swift#L318">directly from the Test Harness project</a>. It shows how we create the three dynamically-instantiated checkboxes on the bottom of the screen.</p>
+<p>The above code snippet was taken <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/RVS_Checkbox_TestHarness_ViewController.swift#L426">directly from the Test Harness project</a>. It shows how we create the three dynamically-instantiated checkboxes on the bottom of the screen.</p>
 
 <p>That results in this display:</p>
 
@@ -446,6 +453,46 @@ func setUpDynamicCheckBoxes() {
 <p><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> has two main differences from <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>: it does not support <a href="https://developer.apple.com/documentation/uikit/uiswitch/1623687-ontintcolor"><code>onTintColor</code></a>, or <a href="https://developer.apple.com/documentation/uikit/uiswitch/1623684-thumbtintcolor"><code>thumbTintColor</code></a>.</p>
 
 <p>It also does not support the Mac-style checkbox functionality for Mac Catalyst. This will work in Mac Catalyst, but in exactly the same way that it does for iOS.</p>
+<h2 id='a-id-test-a-the-test-harness-app' class='heading'><a id="TEST"></a>THE TEST HARNESS APP</h2>
+
+<p><img src="img/TestHarness.png" align="right" alt="The Test Harness App Screen" style="margin-left: 0.5em;margin-bottom:0.5em" /></p>
+
+<p>Although not required to implement <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code>, the Test Harness App is useful for demonstrating its capabilities, and providing guidance in employing the control.</p>
+
+<p>It is strongly suggested that, if you have any questions or concerns with the implementation of <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code>, you begin by running the test harness, and examining its codebase.</p>
+
+<p>The app, itself, is extremely simple. It is a single-screen iOS app that will run on iPods, iPhones, and iPads.</p>
+
+<p>It is a <a href="https://developer.apple.com/documentation/uikit"><code>UIKit</code></a>-based app, using a <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/Storyboard.html">storyboard</a> (<a href="https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/">Interface Builder</a>).</p>
+
+<p><a href="https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness">This is the Test Harness App Location in the GitHub Repo</a></p>
+<h3 id='a-id-targets-a-app-build-targets' class='heading'><a id="TARGETS"></a>App Build Targets</h3>
+
+<p><img src="img/Targets.png" alt="App Targets"></p>
+
+<p>There are four app targets, in addition to the framework target (RVS_Checkbox). All targets share source, with the exception of the Direct and Carthage targets. They use the same source code, but a separate storyboard. This is because their implementation of <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> is compiled directly into the app, so there is no separate module.</p>
+<h4 id='a-id-targets-direct-a-a-href-https-github-com-riftvalleysoftware-rvs_checkbox-blob-main-testharness-rvs_checkbox_testharness-info-direct-plist-rvs_checkbox_test_harness-direct-a' class='heading'><a id="TARGETS-DIRECT"></a><a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/Info-Direct.plist">RVS_Checkbox_Test_Harness (Direct)</a></h4>
+
+<p>This target directly imports <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift">the <code>RVS_Checkbox.swift</code> file</a> into the project, with no package manager or library/framework. The file is compiled in the app namespace.</p>
+<h4 id='a-id-targets-framework-a-a-href-https-github-com-riftvalleysoftware-rvs_checkbox-blob-main-testharness-rvs_checkbox_testharness-info-plist-rvs_checkbox_test_harness-framework-a' class='heading'><a id="TARGETS-FRAMEWORK"></a><a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/Info.plist">RVS_Checkbox_Test_Harness (Framework)</a></h4>
+
+<p>This target uses the built-in <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/Meta/Info.plist">RVS_Checkbox</a> dynamic framework target to build the framework, and imports that dylib into the project.</p>
+<h4 id='a-id-targets-spm-a-a-href-https-github-com-riftvalleysoftware-rvs_checkbox-blob-main-testharness-rvs_checkbox_testharness-info-spm-plist-rvs_checkbox_test_harness-spm-a' class='heading'><a id="TARGETS-SPM"></a><a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/Info-SPM.plist">RVS_Checkbox_Test_Harness (SPM)</a></h4>
+
+<p>This target uses <a href="https://swift.org/package-manager/">the Swift Package Manager</a> to import the package from <a href="https://github.com/RiftValleySoftware/RVS_Checkbox">its location in GitHub</a>. This is the preferred method of employing <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> in your project.</p>
+<h4 id='a-id-targets-carthage-a-a-href-https-github-com-riftvalleysoftware-rvs_checkbox-blob-main-testharness-rvs_checkbox_testharness-info-carthage-plist-rvs_checkbox_test_harness-carthage-a' class='heading'><a id="TARGETS-CARTHAGE"></a><a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/Info-Carthage.plist">RVS_Checkbox_Test_Harness (Carthage)</a></h4>
+
+<p>This target uses <a href="https://github.com/Carthage/Carthage">GitHub Carthage</a> to fetch the package from <a href="https://github.com/RiftValleySoftware/RVS_Checkbox">its location in GitHub</a>. It then directly includes  <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift">the <code>RVS_Checkbox.swift</code> file</a> from the <code>Carthage</code> directory, into the project, with no library/framework. The file is compiled in the app namespace.</p>
+<h3 id='a-id-schemes-a-app-run-schemes' class='heading'><a id="SCHEMES"></a>App Run Schemes</h3>
+
+<p><img src="img/Schemes.png" alt="App Schemes"></p>
+
+<p>There are four run schemes to go with each target.</p>
+<h3 id='a-id-test-dep-a-dependencies-and-requirements' class='heading'><a id="TEST-DEP"></a>Dependencies and Requirements</h3>
+
+<p>Depending upon which target, the <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> framework/source file may be a dependency.</p>
+
+<p>All targets are dependent upon [the <code>RVS_Generic_Swift_Toolbox</code> Package], using <a href="https://swift.org/package-manager/">the Swift Package Manager</a>.</p>
 
           </div>
         </section>
