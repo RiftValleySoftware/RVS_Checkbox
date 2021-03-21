@@ -23,8 +23,6 @@
             - [Dynamic Instantiation](#DYNAMIC)
         - [Options](#OPTIONS)
             - [Three-State (Default OFF)](#THREE-STATE)
-                - [Two-State (Default)](#THREE-STATE-OFF)
-                - [Three-State](#THREE-STATE-ON)
             - [Use SF Symbols (Default OFF)](SF-SYMBOLS)
             - [Use OFF Image for CLEAR (Default OFF)](#OPTION-OFF-CLEAR)
             - [Use Haptics (Default ON)](#HAPTICS)
