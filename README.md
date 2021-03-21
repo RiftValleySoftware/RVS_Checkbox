@@ -305,7 +305,7 @@ func setUpDynamicCheckBoxes() {
 }
 ```
 
-The above code snippet was taken [directly from the Test Harness project](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/RVS_Checkbox_TestHarness_ViewController.swift#L318). It shows how we create the three dynamically-instantiated checkboxes on the bottom of the screen.
+The above code snippet was taken [directly from the Test Harness project](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/TestHarness/RVS_Checkbox_TestHarness/RVS_Checkbox_TestHarness_ViewController.swift#L426). It shows how we create the three dynamically-instantiated checkboxes on the bottom of the screen.
 
 That results in this display:
 
