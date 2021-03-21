@@ -31,7 +31,7 @@
         - [NOT SUPPORTED](#NOT-SUPPORTED)
 
 ## <a id="INTRO"></a>INTRODUCTION
-This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as `UISwitch`.
+This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
 
 It is implemented as [a single source file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift), with no dependencies.
 
@@ -184,7 +184,7 @@ Then, open Terminal, and navigate to the top of the `RVS_Checkbox` directory, an
 carthage update
 ```
 
-It will creat a directory at the same level as the Cartfile, called "`Carthage`." Inside of this directory, will be another directory, called "`Checkouts`." Inside of that directory, will be another one, called "`RVS_Checkbox`." You want to go into "`Sources/RVS_Checkout`," and access the `RVS_Checkbox.swift` file. Drag this into your project, and associate it with your app build target.
+It will create a directory at the same level as the Cartfile, called "`Carthage`." Inside of this directory, will be another directory, called "`Checkouts`." Inside of that directory, will be another one, called "`RVS_Checkbox`." You want to go into "`Sources/RVS_Checkout`," and access the `RVS_Checkbox.swift` file. Drag this into your project, and associate it with your app build target.
 
 ![The Carthage Checkouts Directory](img/Checkouts.png)
 
