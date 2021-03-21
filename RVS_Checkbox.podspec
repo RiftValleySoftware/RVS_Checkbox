@@ -2,7 +2,9 @@ Pod::Spec.new do |spec|
     spec.name               = 'RVS_Checkbox'
     spec.summary            = 'A robust, simple "drop-in" replacement for the Apple UISwitch UI element.'
     spec.description        = 'The RVS_Checkbox is a Swift framework/source file designed to allow easy implementation of a powerful, robust, simple, and highly-usable checkbox control.'
-    spec.version            = '1.1.0'
+    spec.version            = '1.1.1'
+    spec.module_name        = 'RVS_Checkbox'
+    spec.info_plist         = { 'CFBundleIdentifier' => 'com.littlegreenviper.RVS-Checkbox' }
     spec.platform           = :ios, '13.0'
     spec.homepage           = 'https://riftvalleysoftware.com'
     spec.social_media_url   = 'https://twitter.com/GrtRiftValley'

@@ -651,7 +651,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Direct";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Direct";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -673,7 +673,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Direct";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Direct";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -684,7 +684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2000;
+				CURRENT_PROJECT_VERSION = 3000;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P53V4JS928;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -699,7 +699,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox";
 				PRODUCT_MODULE_NAME = RVS_Checkbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -713,7 +713,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2000;
+				CURRENT_PROJECT_VERSION = 3000;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P53V4JS928;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -728,7 +728,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox";
 				PRODUCT_MODULE_NAME = RVS_Checkbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -753,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Carthage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -775,7 +775,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Carthage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -797,7 +797,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-SPM";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-SPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -819,7 +819,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-SPM";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-SPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -965,7 +965,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Framework";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -987,7 +987,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.littlegreenviper.RVS-Checkbox-TestHarness-Framework";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

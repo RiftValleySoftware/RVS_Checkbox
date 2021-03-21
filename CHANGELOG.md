@@ -1,8 +1,10 @@
 # RVS_Checkbox Change Log
 
-## 1.1.0.2000
+## 1.1.1
 
-- **TBD**
+- **March 20, 2021**
+
+- Added support for haptics, and finalized the documentation.
 
 - Changed main project to dylib.
 
