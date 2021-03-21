@@ -23,6 +23,18 @@
             - [Interface Builder](#IB)
             - [Dynamic Instantiation](#DYNAMIC)
         - [Options](#OPTIONS)
+            - [Three-State (Default OFF)](#THREE-STATE)
+                - [Two-State (Default)](#THREE-STATE-OFF)
+                - [Three-State](#THREE-STATE-ON)
+            - [Use SF Symbols (Default OFF)](SF-SYMBOLS)
+            - [Use OFF Image for CLEAR (Default OFF)](#OPTION-OFF-CLEAR)
+            - [Use Haptics (Default ON)](#HAPTICS)
+            - [Images](#IMAGES)
+                - [OFF Image](#IMAGES-OFF)
+                - [CLEAR Image](#IMAGES-CLEAR)
+                - [ON Image](#IMAGES-ON)
+            - [Checkbox State](#STATE)
+        - [NOT SUPPORTED](#NOT-SUPPORTED)
 
 ## <a id="INTRO"></a>INTRODUCTION
 This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UIControl`](https://developer.apple.com/documentation/uikit/uicontrol), and provides almost exactly the same API as `UISwitch`.
@@ -311,18 +323,76 @@ There are a number of options available, for customizing the way that the contro
 
 These are available, both in [Interface Builder](https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/), or programmatically.
 
-#### <a id="THREE-STATE"></a> Three-State
+#### <a id="THREE-STATE"></a>Three-State (Default OFF)
+
+[The Documentation for This Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)isThreeState)
 
 The control can operate in two modes:
 
-##### <a id="THREE-STATE-OFF"></a> Two-State (Default)
+##### <a id="THREE-STATE-OFF"></a>Two-State (Default)
 
 This is the default operation of the checkbox. It has two states: OFF or ON (0 or 1, in value).
 
+##### <a id="THREE-STATE-ON"></a>Three-State
+
 If we set the `useThreeState` checkbox option to ON, then the control has three states: OFF (-1), CLEAR (0), and ON (1). CLEAR can be used as an "indeterminate" state, and is selected between the other two states, when continually actuating the control (OFF-CLEAR-ON, or ON-CLEAR-OFF). 
 
-![The Three-State Option in Interface Builder](Option-ThreeState)
+#### <a id="SFSYMBOLS"></a>Use SF Symbols (Default OFF)
+
+[The Documentation for this Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)isUsingSFSymbols)
+
+If this option is ON (default is OFF), then the control will display images that approximate the Mac checkboxes.
+
+If custom images are provided, then this is ignored.
+
+If this is selected, then the "Use OFF Image for CLEAR" option is ignored (as there is a specific way the Mac checkboxes work, and they already do this).
+
+#### <a id="OPTION-OFF-CLEAR"></a>Use OFF Image for CLEAR (Default OFF)
+
+[The Documentation for this Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)useOffImageForClear)
+
+If this is selected (default is OFF), then, in either the default appearance, or custom image appearance, the image used for the Three-State "OFF" state is used for Two-State "CLEAR" (also OFF).
+
+This is ignored for Three-State, or if using SF Symbol appearance.
+
+#### <a id="HAPTICS"></a>Use Haptics (DEFAULT ON)
+
+[The Documentation for This Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)useHaptics)
+
+By default, the control uses the same subtle haptics that [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) uses. If this is turned OFF, then no haptics are used.
+
+Haptics are not used when setting the value programatically, even if this is ON.
 
 #### <a id="IMAGES"></a>Images
 
 It is possible to override the built-in images, and add your own.
+
+#### <a id="IMAGES-OFF"></a>OFF Image
+
+[The Documentation for This Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)offImage)
+
+#### <a id="IMAGES-CLEAR"></a>CLEAR Image
+
+[The Documentation for This Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)clearImage)
+
+#### <a id="IMAGES-ON"></a>ON Image
+
+[The Documentation for This Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)onImage)
+
+### <a id="STATE"></a>Checkbox State
+
+The checkbox is always in some state: OFF, CLEAR or ON. If in Two-State Mode, then OFF and CLEAR are synonymous.
+
+State is available either through the [`checkboxState`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC13checkboxStateAB6StatesOvp) property (uses [the `RVS_Checkbox.States` enum](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox/States.html)), or by [the `value` property](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5valueSivp) (Uses Integers -1, 0, or 1).
+
+It has the same [`isOn`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@CM@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)isOn) property that [`UISwitch` has](https://developer.apple.com/documentation/uikit/uiswitch/1623690-ison).
+
+Additionally, it also has [`isOff`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5isOffSbvp), and [`isClear`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC7isClearSbvp) (which is the same as [`isOff`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5isOffSbvp) in Two-State Mode).
+
+Like [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch/1623690-ison), it has [a `setOn(_:Bool,animated:Bool)` method](https://developer.apple.com/documentation/uikit/uiswitch/1623686-seton). It also has [`setClear`](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC8setClear8animatedySb_tF).
+
+## <a id="NOT-SUPPORTED"></a>NOT SUPPORTED
+
+`RVS_Checkbox` has two main differences from [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch): it does not support [`onTintColor`](https://developer.apple.com/documentation/uikit/uiswitch/1623687-ontintcolor), or [`thumbTintColor`](https://developer.apple.com/documentation/uikit/uiswitch/1623684-thumbtintcolor).
+
+It also does not support the Mac-style checkbox functionality for Mac Catalyst. This will work in Mac Catalyst, but in exactly the same way that it does for iOS.
