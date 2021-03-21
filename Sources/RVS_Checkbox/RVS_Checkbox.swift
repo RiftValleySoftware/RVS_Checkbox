@@ -526,6 +526,7 @@ open class RVS_Checkbox: UIControl {
     #endif
 }
 
+#if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 /* ###################################################################################################################################### */
 // MARK: -
 // MARK: - PUBLIC COMPUTED PROPERTIES -
@@ -770,3 +771,4 @@ extension RVS_Checkbox {
         setNeedsDisplay()
     }
 }
+#endif
