@@ -1,5 +1,13 @@
 # RVS_Checkbox Change Log
 
+## 1.1.2
+
+- **March 21, 2021**
+
+- Improved the documentation to include the test harness app.
+- Some minor code changes in the library, in an attempt to avoid the Interface Builder designables issue.
+- Improved the code documentation of the test harness app.
+
 ## 1.1.1
 
 - **March 20, 2021**

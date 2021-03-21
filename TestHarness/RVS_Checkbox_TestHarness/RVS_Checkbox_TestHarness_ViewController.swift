@@ -30,8 +30,16 @@ import RVS_Generic_Swift_Toolbox
 // MARK: - Main View Controller -
 /* ###################################################################################################################################### */
 /**
+ This presents a single screen, with a bunch of inter-related controls, affecting a single storyboard-established instance of RVS_Checkbox.
+ 
+ Additionally, there are five more instances that are not directly controlled by this view controller, although three of them are dynamically created.
+ 
+ Switches use "label buttons." This is a pattern that I use to mimic the way Web browsers work, with `<label></label>` elements, that affect the control with which they are associated.
  */
 class RVS_Checkbox_TestHarness_ViewController: UIViewController {
+    /* ################################################################################################################################## */
+    // MARK: - IB Properties
+    /* ################################################################################################################################## */
     /* ################################################################## */
     /**
      This is the last item in the vertical stack view that will hold the dynamic checkboxes.
@@ -46,66 +54,79 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     This is the label button for the two-state side of the`stateSwitch`. It is disabled, when the switch is in two-state mode.
      */
     @IBOutlet weak var standardLabelButton: UIButton!
 
     /* ################################################################## */
     /**
-     */
+     This is the label button for the three-state side of the `stateSwitch`. It is disabled, when the switch is in three-state mode.
+    */
     @IBOutlet weak var threeStateLabelButton: UIButton!
 
     /* ################################################################## */
     /**
+     The three-state switch. If OFF, the `checkboxObject` will be in two-state mode. If ON, the `checkboxObject` will be in three-state mode.
      */
     @IBOutlet weak var stateSwitch: UISwitch!
     
     /* ################################################################## */
     /**
+     The switch that controls the use of the OFF image for CLEAR, in default and custom modes.
      */
     @IBOutlet weak var useOffImageSwitch: UISwitch!
     
     /* ################################################################## */
     /**
+     The label for the above switch.
      */
     @IBOutlet weak var useOffImageLabelButton: UIButton!
 
     /* ################################################################## */
     /**
+     The switch that controls the use of haptics.
      */
     @IBOutlet weak var useHapticsSwitch: UISwitch!
 
     /* ################################################################## */
     /**
+     The label for the above switch.
      */
     @IBOutlet weak var useHapticsSwitchLabelButton: UIButton!
 
     /* ################################################################## */
     /**
+     This switch just toggles the enabled state of the checkbox.
      */
     @IBOutlet weak var enabledSwitch: UISwitch!
     
     /* ################################################################## */
     /**
+     The label for the above switch.
      */
     @IBOutlet weak var enabledSwitchLabelButton: UIButton!
     
     /* ################################################################## */
     /**
-     */
+     This switch controls whether or not the setXX() methods are animated.
+    */
     @IBOutlet weak var animatedSwitch: UISwitch!
 
     /* ################################################################## */
     /**
+     The label for the above switch.
      */
     @IBOutlet weak var animatedSwitchLabelButton: UIButton!
 
     /* ################################################################## */
     /**
+     This switch is tied to the checkbox value.
      */
     @IBOutlet weak var valueChangedSegmentedSwitch: UISegmentedControl!
 
     /* ################################################################## */
     /**
+     This switch selects the checkbox tinc color.
      */
     @IBOutlet weak var tintSelectorSegmentedSwitch: UISegmentedControl!
     
@@ -116,16 +137,26 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     The label for the customized IB switches.
      */
     @IBOutlet weak var customHeaderLabel: UILabel!
     
     /* ################################################################## */
     /**
+     The label for the dynamically-instantiated switches.
      */
     @IBOutlet weak var dynamicHeaderLabel: UILabel!
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: - IB Methods
+/* ###################################################################################################################################### */
+extension RVS_Checkbox_TestHarness_ViewController {
     /* ################################################################## */
     /**
+     Called when the `stateSwitch`two-state  label button is hit. It just toggles the control, and also calls its handler.
+     
+     - parameter: Ignored
      */
     @IBAction func standardLabelButtonHit(_: Any) {
         stateSwitch.setOn(false, animated: true)
@@ -134,6 +165,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     Called when the `stateSwitch`three-state  label button is hit. It just toggles the control, and also calls its handler.
+     
+     - parameter: Ignored
      */
     @IBAction func threeStateLabelButtonHit(_: Any) {
         stateSwitch.setOn(true, animated: true)
@@ -142,6 +176,7 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the three-state switch changes value. The `checkboxObject.isThreeState` state is set, according to the switch value.
      */
     @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isThreeState = inSwitch.isOn
@@ -151,6 +186,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     Called when the `useOffImageSwitch` label button is hit. It just toggles the control, and also calls its handler.
+     
+      - parameter: Ignored
      */
     @IBAction func useOffImageLabelButtonHit(_: Any) {
         useOffImageSwitch.setOn(!(useOffImageSwitch?.isOn ?? true), animated: true)
@@ -159,6 +197,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the switch, controlling the use of the OFF image as the CLEAR image is requested.
+     
+     - parameter inSwitch: The switch instance.
      */
     @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.useOffImageForClear = inSwitch.isOn
@@ -166,6 +207,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the switch, controlling the use of haptics is requested.
+     
+     - parameter inSwitch: The switch instance.
      */
     @IBAction func useHapticsSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.useHaptics = inSwitch.isOn
@@ -173,6 +217,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     Called when the `useHapticsSwitch` label button is hit. It just toggles the control.
+     
+     - parameter: Ignored
      */
     @IBAction func useHapticsLabelButtonHit(_: Any) {
         useHapticsSwitch.setOn(!(useHapticsSwitch?.isOn ?? true), animated: true)
@@ -181,6 +228,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the switch, controlling the enabled state of the control is changed.
+     
+     - parameter inSwitch: The switch instance.
      */
     @IBAction func enabledSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isEnabled = inSwitch.isOn
@@ -189,6 +239,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     Called when the `enabledSwitch` label button is hit. It just toggles the control.
+     
+     - parameter: Ignored
      */
     @IBAction func enabledSwitchLabelButtonHit(_: Any) {
         enabledSwitch.setOn(!(enabledSwitch?.isOn ?? true), animated: true)
@@ -197,6 +250,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the `animatedSwitch` label button is hit. It just toggles the control.
+     
+     - parameter: Ignored
      */
     @IBAction func animatedSwitchLabelButtonHit(_: Any) {
         animatedSwitch.setOn(!(animatedSwitch?.isOn ?? true), animated: true)
@@ -204,6 +260,11 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the user selects a new value in the segmented switch.
+     This causes the control to change its value.
+     Animation of the change is determined by the state of the `animatedSwitch` value.
+     
+     - parameter inSegmentedSwitch: The switch object
      */
     @IBAction func valueChangeSegmentedSwitchChanged(_ inSegmentedSwitch: UISegmentedControl) {
         let value = inSegmentedSwitch.selectedSegmentIndex - 1
@@ -217,20 +278,49 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called when the tint is changed.
+     
+     - parameter: Ignored
      */
-    @IBAction func tintSelectorSegmentedSwitchChanged(_ sender: UISegmentedControl) {
+    @IBAction func tintSelectorSegmentedSwitchChanged(_: Any) {
         setSelectedTint()
     }
 
     /* ################################################################## */
     /**
+     Called when teh selected style is changed.
+     - parameter: Ignored
      */
-    @IBAction func imageSelectorSegmentedSwitchChanged(_ sender: UISegmentedControl) {
+    @IBAction func imageSelectorSegmentedSwitchChanged(_: Any) {
         setUpUI()
     }
+}
 
+/* ###################################################################################################################################### */
+// MARK: - Action Callback - Changes the Value Switch
+/* ###################################################################################################################################### */
+extension RVS_Checkbox_TestHarness_ViewController {
     /* ################################################################## */
     /**
+     Called when the checkbox changes value.
+     - parameter inCheckboxObject: The checkbox object making the call.
+     */
+    @IBAction func valueChanged(_ inCheckboxObject: RVS_Checkbox) {
+        print("I got called for a valueChanged, by \(String(describing: inCheckboxObject))")
+        let value = inCheckboxObject.value
+        valueChangedSegmentedSwitch?.selectedSegmentIndex = value + 1
+    }
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Action Callbacks - Displays in the Console
+/* ###################################################################################################################################### */
+extension RVS_Checkbox_TestHarness_ViewController {
+    /* ################################################################## */
+    /**
+     Called for touch down events.
+     
+     - parameter inCheckboxObject: The checkbox object.
      */
     @IBAction func touchDown(_ inCheckboxObject: RVS_Checkbox) {
         print("I got called for a touchDown, by \(String(describing: inCheckboxObject))")
@@ -238,6 +328,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called for touch up (inside) events.
+     
+     - parameter inCheckboxObject: The checkbox object.
      */
     @IBAction func touchUpInside(_ inCheckboxObject: RVS_Checkbox) {
         print("I got called for a touchUpInside, by \(String(describing: inCheckboxObject))")
@@ -245,6 +338,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     Called for touch up (outside) events.
+     
+     - parameter inCheckboxObject: The checkbox object.
      */
     @IBAction func touchUpOutside(_ inCheckboxObject: RVS_Checkbox) {
         print("I got called for a touchUpOutside, by \(String(describing: inCheckboxObject))")
@@ -252,25 +348,29 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
-     */
-    @IBAction func valueChanged(_ inCheckboxObject: RVS_Checkbox) {
-        print("I got called for a valueChanged, by \(String(describing: inCheckboxObject))")
-        let value = inCheckboxObject.value
-        valueChangedSegmentedSwitch?.selectedSegmentIndex = value + 1
-    }
-
-    /* ################################################################## */
-    /**
+     Called for primary action events.
+     
+     - parameter inCheckboxObject: The checkbox object.
      */
     @IBAction func primaryActionTriggered(_ inCheckboxObject: RVS_Checkbox) {
         print("I got called for a primaryActionTriggered, by \(String(describing: inCheckboxObject))")
     }
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Base Class Overrides
+/* ###################################################################################################################################### */
+extension RVS_Checkbox_TestHarness_ViewController {
     /* ################################################################## */
     /**
+     Called after the view hierarchy is loaded.
+     
+     We use this to set up the screen.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Localizations
         standardLabelButton?.setTitle((standardLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         threeStateLabelButton?.setTitle((threeStateLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         useOffImageLabelButton?.setTitle((useOffImageLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
@@ -280,6 +380,7 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
         customHeaderLabel?.text = (customHeaderLabel?.text ?? "ERROR").localizedVariant
         dynamicHeaderLabel?.text = (dynamicHeaderLabel?.text ?? "ERROR").localizedVariant
 
+        // Set up the colors for the value segmented switch, and localize.
         if let valueChangedSegmentedSwitch = valueChangedSegmentedSwitch {
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.label], for: .normal)
@@ -290,6 +391,7 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
             }
         }
         
+        // Set up the little tint squares for the tint selector control.
         if let tintSelectorSegmentedSwitch = tintSelectorSegmentedSwitch {
             if let color = UIColor(named: "AccentColor"),
                let image = UIImage(systemName: "square.fill")?.withTintColor(color) {
@@ -308,13 +410,19 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
             // Select red, so it stands out.
             tintSelectorSegmentedSwitch.selectedSegmentIndex = tintSelectorSegmentedSwitch.numberOfSegments - 2
         }
+        
+        imageSelectorSegmentedSwitch?.selectedSegmentIndex = 0
 
         setUpUI()
-        setImageSelectorSwitch()
         setSegmentedSwitch()
         setUpDynamicCheckBoxes()
     }
-    
+}
+
+/* ###################################################################################################################################### */
+// MARK: - Instance Methods
+/* ###################################################################################################################################### */
+extension RVS_Checkbox_TestHarness_ViewController {
     /* ################################################################## */
     /**
      This sets up the three checkboxes along the bottom of the screen.
@@ -376,6 +484,7 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     This sets up a few of the displayed controls and whatnot.
      */
     func setUpUI() {
         enabledSwitch?.isOn = checkboxObject?.isEnabled ?? false
@@ -392,6 +501,8 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     This checks the `imageSelectorSegmentedSwitch`, and sets the appropriate type of
+     control, based on its value.
      */
     func setSelectedImage() {
         if let imageIndex = imageSelectorSegmentedSwitch?.selectedSegmentIndex {
@@ -422,6 +533,8 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     This checks the `tintSelectorSegmentedSwitch`, and sets the appropriate color for the
+     control, based on its value.
      */
     func setSelectedTint() {
         if let index = tintSelectorSegmentedSwitch?.selectedSegmentIndex,
@@ -432,15 +545,9 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
 
     /* ################################################################## */
     /**
+     This simply sets the value of the `valueChangedSegmentedSwitch`, based on the control value.
      */
     func setSegmentedSwitch() {
         valueChangedSegmentedSwitch?.selectedSegmentIndex = (checkboxObject?.value ?? 1) + 1
-    }
-    
-    /* ################################################################## */
-    /**
-     */
-    func setImageSelectorSwitch() {
-        imageSelectorSegmentedSwitch?.selectedSegmentIndex = checkboxObject?.isUsingSFSymbols ?? false ? 1 : 0
     }
 }

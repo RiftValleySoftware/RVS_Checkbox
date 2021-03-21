@@ -26,6 +26,9 @@ import UIKit
 // MARK: - Main Application Delegate -
 /* ###################################################################################################################################### */
 /**
+ This is a very simple app.
+ 
+ This app delegate object is the bare minimum necessary to present a single screen.
  */
 @main
 class RVS_Checkbox_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate {
