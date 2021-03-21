@@ -437,4 +437,4 @@ There are four run schemes to go with each target.
 
 Depending upon which target, the `RVS_Checkbox` framework/source file may be a dependency.
 
-All targets are dependent upon [the `RVS_Generic_Swift_Toolbox` Package], using [the Swift Package Manager](https://swift.org/package-manager/).
+All targets are dependent upon [the `RVS_Generic_Swift_Toolbox` Package](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), using [the Swift Package Manager](https://swift.org/package-manager/).
