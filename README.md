@@ -337,8 +337,6 @@ If we set the `useThreeState` checkbox option to ON, then the control has three 
 
 If this option is ON (default is OFF), then the control will display images that approximate the Mac checkboxes.
 
-If custom images are provided, then this is ignored.
-
 If this is selected, then the "Use OFF Image for CLEAR" option is ignored (as there is a specific way the Mac checkboxes work, and they already do this).
 
 #### <a id="OPTION-OFF-CLEAR"></a>Use OFF Image for CLEAR (Default OFF)
