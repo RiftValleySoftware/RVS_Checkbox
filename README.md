@@ -29,9 +29,6 @@
             - [Use OFF Image for CLEAR (Default OFF)](#OPTION-OFF-CLEAR)
             - [Use Haptics (Default ON)](#HAPTICS)
             - [Images](#IMAGES)
-                - [OFF Image](#IMAGES-OFF)
-                - [CLEAR Image](#IMAGES-CLEAR)
-                - [ON Image](#IMAGES-ON)
             - [Checkbox State](#STATE)
         - [NOT SUPPORTED](#NOT-SUPPORTED)
 
