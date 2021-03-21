@@ -24,6 +24,7 @@
 
 import UIKit
 
+#if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 /* ###################################################################################################################################### */
 // MARK: - Three-State UIKit Checkbox -
 /* ###################################################################################################################################### */
@@ -39,7 +40,6 @@ import UIKit
  */
 @IBDesignable
 open class RVS_Checkbox: UIControl {
-    #if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
     /* ###################################################################################################################################### */
     // MARK: -
     // MARK: - INTERNAL DEFAULT DYNAMIC IMAGES
@@ -523,10 +523,8 @@ open class RVS_Checkbox: UIControl {
             _refresh()
         }
     }
-    #endif
 }
 
-#if os(iOS) // This prevents the IB errors from showing up, under SPM (From SO Answer: https://stackoverflow.com/a/66334661/879365).
 /* ###################################################################################################################################### */
 // MARK: -
 // MARK: - PUBLIC COMPUTED PROPERTIES -
@@ -771,4 +769,8 @@ extension RVS_Checkbox {
         setNeedsDisplay()
     }
 }
+#else
+// This just gives IB something to stick in its place, for non-iOS builds.
+@IBDesignable
+class RVS_Checkbox: UIView { }
 #endif
