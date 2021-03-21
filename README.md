@@ -13,7 +13,6 @@
         - [Swift Package Manager](#SPM)
             - [Adding the Package Directly to One Target](#SINGLETARGET)
             - [Adding the Package Directly to Another Target](#ADDITIONALTARGET)
-        - [CocoaPods](#COCOAPODS)
         - [AFTER INCLUDING THE PACKAGE OR LIBRARY](#AFTER)
         - [Carthage](#CARTHAGE)
         - [Directly Accessing the GitHub Repo](#GITHUBREPO)
@@ -130,7 +129,7 @@ There are no dependencies for the module. If you will be running [the test harne
 
 ## <a id="INSTALLATION"></a>INSTALLATION
 
-The control is provided as a [Swift Package Manager](https://swift.org/package-manager/) package, a [CocoaPod](https://cocoapods.org), and can be installed using [Carthage](https://github.com/Carthage/Carthage). You can also simply drag [the project](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/RVS_Checkbox.xcodeproj) into your own project, straight from a local repo, or even just include [the single source file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift) (I like to keep the number of source files to a minimum for these types of projects).
+The control is provided as a [Swift Package Manager](https://swift.org/package-manager/) package, and can be installed using [Carthage](https://github.com/Carthage/Carthage). You can also simply drag [the project](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/RVS_Checkbox.xcodeproj) into your own project, straight from a local repo, or even just include [the single source file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift) (I like to keep the number of source files to a minimum for these types of projects).
 
 ### <a id="SPM"></a>Swift Package Manager
 
@@ -167,10 +166,6 @@ Step 5: Adding the package to a target in the General Tab.
 ![Step 6: Selecting the Framework](img/05-Package.png)
 
 Step 6: Selecting the imported framework.
-
-### <a id="COCOAPODS"></a>CocoaPods
-
-The Pod URI is [`https://cocoapods.org/pods/RVS_Checkbox`](https://cocoapods.org/pods/RVS_Checkbox).
 
 ### <a id="AFTER"></a>AFTER INCLUDING THE PACKAGE OR LIBRARY
 
@@ -236,7 +231,7 @@ We should select a generic[`UIView` (View)](https://developer.apple.com/document
 
 Drag that into the View Controller (1), and arrange it the way that you like. Then select it, and select the Identity Inspector tab. Once that has been selected, enter `RVS_Checkbox` as the object class (2).
 
-If we used Swift Package Manager or CocoaPods to add the class, we should set the "`Module`" field to "`RVS_Checkbox`." (3) Otherwise, we should check the "`Inherit Module From Target`" checkbox, and let the app module be chosen.
+If we used Swift Package Manager to add the class, we should set the "`Module`" field to "`RVS_Checkbox`." (3) Otherwise, we should check the "`Inherit Module From Target`" checkbox, and let the app module be chosen.
 
 ![Set Class and Module](img/02-IB.png)
 

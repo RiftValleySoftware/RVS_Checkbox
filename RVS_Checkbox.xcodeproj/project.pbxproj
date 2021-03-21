@@ -92,7 +92,6 @@
 		D4520D78260652CE0020C060 /* RVS_Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RVS_Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4520D8E260653180020C060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D468535725FFAEA200380E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D483817E260529E500A4C686 /* RVS_Checkbox.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVS_Checkbox.podspec; sourceTree = "<group>"; };
 		D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Checkbox.swift; sourceTree = "<group>"; };
 		D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 				D4970C3625FF9A5F00B97CC4 /* Package.swift */,
 				D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */,
 				D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */,
-				D483817E260529E500A4C686 /* RVS_Checkbox.podspec */,
 				D4970C2A25FF99B400B97CC4 /* Sources */,
 				D4FD207125FF916300884043 /* TestHarness */,
 				D4FD201B25FF90C200884043 /* Products */,
