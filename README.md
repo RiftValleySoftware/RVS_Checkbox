@@ -23,7 +23,7 @@
             - [Dynamic Instantiation](#DYNAMIC)
         - [Options](#OPTIONS)
             - [Three-State (Default OFF)](#THREE-STATE)
-            - [Use SF Symbols (Default OFF)](SF-SYMBOLS)
+            - [Use SF Symbols (Default OFF)](#SF-SYMBOLS)
             - [Use OFF Image for CLEAR (Default OFF)](#OPTION-OFF-CLEAR)
             - [Use Haptics (Default ON)](#HAPTICS)
             - [Images](#IMAGES)
@@ -331,7 +331,7 @@ This is the default operation of the checkbox. It has two states: OFF or ON (0 o
 
 If we set the `useThreeState` checkbox option to ON, then the control has three states: OFF (-1), CLEAR (0), and ON (1). CLEAR can be used as an "indeterminate" state, and is selected between the other two states, when continually actuating the control (OFF-CLEAR-ON, or ON-CLEAR-OFF). 
 
-#### <a id="SFSYMBOLS"></a>Use SF Symbols (Default OFF)
+#### <a id="SF-SYMBOLS"></a>Use SF Symbols (Default OFF)
 
 [The Documentation for this Option](https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc\(cs\)RVS_Checkbox\(py\)isUsingSFSymbols)
 
