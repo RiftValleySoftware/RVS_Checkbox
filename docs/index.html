@@ -175,7 +175,7 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 
 <p>Additionally, <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> brings the &ldquo;three-state&rdquo; checkbox that is found in the Mac, to iOS. That means it is possible to have an &ldquo;OFF,&rdquo; &ldquo;ON,&rdquo; and &ldquo;indeterminate&rdquo; mode (I call it &ldquo;CLEAR&rdquo;). The default appearence is the circular checkbox, and the default mode is &ldquo;binary,&rdquo; like <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>.</p>
 
-<p>Here are what the images looks like (the color is controlled by the <a href="https://developer.apple.com/documentation/uikit/uiview/1622467-tintcolor"><code>tintColor</code> property</a> of the control):</p>
+<p>Here are what the images look like (the color is controlled by the <a href="https://developer.apple.com/documentation/uikit/uiview/1622467-tintcolor"><code>tintColor</code> property</a> of the control):</p>
 
 <table style="text-align:center">
     <thead>
@@ -439,7 +439,9 @@ func setUpDynamicCheckBoxes() {
 
 <p>The checkbox is always in some state: OFF, CLEAR or ON. If in Two-State Mode, then OFF and CLEAR are synonymous.</p>
 
-<p>State is available either through the <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC13checkboxStateAB6StatesOvp"><code>checkboxState</code></a> property (uses <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox/States.html">the <code><a href="Classes/RVS_Checkbox/States.html">RVS_Checkbox.States</a></code> enum</a>), or by <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5valueSivp">the <code>value</code> property</a> (Uses Integers -1, 0, or 1).</p>
+<p>State is available either through the <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC13checkboxStateAB6StatesOvp"><code>checkboxState</code></a> property (uses <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox/States.html">the <code><a href="Classes/RVS_Checkbox/States.html">RVS_Checkbox.States</a></code> enum</a>), or by <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5valueSivp">the <code>value</code> property</a> (Uses Integers -1, 0, or 1). You can modify either one, and the control will change its state <em>(</em><em>NOTE:</em>* Programmatic changes to control state will not send action messages, or trigger haptics)*</p>
+
+<p><a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC5valueSivp">The <code>value</code> property</a> allows you to affect the control state, numerically. Negative numbers will be OFF (or CLEAR, if in two-state mode). 0 is CLEAR, and positive numbers are ON.</p>
 
 <p>It has the same <a href="https://riftvalleysoftware.github.io/RVS_Checkbox/Classes/RVS_Checkbox.html#/c:@CM@RVS_Checkbox@objc(cs)RVS_Checkbox(py)isOn"><code>isOn</code></a> property that <a href="https://developer.apple.com/documentation/uikit/uiswitch/1623690-ison"><code>UISwitch</code> has</a>.</p>
 
