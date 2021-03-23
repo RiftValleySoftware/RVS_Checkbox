@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.1.2
+ Version 1.1.3
 */
 
 import UIKit
@@ -675,6 +675,15 @@ extension RVS_Checkbox {
 // MARK: -
 /* ###################################################################################################################################### */
 extension RVS_Checkbox {
+    /* ################################################################## */
+    /**
+     It's important for the background to be clear.
+     */
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = .clear
+    }
+    
     /* ################################################################## */
     /**
      The tint color.

@@ -122,6 +122,8 @@ The images will resize with the control, and will scale to fill (so the control 
 
 It is designed for native Swift iOS application development.
 
+This requires [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados) version 13.0 or above.
+
 ## <a id="DEPENDENCIES"></a>DEPENDENCIES
 
 There are no dependencies for the module. If you will be running [the test harness](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness), you will need to load [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), as well. Again, **THIS IS NOT NECESSARY TO USE THE PACKAGE. IT IS ONLY FOR THE TEST HARNESS!**
@@ -182,7 +184,7 @@ If you are using Carthage, then you should add the following line to your Cartfi
 github "RiftValleySoftware/RVS_Checkbox"
 ```
 
-Then, open Terminal, and navigate to the top of the `RVS_Checkbox` directory, and type this into Terminal:
+Then, open Terminal, and navigate to the top of the project directory, and type this into Terminal:
 
 ```
 carthage update
