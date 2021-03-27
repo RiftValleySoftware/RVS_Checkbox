@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 1.1.4
+
+- **March 27, 2021**
+
+- I needed to add a decisive refresh call to the setState(), and set the value prior to the animation being executed.
+
 ## 1.1.3
 
 - **March 23, 2021**

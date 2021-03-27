@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.1.3
+ Version 1.1.4
 */
 
 import UIKit
@@ -447,8 +447,10 @@ open class RVS_Checkbox: UIControl {
      */
     open var checkboxState: States = .clear {
         didSet {
-            _selectionFeedbackGenerator?.selectionChanged()
-            _refresh()
+            if nil != _selectionFeedbackGenerator { // This is because we don't want to short out any animations.
+                _selectionFeedbackGenerator?.selectionChanged()
+                _refresh()
+            }
         }
     }
 
@@ -628,18 +630,18 @@ extension RVS_Checkbox {
             }
 
             setNeedsDisplay()
-            
+            _selectionFeedbackGenerator = nil // This makes sure we don't get haptic feedback for the set (copies UISwitch behavior).
+            checkboxState = inState
+
             UIView.transition(with: self,
                               duration: Self._sTransitionDelay,
                               options: .transitionCrossDissolve,
                               animations: { [weak self] in self?._drawingImage = finalImage },
-                              completion: { [weak self] _ in
-                                self?._selectionFeedbackGenerator = nil // This makes sure we don't get haptic feedback for the set (copies UISwitch behavior).
-                                self?.checkboxState = inState
-                              })
+                              completion: { [weak self] _ in self?._refresh() })
         } else {
             _selectionFeedbackGenerator = nil // This makes sure we don't get haptic feedback for the set (copies UISwitch behavior).
             checkboxState = inState
+            _refresh()
         }
     }
 
