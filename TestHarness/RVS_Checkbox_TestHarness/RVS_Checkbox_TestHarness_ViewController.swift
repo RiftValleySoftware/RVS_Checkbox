@@ -21,8 +21,11 @@
 */
 
 import UIKit
-import RVS_Generic_Swift_Toolbox
 #if !CARTHAGE
+    import RVS_Generic_Swift_Toolbox
+#endif
+
+#if !DIRECT && !CARTHAGE
     import RVS_Checkbox
 #endif
 

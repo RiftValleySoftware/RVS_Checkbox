@@ -5,6 +5,7 @@
 - **May 13, 2021**
 
 - Renamed the Cartfile, to prevent a loop.
+- Made sure that the correct libraries (or not libraries) were being included for the various example builds.
 
 ## 1.1.4
 
