@@ -514,7 +514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D4E42ED42606154E0015F796 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

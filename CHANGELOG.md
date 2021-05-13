@@ -6,6 +6,7 @@
 
 - Renamed the Cartfile, to prevent a loop.
 - Made sure that the correct libraries (or not libraries) were being included for the various example builds.
+- Moved SwiftLint out, so the system version will be used.
 
 ## 1.1.4
 
