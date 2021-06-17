@@ -342,7 +342,7 @@ open class RVS_Checkbox: UIControl {
     // MARK: Instance Computed Properties
     /* ################################################################## */
     /**
-     This returns the predicted next state, when the swicth will next be selected.
+     This returns the predicted next state, when the switch will next be selected.
      */
     private var _nextState: States {
         var ret = checkboxState
