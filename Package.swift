@@ -28,14 +28,10 @@ let package = Package(
     ],
     products: [
         .library(name: "RVS-Checkbox",
-                 targets: [
-                    "RVS_Checkbox"
-                    ]
+                 targets: ["RVS_Checkbox"]
         )
     ],
     targets: [
-        .target(
-            name: "RVS_Checkbox",
-            dependencies: [])
+        .target(name: "RVS_Checkbox")
     ]
 )
