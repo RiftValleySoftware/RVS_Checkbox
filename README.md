@@ -114,7 +114,7 @@ Here are what the images look like (the color is controlled by the [`tintColor` 
 
 The "DEFAULT" and "SF SYMBOLS" images are "baked into" the class, and the "USER-PROVIDED" images are three arbitrary images that were added in the storyboard (you can see these in the test harness).
 
-The images will resize with the control, and will scale to fill (so the control needs to be sized to the aspect ratio of the images, for undistorted display).
+The images will resize with the control, but will retain their aspect (Aspect fit mode).
 
 ## <a id="REQUIREMENTS"></a>REQUIREMENTS
 

@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.1.6
+ Version 1.1.7
 */
 
 import UIKit
@@ -705,7 +705,12 @@ extension RVS_Checkbox {
     override open func draw(_ inRect: CGRect) {
         if let currentImage = _drawingImage ?? _image(forState: checkboxState) {
             let alpha = (isTracking && isTouchInside) || !isEnabled ? Self._sDimmedAlpha : 1.0
-            currentImage.draw(in: inRect, blendMode: .normal, alpha: alpha)
+            let scaleX: CGFloat = inRect.size.width / currentImage.size.width
+            let scaleY: CGFloat = inRect.size.height / currentImage.size.height
+            let drawingScale = min(scaleX, scaleY)
+            let newImageSize = CGSize(width: currentImage.size.width * drawingScale, height: currentImage.size.height * drawingScale)
+            let destRect = CGRect(origin: CGPoint(x: (inRect.size.width - newImageSize.width) / 2, y: (inRect.size.height - newImageSize.height) / 2), size: newImageSize)
+            currentImage.draw(in: destRect, blendMode: .normal, alpha: alpha)
         }
     }
     

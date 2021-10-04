@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 1.1.7
+
+- **October 4, 2021**
+
+- The images now retain aspect when drawn (Aspect Fit mode).
+
 ## 1.1.6
 
 - **September 23, 2021**
