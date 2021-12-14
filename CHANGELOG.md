@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 1.1.8
+
+- **December 14, 2021**
+
+- Updated to the latest tools.
+
 ## 1.1.7
 
 - **October 4, 2021**
