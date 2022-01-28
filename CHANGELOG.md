@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 1.1.9
+
+- **January 27, 2022**
+
+- Added support for DocC. No code or API changes.
+
 ## 1.1.8
 
 - **December 14, 2021**

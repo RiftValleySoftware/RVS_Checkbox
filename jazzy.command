@@ -33,6 +33,6 @@ jazzy   --readme ./README.md \
         --module RVS_Checkbox \
         --theme fullwidth \
         -b -scheme,RVS_Checkbox
-cp ./img/* docs/img
+cp ./Sources/RVS_Checkbox/RVS_Checkbox.docc/Resources/* docs/img
 
 cd "${CWD}"
