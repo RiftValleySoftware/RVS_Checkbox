@@ -1188,7 +1188,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Checkbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.8;
+				minimumVersion = 1.1.10;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
