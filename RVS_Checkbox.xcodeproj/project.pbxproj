@@ -41,7 +41,6 @@
 		D4E8A2202604E1F00098B673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204725FF910300884043 /* LaunchScreen.storyboard */; };
 		D4E8A2232604E1F70098B673 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
 		D4E8A2262604E1FB0098B673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204525FF910300884043 /* Assets.xcassets */; };
-		D4FB6AC326053A62004F7EEB /* RVS-Checkbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB6AC226053A62004F7EEB /* RVS-Checkbox */; };
 		D4FD203D25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */; };
 		D4FD204125FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */; };
 		D4FD204425FF910200884043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204225FF910200884043 /* Main.storyboard */; };
@@ -140,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D487D30927E1328900421303 /* RVS-Generic-Swift-Toolbox in Frameworks */,
-				D4FB6AC326053A62004F7EEB /* RVS-Checkbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +328,7 @@
 			name = RVS_Checkbox;
 			packageProductDependencies = (
 				D487D30427E1310700421303 /* RVS-Generic-Swift-Toolbox */,
+				D45E989027F93335003BF973 /* RVS-Checkbox */,
 			);
 			productName = RVS_Checkbox;
 			productReference = D4520D78260652CE0020C060 /* RVS_Checkbox.framework */;
@@ -372,7 +371,6 @@
 			);
 			name = "RVS_Checkbox_TestHarness (SPM)";
 			packageProductDependencies = (
-				D4FB6AC226053A62004F7EEB /* RVS-Checkbox */,
 				D487D30827E1328900421303 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = "RVS_Checkbox_TestHarness (SPM)";
@@ -432,8 +430,8 @@
 			);
 			mainGroup = D4FD201025FF90C200884043;
 			packageReferences = (
-				D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */,
 				D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+				D45E988F27F93335003BF973 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */,
 			);
 			productRefGroup = D4FD201B25FF90C200884043 /* Products */;
 			projectDirPath = "";
@@ -1175,20 +1173,20 @@
 				minimumVersion = 1.5.2;
 			};
 		};
+		D45E988F27F93335003BF973 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Checkbox";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.6.7;
-			};
-		};
-		D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Checkbox.git";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1198,6 +1196,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D44742CC2606573500239670 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
+		};
+		D45E989027F93335003BF973 /* RVS-Checkbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D45E988F27F93335003BF973 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */;
+			productName = "RVS-Checkbox";
 		};
 		D487D30427E1310700421303 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1218,11 +1221,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
-		};
-		D4FB6AC226053A62004F7EEB /* RVS-Checkbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D4FB6AB4260539F4004F7EEB /* XCRemoteSwiftPackageReference "RVS_Checkbox" */;
-			productName = "RVS-Checkbox";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
