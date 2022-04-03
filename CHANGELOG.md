@@ -1,4 +1,9 @@
 # RVS_Checkbox Change Log
+## 1.1.10
+
+- **April 2, 2022**
+
+- No change, but I had to update the version number, as my project was complaining.
 
 ## 1.1.10
 
