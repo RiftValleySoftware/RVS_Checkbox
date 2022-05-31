@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D44742CF2606573500239670 /* RVS_Checkbox_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD204025FF910200884043 /* RVS_Checkbox_TestHarness_ViewController.swift */; };
 		D44742D02606573500239670 /* RVS_Checkbox_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FD203C25FF910200884043 /* RVS_Checkbox_TestHarness_AppDelegate.swift */; };
-		D44742D22606573500239670 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44742CB2606573500239670 /* RVS-Generic-Swift-Toolbox */; };
 		D44742D52606573500239670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204725FF910300884043 /* LaunchScreen.storyboard */; };
 		D44742D62606573500239670 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
 		D44742D72606573500239670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FD204525FF910300884043 /* Assets.xcassets */; };
@@ -19,9 +18,10 @@
 		D4520D80260652CE0020C060 /* RVS_Checkbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4520D78260652CE0020C060 /* RVS_Checkbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4520D9A260656340020C060 /* RVS_Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4970C2C25FF99B400B97CC4 /* RVS_Checkbox.swift */; };
 		D468535825FFAEA200380E41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468535625FFAEA200380E41 /* Localizable.strings */; };
-		D487D30727E1328300421303 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D487D30627E1328300421303 /* RVS-Generic-Swift-Toolbox */; };
-		D487D30927E1328900421303 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D487D30827E1328900421303 /* RVS-Generic-Swift-Toolbox */; };
-		D487D30B27E1328E00421303 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D487D30A27E1328E00421303 /* RVS-Generic-Swift-Toolbox */; };
+		D46D6D7C2846CE3900A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46D6D7B2846CE3900A5B2CE /* RVS_Generic_Swift_Toolbox */; };
+		D46D6D7E2846CE4800A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46D6D7D2846CE4800A5B2CE /* RVS_Generic_Swift_Toolbox */; };
+		D46D6D802846CE5100A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46D6D7F2846CE5100A5B2CE /* RVS_Generic_Swift_Toolbox */; };
+		D46D6D822846CE5A00A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D46D6D812846CE5A00A5B2CE /* RVS_Generic_Swift_Toolbox */; };
 		D49CFC85264D8F52004A405F /* RVS_FIFOQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CFC7D264D8F52004A405F /* RVS_FIFOQueue.swift */; };
 		D49CFC86264D8F52004A405F /* RVS_SequenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CFC7E264D8F52004A405F /* RVS_SequenceProtocol.swift */; };
 		D49CFC87264D8F52004A405F /* RVS_Int_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CFC80264D8F52004A405F /* RVS_Int_Extensions.swift */; };
@@ -122,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44742D22606573500239670 /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D46D6D7C2846CE3900A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D487D30B27E1328E00421303 /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D46D6D822846CE5A00A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D487D30927E1328900421303 /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D46D6D802846CE5100A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D487D30727E1328300421303 /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D46D6D7E2846CE4800A5B2CE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 				D4520D7F260652CE0020C060 /* RVS_Checkbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +308,7 @@
 			);
 			name = "RVS_Checkbox_TestHarness (Direct)";
 			packageProductDependencies = (
-				D44742CB2606573500239670 /* RVS-Generic-Swift-Toolbox */,
+				D46D6D7B2846CE3900A5B2CE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_Checkbox_TestHarness;
 			productReference = D44742DE2606573500239670 /* RVS_Checkbox_TestHarness (Direct).app */;
@@ -350,7 +350,7 @@
 			);
 			name = "RVS_Checkbox_TestHarness (Carthage)";
 			packageProductDependencies = (
-				D487D30A27E1328E00421303 /* RVS-Generic-Swift-Toolbox */,
+				D46D6D812846CE5A00A5B2CE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = "RVS_Checkbox_TestHarness (SPM)";
 			productReference = D4E42EE32606154E0015F796 /* RVS_Checkbox_TestHarness (Carthage).app */;
@@ -371,7 +371,7 @@
 			);
 			name = "RVS_Checkbox_TestHarness (SPM)";
 			packageProductDependencies = (
-				D487D30827E1328900421303 /* RVS-Generic-Swift-Toolbox */,
+				D46D6D7F2846CE5100A5B2CE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = "RVS_Checkbox_TestHarness (SPM)";
 			productReference = D4E8A1E02604E1BB0098B673 /* RVS_Checkbox_TestHarness (SPM).app */;
@@ -394,7 +394,7 @@
 			);
 			name = "RVS_Checkbox_TestHarness (Framework)";
 			packageProductDependencies = (
-				D487D30627E1328300421303 /* RVS-Generic-Swift-Toolbox */,
+				D46D6D7D2846CE4800A5B2CE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_Checkbox_TestHarness;
 			productReference = D4FD203A25FF910200884043 /* RVS_Checkbox_TestHarness (Framework).app */;
@@ -407,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					D4520D77260652CE0020C060 = {
 						CreatedOnToolsVersion = 12.4;
@@ -703,7 +703,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Direct";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -730,7 +730,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Direct";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -761,7 +761,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox";
 				PRODUCT_MODULE_NAME = RVS_Checkbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -795,7 +795,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox";
 				PRODUCT_MODULE_NAME = RVS_Checkbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -833,7 +833,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -865,7 +865,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -892,7 +892,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-SPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -918,7 +918,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-SPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1068,7 +1068,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1094,7 +1094,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MARKETING_VERSION = 1.1.12;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Checkbox-TestHarness-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1165,14 +1165,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D44742CC2606573500239670 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.2;
-			};
-		};
 		D45E988F27F93335003BF973 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Checkbox";
@@ -1186,38 +1178,38 @@
 			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.2;
+				minimumVersion = 1.8.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D44742CB2606573500239670 /* RVS-Generic-Swift-Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D44742CC2606573500239670 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
-		};
 		D45E989027F93335003BF973 /* RVS-Checkbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D45E988F27F93335003BF973 /* XCRemoteSwiftPackageReference "RVS_Checkbox" */;
 			productName = "RVS-Checkbox";
 		};
+		D46D6D7B2846CE3900A5B2CE /* RVS_Generic_Swift_Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = RVS_Generic_Swift_Toolbox;
+		};
+		D46D6D7D2846CE4800A5B2CE /* RVS_Generic_Swift_Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = RVS_Generic_Swift_Toolbox;
+		};
+		D46D6D7F2846CE5100A5B2CE /* RVS_Generic_Swift_Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = RVS_Generic_Swift_Toolbox;
+		};
+		D46D6D812846CE5A00A5B2CE /* RVS_Generic_Swift_Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = RVS_Generic_Swift_Toolbox;
+		};
 		D487D30427E1310700421303 /* RVS-Generic-Swift-Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
-		};
-		D487D30627E1328300421303 /* RVS-Generic-Swift-Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
-		};
-		D487D30827E1328900421303 /* RVS-Generic-Swift-Toolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
-		};
-		D487D30A27E1328E00421303 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D487D30327E1310700421303 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";

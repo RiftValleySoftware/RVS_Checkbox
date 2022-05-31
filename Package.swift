@@ -27,7 +27,7 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "RVS-Checkbox",
+        .library(name: "RVS_Checkbox",
                  targets: ["RVS_Checkbox"]
         )
     ],

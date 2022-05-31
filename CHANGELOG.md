@@ -1,4 +1,11 @@
 # RVS_Checkbox Change Log
+## 1.2.0
+
+- **May 31, 2022**
+
+- Removed the dash-notation.
+- Updated to the latest packages.
+
 ## 1.1.10
 
 - **April 2, 2022**
