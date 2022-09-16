@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.2.1
+ Version 1.2.2
 */
 
 import UIKit
@@ -528,7 +528,7 @@ extension RVS_Checkbox {
         -  0: CLEAR (Or OFF, in two-state)
         -  1: ON
      */
-    open var value: Int {
+    public var value: Int {
         get { checkboxState.rawValue }
         set {
             let lowerBound = isThreeState ? States.off.rawValue : States.clear.rawValue
@@ -545,14 +545,14 @@ extension RVS_Checkbox {
      This returns true, if the control is currently in "CLEAR" state (which is also off, for two-state).
      READ-ONLY
      */
-    open var isClear: Bool { .clear == checkboxState }
+    public var isClear: Bool { .clear == checkboxState }
     
     /* ################################################################## */
     /**
      This returns true, if the control is in "OFF" state (three state), or either "off" or "clear" (two-state).
      READ-ONLY
      */
-    open var isOff: Bool { isThreeState ? .off == checkboxState : .on != checkboxState }
+    public var isOff: Bool { isThreeState ? .off == checkboxState : .on != checkboxState }
 }
 
 /* ################################################################################################################################## */
@@ -581,7 +581,7 @@ extension RVS_Checkbox {
      - parameter inIsOn: If true, the control is set to ON. If false, the control is set to OFF (or CLEAR, in two-state)
      - parameter animated: If true, the change is animated.
      */
-    open func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool = false) {
+    public func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool = false) {
         setState(inIsOn ? .on : .off, animated: inIsAnimated)
     }
     
@@ -591,7 +591,7 @@ extension RVS_Checkbox {
      
      - parameter animated: If true, the change is animated.
      */
-    open func setClear(animated inIsAnimated: Bool = false) {
+    public func setClear(animated inIsAnimated: Bool = false) {
         setState(.clear, animated: inIsAnimated)
     }
 
@@ -602,7 +602,7 @@ extension RVS_Checkbox {
      - parameter inState: The control state.
      - parameter animated: If true, the change is animated.
      */
-    open func setState(_ inState: States, animated inIsAnimated: Bool = false) {
+    public func setState(_ inState: States, animated inIsAnimated: Bool = false) {
         if inIsAnimated {
             let state = !isThreeState && .off == inState ? .clear : inState
             var finalImage: UIImage?
@@ -640,7 +640,7 @@ extension RVS_Checkbox {
        If in two-state, negative numbers are the same as 0.
      - parameter animated: If true, the change is animated.
      */
-    open func setValue(_ inValue: Int, animated inIsAnimated: Bool = false) {
+    public func setValue(_ inValue: Int, animated inIsAnimated: Bool = false) {
         let value = max(isThreeState ? -1 : 0, min(1, inValue))
         var state: States = .clear
 

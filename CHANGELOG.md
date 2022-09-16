@@ -1,4 +1,11 @@
 # RVS_Checkbox Change Log
+## 1.2.2
+
+- **September 16, 2022**
+
+- Updated a dependency and tools.
+- Had to change "open" to "public," but should not affect the API.""""
+
 ## 1.2.1
 
 - **July 10, 2022**

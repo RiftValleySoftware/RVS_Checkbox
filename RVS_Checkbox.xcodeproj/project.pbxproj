@@ -407,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					D4520D77260652CE0020C060 = {
 						CreatedOnToolsVersion = 12.4;
@@ -496,6 +496,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D44742CD2606573500239670 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -510,10 +511,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D4520D9E260656470020C060 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -532,6 +534,7 @@
 		};
 		D4E42ED42606154E0015F796 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -546,10 +549,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D4FD1A4226051228005580D2 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -564,10 +568,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D4FD1A432605123E005580D2 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -582,7 +587,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1178,7 +1183,7 @@
 			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.1;
+				minimumVersion = 1.10.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
