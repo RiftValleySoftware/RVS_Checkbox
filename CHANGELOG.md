@@ -1,4 +1,10 @@
 # RVS_Checkbox Change Log
+## 1.2.3
+
+- **October 6, 2022**
+
+- Updated a dependency. No API changes.
+
 ## 1.2.2
 
 - **September 16, 2022**
