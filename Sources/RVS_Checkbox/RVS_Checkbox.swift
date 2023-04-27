@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.2.3
+ Version 2.0.0
 */
 
 import UIKit
@@ -39,7 +39,7 @@ import UIKit
  This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting `useHaptics` to false.
  */
 @IBDesignable
-open class RVS_Checkbox: UIControl {
+open class RVS_Checkbox: UISwitch {
     /* ###################################################################################################################################### */
     // MARK: - INTERNAL DEFAULT DYNAMIC IMAGES
     /* ###################################################################################################################################### */
@@ -453,7 +453,7 @@ open class RVS_Checkbox: UIControl {
     /**
      This is the image to be displayed in an "ON" state.
      */
-    @IBInspectable open var onImage: UIImage? {
+    @IBInspectable open override var onImage: UIImage? {
         didSet { _refresh() }
     }
 
@@ -461,7 +461,7 @@ open class RVS_Checkbox: UIControl {
     /**
      This is the image to be displayed in an "OFF" state.
      */
-    @IBInspectable open var offImage: UIImage? {
+    @IBInspectable open override var offImage: UIImage? {
         didSet { _refresh() }
     }
     
@@ -564,7 +564,7 @@ extension RVS_Checkbox {
      This returns true, if the control is in ON state.
      If explicitly set to false, the checkbox is set to OFF (or CLEAR for two  state).
      */
-    @IBInspectable open var isOn: Bool {
+    open override var isOn: Bool {
         get { .on == checkboxState }
         set { checkboxState = newValue ? .on : !isThreeState ? .clear : .off }
     }
@@ -581,7 +581,7 @@ extension RVS_Checkbox {
      - parameter inIsOn: If true, the control is set to ON. If false, the control is set to OFF (or CLEAR, in two-state)
      - parameter animated: If true, the change is animated.
      */
-    public func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool = false) {
+    public override func setOn(_ inIsOn: Bool, animated inIsAnimated: Bool = false) {
         setState(inIsOn ? .on : .off, animated: inIsAnimated)
     }
     
@@ -666,34 +666,10 @@ extension RVS_Checkbox {
      It's important for the background to be clear.
      */
     override open func layoutSubviews() {
+        // This is because the standard UISwitch actually has an embedded subview, with the switch. This removes that, so we have the whole thing.
+        subviews.forEach { $0.removeFromSuperview() }
         super.layoutSubviews()
         backgroundColor = .clear
-    }
-    
-    /* ################################################################## */
-    /**
-     The tint color.
-     The override is to force a redraw.
-     */
-    override open var tintColor: UIColor? {
-        get { super.tintColor }
-        set {
-            super.tintColor = newValue
-            _refresh()
-        }
-    }
-    
-    /* ################################################################## */
-    /**
-     The enabled state.
-     The override is to force a redraw.
-     */
-    override open var isEnabled: Bool {
-        get { super.isEnabled }
-        set {
-            super.isEnabled = newValue
-            _refresh()
-        }
     }
     
     /* ################################################################## */

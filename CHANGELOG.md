@@ -1,4 +1,10 @@
 # RVS_Checkbox Change Log
+## 2.0.0
+
+- **April 27, 2023**
+
+- Even though the API hasn't changed, we now derive from [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), so it is now a _true_ "drop in" replacement for the switch.
+
 ## 1.2.3
 
 - **October 6, 2022**

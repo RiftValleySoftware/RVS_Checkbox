@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="44" width="374" height="712"/>
+                                <rect key="frame" x="20" y="48" width="374" height="712"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
@@ -81,7 +81,7 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="15.5" y="144" width="343" height="65"/>
+                                        <rect key="frame" x="11.5" y="144" width="351" height="65"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
@@ -202,7 +202,7 @@
                                                     <action selector="animatedSwitchLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B13-7C-ugg"/>
                                                 </connections>
                                             </button>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
                                                 <rect key="frame" x="186" y="16.5" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="enabledSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="N6D-RH-Ncf"/>
@@ -289,6 +289,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="prk-yo-6OY" secondAttribute="bottom" id="4ai-sz-vQk"/>
                             <constraint firstAttribute="trailing" secondItem="EJm-MP-JeU" secondAttribute="trailing" constant="20" id="6bh-6J-4Qq"/>
@@ -303,6 +304,8 @@
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
                         <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
+                        <outlet property="customCheckbox1" destination="BsS-dE-zbU" id="YiF-Cj-phb"/>
+                        <outlet property="customCheckbox2" destination="lz5-2b-sOw" id="yMZ-2G-tH2"/>
                         <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
                         <outlet property="dynamicContainer" destination="LLA-a3-s9W" id="UDc-ze-Abv"/>
                         <outlet property="dynamicHeaderLabel" destination="TAI-Bd-nLp" id="B8L-rh-oC0"/>
@@ -336,7 +339,7 @@
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.5" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint-6">
             <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

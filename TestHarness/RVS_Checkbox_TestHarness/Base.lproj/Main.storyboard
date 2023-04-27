@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="44" width="374" height="712"/>
+                                <rect key="frame" x="20" y="48" width="374" height="712"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
@@ -81,7 +81,7 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="15.5" y="144" width="343" height="65"/>
+                                        <rect key="frame" x="11.5" y="144" width="351" height="65"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
@@ -303,6 +303,8 @@
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
                         <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
+                        <outlet property="customCheckbox1" destination="1tR-x3-BHZ" id="FXa-cY-ZPf"/>
+                        <outlet property="customCheckbox2" destination="yG4-YB-wnq" id="WKo-Rl-BCo"/>
                         <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
                         <outlet property="dynamicContainer" destination="Th6-R0-mtf" id="n25-on-CYW"/>
                         <outlet property="dynamicHeaderLabel" destination="7ov-ak-cTo" id="hrt-dY-YaX"/>
@@ -336,7 +338,7 @@
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.5" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint-6">
             <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

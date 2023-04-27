@@ -146,6 +146,18 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
+     The first custom checkbox
+     */
+    @IBOutlet weak var customCheckbox1: RVS_Checkbox!
+
+    /* ################################################################## */
+    /**
+     The second custom checkbox
+     */
+    @IBOutlet weak var customCheckbox2: RVS_Checkbox!
+    
+    /* ################################################################## */
+    /**
      The label for the dynamically-instantiated switches.
      */
     @IBOutlet weak var dynamicHeaderLabel: UILabel!
@@ -415,7 +427,10 @@ extension RVS_Checkbox_TestHarness_ViewController {
         }
         
         imageSelectorSegmentedSwitch?.selectedSegmentIndex = 0
-
+        checkboxObject?.isEnabled = true
+        customCheckbox1?.isEnabled = true
+        customCheckbox2?.isEnabled = true
+        
         setUpUI()
         setSegmentedSwitch()
         setUpDynamicCheckBoxes()
@@ -543,6 +558,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
         if let index = tintSelectorSegmentedSwitch?.selectedSegmentIndex,
            let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
             checkboxObject?.tintColor = color
+            checkboxObject?.setNeedsDisplay()
         }
     }
 
