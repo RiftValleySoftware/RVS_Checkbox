@@ -1,4 +1,12 @@
 # RVS_Checkbox Change Log
+## 2.0.1
+
+- **January 6, 2024**
+
+- Updated the dependencies.
+- Added privacy statements.
+- I had to remove SwiftLint, as it no longer works in the latest Xcode.
+
 ## 2.0.0
 
 - **April 27, 2023**

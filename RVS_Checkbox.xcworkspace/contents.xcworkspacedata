@@ -5,7 +5,22 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:CHANGELOG.md">
+   </FileRef>
+   <FileRef
+      location = "group:CODEOWNERS">
+   </FileRef>
+   <FileRef
+      location = "group:../RVS_GeneralObserver/LICENSE">
+   </FileRef>
+   <FileRef
       location = "group:Example Cartfile">
+   </FileRef>
+   <FileRef
+      location = "group:PRIVACY.md">
+   </FileRef>
+   <FileRef
+      location = "group:PrivacyInfo.xcprivacy">
    </FileRef>
    <FileRef
       location = "group:RVS_Checkbox.xcodeproj">

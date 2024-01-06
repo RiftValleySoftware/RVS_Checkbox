@@ -91,10 +91,7 @@
 		D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4970C3625FF9A5F00B97CC4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		D4970C3725FF9A9400B97CC4 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		D4970C3825FF9AB700B97CC4 /* CODEOWNERS */ = {isa = PBXFileReference; lastKnownFileType = text; path = CODEOWNERS; sourceTree = "<group>"; };
 		D4970C3925FF9ABF00B97CC4 /* jazzy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = jazzy.command; sourceTree = "<group>"; };
-		D4970C4225FF9C9D00B97CC4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../RVS_GeneralObserver/LICENSE; sourceTree = "<group>"; };
 		D49CFC7D264D8F52004A405F /* RVS_FIFOQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_FIFOQueue.swift; sourceTree = "<group>"; };
 		D49CFC7E264D8F52004A405F /* RVS_SequenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_SequenceProtocol.swift; sourceTree = "<group>"; };
 		D49CFC80264D8F52004A405F /* RVS_Int_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Int_Extensions.swift; sourceTree = "<group>"; };
@@ -154,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D43D1BB92B49AFF300BE6721 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
 		D4520D902606531F0020C060 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,12 +243,9 @@
 		D4FD201025FF90C200884043 = {
 			isa = PBXGroup;
 			children = (
-				D4970C3725FF9A9400B97CC4 /* CHANGELOG.md */,
-				D4970C3825FF9AB700B97CC4 /* CODEOWNERS */,
-				D4970C4225FF9C9D00B97CC4 /* LICENSE */,
+				D43D1BB92B49AFF300BE6721 /* Meta */,
 				D4970C3925FF9ABF00B97CC4 /* jazzy.command */,
 				D4970C3625FF9A5F00B97CC4 /* Package.swift */,
-				D4970C3125FF9A3300B97CC4 /* Warnings.xcconfig */,
 				D4970C3025FF9A2000B97CC4 /* .swiftlint.yml */,
 				D4970C2A25FF99B400B97CC4 /* Sources */,
 				D4FD207125FF916300884043 /* TestHarness */,
@@ -297,7 +299,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D44742DB2606573500239670 /* Build configuration list for PBXNativeTarget "RVS_Checkbox_TestHarness (Direct)" */;
 			buildPhases = (
-				D44742CD2606573500239670 /* SwiftLint */,
 				D44742CE2606573500239670 /* Sources */,
 				D44742D12606573500239670 /* Frameworks */,
 				D44742D42606573500239670 /* Resources */,
@@ -318,7 +319,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4520D81260652CE0020C060 /* Build configuration list for PBXNativeTarget "RVS_Checkbox" */;
 			buildPhases = (
-				D4520D9E260656470020C060 /* SwiftLint */,
 				D4520D74260652CE0020C060 /* Sources */,
 			);
 			buildRules = (
@@ -338,7 +338,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4E42EE02606154E0015F796 /* Build configuration list for PBXNativeTarget "RVS_Checkbox_TestHarness (Carthage)" */;
 			buildPhases = (
-				D4E42ED42606154E0015F796 /* SwiftLint */,
 				D4E42ED52606154E0015F796 /* Sources */,
 				D4E42ED82606154E0015F796 /* Frameworks */,
 				D4E42EDB2606154E0015F796 /* Resources */,
@@ -360,7 +359,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4E8A20D2604E1BC0098B673 /* Build configuration list for PBXNativeTarget "RVS_Checkbox_TestHarness (SPM)" */;
 			buildPhases = (
-				D4FD1A432605123E005580D2 /* SwiftLint */,
 				D4E8A1DC2604E1BB0098B673 /* Sources */,
 				D4E8A1DD2604E1BB0098B673 /* Frameworks */,
 				D4E8A1DE2604E1BB0098B673 /* Resources */,
@@ -381,7 +379,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4FD206125FF910300884043 /* Build configuration list for PBXNativeTarget "RVS_Checkbox_TestHarness (Framework)" */;
 			buildPhases = (
-				D4FD1A4226051228005580D2 /* SwiftLint */,
 				D4FD203625FF910200884043 /* Sources */,
 				D4FD203725FF910200884043 /* Frameworks */,
 				D4FD203825FF910200884043 /* Resources */,
@@ -408,7 +405,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					D4520D77260652CE0020C060 = {
 						CreatedOnToolsVersion = 12.4;
@@ -493,104 +490,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D44742CD2606573500239670 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4520D9E260656470020C060 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4E42ED42606154E0015F796 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4FD1A4226051228005580D2 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-		D4FD1A432605123E005580D2 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D44742CE2606573500239670 /* Sources */ = {
@@ -982,6 +881,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1047,6 +947,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1192,7 +1093,7 @@
 			repositoryURL = "https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.12.4;
+				minimumVersion = 1.13.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
