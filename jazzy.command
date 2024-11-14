@@ -32,7 +32,8 @@ jazzy   --readme ./README.md \
         --min_acl public \
         --module RVS_Checkbox \
         --theme fullwidth \
-        -b -scheme,RVS_Checkbox
+        -b -scheme,RVS_Checkbox \
+        --sdk iphonesimulator
 cp ./Sources/RVS_Checkbox/RVS_Checkbox.docc/Resources/* docs/img
 
 cd "${CWD}"

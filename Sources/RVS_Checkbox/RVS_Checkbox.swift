@@ -50,7 +50,7 @@ open class RVS_Checkbox: UISwitch {
      This provides a base class for the three images to be used as switch elements.
      The default uses code-drawn images that render in template mode, and use the tint color.
      */
-    class RVS_Checkbox_Image: UIImage {
+    class RVS_Checkbox_Image: UIImage, @unchecked Sendable {
         /* ################################################################################################################################## */
         // MARK: - Instance Stored Properties -
         /* ################################################################################################################################## */
@@ -113,7 +113,7 @@ open class RVS_Checkbox: UISwitch {
     /**
      This is the "clear" (blank circle) image. In a two-state checkbox, it is also the "Off" value image.
      */
-    class RVS_Checkbox_Image_Clear: RVS_Checkbox_Image {
+    class RVS_Checkbox_Image_Clear: RVS_Checkbox_Image, @unchecked Sendable {
         /* ################################################################## */
         /**
          This supplies a rendered image. It will use the myFillColor.
@@ -135,7 +135,7 @@ open class RVS_Checkbox: UISwitch {
     /**
      This is the "Checked," or "√" image. In a two-state checkbox, it is also the "On" value image.
      */
-    class RVS_Checkbox_Image_On: RVS_Checkbox_Image {
+    class RVS_Checkbox_Image_On: RVS_Checkbox_Image, @unchecked Sendable {
         /* ################################################################## */
         /**
          This supplies a rendered image. It will use the myFillColor.
@@ -210,7 +210,7 @@ open class RVS_Checkbox: UISwitch {
     /**
      This is the "Unchecked," or "X" image. In a two-state checkbox, it is ignored.
      */
-    class RVS_Checkbox_Image_Off: RVS_Checkbox_Image {
+    class RVS_Checkbox_Image_Off: RVS_Checkbox_Image, @unchecked Sendable {
         /* ################################################################## */
         /**
          This supplies a rendered image. It will use the myFillColor.

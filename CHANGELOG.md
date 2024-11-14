@@ -1,4 +1,10 @@
 # RVS_Checkbox Change Log
+## 2.0.2
+
+- **November 14, 2024**
+
+- Added `@unchecked Sendable` to the hardcoded image classes.
+
 ## 2.0.1
 
 - **January 6, 2024**
