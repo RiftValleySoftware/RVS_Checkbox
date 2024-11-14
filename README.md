@@ -116,6 +116,8 @@ The "DEFAULT" and "SF SYMBOLS" images are "baked into" the class, and the "USER-
 
 The images will resize with the control, but will retain their aspect (Aspect fit mode).
 
+> NOTE: Currently, the images have to be monochrome template images. This is non-optimal, and we'll see about supporting full-color images.
+
 ## <a id="REQUIREMENTS"></a>REQUIREMENTS
 
 `RVS_Checkbox` is an [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)-only [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol), designed for use by [Swift](https://swift.org) language applications.
