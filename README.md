@@ -232,6 +232,8 @@ We should select a generic[`UIView` (View)](https://developer.apple.com/document
 
 ![Add View](img/01-IB.png)
 
+> NOTE: You can now also select a [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) element.
+
 Drag that into the View Controller (1), and arrange it the way that you like. Then select it, and select the Identity Inspector tab. Once that has been selected, enter `RVS_Checkbox` as the object class (2).
 
 If we used Swift Package Manager to add the class, we should set the "`Module`" field to "`RVS_Checkbox`." (3) Otherwise, we should check the "`Inherit Module From Target`" checkbox, and let the app module be chosen.
