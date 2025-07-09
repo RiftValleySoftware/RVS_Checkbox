@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,16 +22,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="48" width="374" height="712"/>
+                                <rect key="frame" x="20" y="96" width="374" height="572"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
+                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
+                                        <rect key="frame" x="141" y="0.0" width="92" height="51"/>
                                         <segments>
-                                            <segment title="X √"/>
                                             <segment title="">
                                                 <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             </segment>
-                                            <segment title="" image="TestImage-2"/>
+                                            <segment title="">
+                                                <imageReference key="image" image="triangleshape.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedSegmentTintColor" name="AccentColor"/>
@@ -40,10 +41,10 @@
                                         </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-h9-cEo">
-                                        <rect key="frame" x="0.0" y="72" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="58" width="374" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-eg-w9Y">
-                                                <rect key="frame" x="0.0" y="17" width="171.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="10" width="171.5" height="30"/>
                                                 <state key="normal" title="SLUG-STANDARD-STATE">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -55,13 +56,13 @@
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-16-VTp">
-                                                <rect key="frame" x="179.5" y="16.5" width="49.5" height="31"/>
+                                                <rect key="frame" x="179.5" y="9.5" width="49.5" height="31"/>
                                                 <connections>
                                                     <action selector="stateSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zqB-aI-4bh"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-Mt-tfX">
-                                                <rect key="frame" x="235" y="17" width="139" height="30"/>
+                                                <rect key="frame" x="235" y="10" width="139" height="30"/>
                                                 <state key="normal" title="SLUG-THREE-STATE">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -81,7 +82,7 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="11.5" y="144" width="351" height="65"/>
+                                        <rect key="frame" x="11.5" y="116" width="351" height="51"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
@@ -113,15 +114,11 @@
                                         </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-p0-4oB">
-                                        <rect key="frame" x="0.0" y="216" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="174" width="374" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phe-Vk-I3J" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="phe-Vk-I3J" secondAttribute="height" multiplier="1:1" id="ZBF-MG-poF"/>
-                                                    <constraint firstAttribute="width" constant="64" id="jxa-KE-mix"/>
-                                                </constraints>
                                                 <connections>
                                                     <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Tfj-D6-oWh"/>
                                                     <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qL7-RS-1KA"/>
@@ -131,7 +128,7 @@
                                                 </connections>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
-                                                <rect key="frame" x="80" y="0.0" width="294" height="65"/>
+                                                <rect key="frame" x="66" y="0.0" width="308" height="51"/>
                                                 <segments>
                                                     <segment title="SLUG-OFF"/>
                                                     <segment title="SLUG-CLEAR"/>
@@ -146,16 +143,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-C1-8IB">
-                                        <rect key="frame" x="0.0" y="288" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="232" width="374" height="50"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-SI-n9X">
-                                                <rect key="frame" x="0.0" y="16.5" width="48.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="48.5" height="31"/>
                                                 <connections>
                                                     <action selector="useOffImageSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="k9O-bi-U77"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-Dw-GHh">
-                                                <rect key="frame" x="54.5" y="17" width="154.5" height="30"/>
+                                                <rect key="frame" x="54.5" y="10" width="154.5" height="30"/>
                                                 <state key="normal" title="SLUG-USE-OFF-IMAGE">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -167,13 +164,13 @@
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FrX-hF-MrD">
-                                                <rect key="frame" x="217" y="16.5" width="49" height="31"/>
+                                                <rect key="frame" x="217" y="9.5" width="49" height="31"/>
                                                 <connections>
                                                     <action selector="useHapticsSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rDV-NB-asz"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooi-nj-Qbj">
-                                                <rect key="frame" x="272" y="17" width="102" height="30"/>
+                                                <rect key="frame" x="272" y="10" width="102" height="30"/>
                                                 <state key="normal" title="SLUG-HAPTICS"/>
                                                 <connections>
                                                     <action selector="useHapticsLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rs-FR-ngD"/>
@@ -185,13 +182,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goN-l8-EUH">
-                                        <rect key="frame" x="9" y="360" width="356" height="64"/>
+                                        <rect key="frame" x="9" y="290" width="356" height="50"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
-                                                <rect key="frame" x="0.0" y="16.5" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="51" height="31"/>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-4x-DS8">
-                                                <rect key="frame" x="57" y="17" width="121" height="30"/>
+                                                <rect key="frame" x="57" y="10" width="121" height="30"/>
                                                 <state key="normal" title="SLUG-ANIMATED">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -203,13 +200,13 @@
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-wX-FrB">
-                                                <rect key="frame" x="186" y="16.5" width="51" height="31"/>
+                                                <rect key="frame" x="186" y="9.5" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="enabledSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="N6D-RH-Ncf"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-HU-W79">
-                                                <rect key="frame" x="243" y="17" width="113" height="30"/>
+                                                <rect key="frame" x="243" y="10" width="113" height="30"/>
                                                 <state key="normal" title="SLUG-ENABLED">
                                                     <color key="titleColor" name="AccentColor"/>
                                                 </state>
@@ -223,20 +220,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-CUSTOM-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7w-2n-L7t">
-                                        <rect key="frame" x="85" y="432" width="204" height="64"/>
+                                        <rect key="frame" x="85" y="348" width="204" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-AA-Fo0">
-                                        <rect key="frame" x="117" y="504" width="140" height="64"/>
+                                        <rect key="frame" x="131" y="406" width="112" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-x3-BHZ" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="Tint-6"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="TiJ-zZ-0j0"/>
                                                     <constraint firstAttribute="width" secondItem="1tR-x3-BHZ" secondAttribute="height" multiplier="1:1" id="UM1-uQ-Snp"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -248,11 +244,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-YB-wnq" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
-                                                <rect key="frame" x="76" y="0.0" width="64" height="64"/>
+                                                <rect key="frame" x="62" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="Tint-6"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="1lR-gE-V8q"/>
                                                     <constraint firstAttribute="width" secondItem="yG4-YB-wnq" secondAttribute="height" multiplier="1:1" id="jbi-1J-h0A"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -267,17 +262,16 @@
                                         <constraints>
                                             <constraint firstItem="yG4-YB-wnq" firstAttribute="height" secondItem="ac4-AA-Fo0" secondAttribute="height" id="Qik-SQ-3Jf"/>
                                             <constraint firstItem="1tR-x3-BHZ" firstAttribute="height" secondItem="ac4-AA-Fo0" secondAttribute="height" id="Sq4-53-DYX"/>
-                                            <constraint firstAttribute="height" constant="64" id="gjr-Xh-5rJ"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DYNAMIC-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ov-ak-cTo">
-                                        <rect key="frame" x="82" y="576" width="210" height="64"/>
+                                        <rect key="frame" x="82" y="464" width="210" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th6-R0-mtf">
-                                        <rect key="frame" x="0.0" y="648" width="374" height="64"/>
+                                        <rect key="frame" x="0.0" y="522" width="374" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -337,6 +331,7 @@
         <image name="background-gradient" width="1" height="1000"/>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <image name="triangleshape.fill" catalog="system" width="128" height="106"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

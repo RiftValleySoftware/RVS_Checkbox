@@ -218,6 +218,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      */
     @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.useOffImageForClear = inSwitch.isOn
+        setUpUI()
     }
 
     /* ################################################################## */
@@ -426,7 +427,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
             tintSelectorSegmentedSwitch.selectedSegmentIndex = tintSelectorSegmentedSwitch.numberOfSegments - 2
         }
         
-        imageSelectorSegmentedSwitch?.selectedSegmentIndex = 0
         checkboxObject?.isEnabled = true
         customCheckbox1?.isEnabled = true
         customCheckbox2?.isEnabled = true
@@ -455,32 +455,21 @@ extension RVS_Checkbox_TestHarness_ViewController {
             let dynamicControlSize: CGFloat = 64
             let testImageFormat = "TestImage-%d"
 
-            let centerDynamicCheckbox = RVS_Checkbox()  // Create the instance
-            dynamicContainer.addSubview(centerDynamicCheckbox)  // Add it to the container.
-            centerDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
-            centerDynamicCheckbox.tintColor = checkboxObject?.tintColor // We steal the tint color from the IB-instantiated checkbox.
-            centerDynamicCheckbox.isUsingSFSymbols = true
-            centerDynamicCheckbox.isThreeState = true
-            centerDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
-
-            NSLayoutConstraint.activate([
-                                        centerDynamicCheckbox.centerXAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: 0),
-                                        centerDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
-                                        centerDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
-                                        ])
-            
-            let leftDynamicCheckbox = RVS_Checkbox()
-            dynamicContainer.addSubview(leftDynamicCheckbox)
-            leftDynamicCheckbox.backgroundColor = .clear
-            leftDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            let leftDynamicCheckbox = RVS_Checkbox()  // Create the instance
+            dynamicContainer.addSubview(leftDynamicCheckbox)  // Add it to the container.
+            leftDynamicCheckbox.backgroundColor = .clear      // Nothing behind us (Just to be sure).
+            leftDynamicCheckbox.tintColor = checkboxObject?.tintColor // We steal the tint color from the IB-instantiated checkbox.
+            leftDynamicCheckbox.isUsingSFSymbols = true
             leftDynamicCheckbox.isThreeState = true
             leftDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
-            
+
             NSLayoutConstraint.activate([
-                                        leftDynamicCheckbox.trailingAnchor.constraint(equalTo: centerDynamicCheckbox.leadingAnchor, constant: -gap),
-                                        leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
-                                        leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
-                                        ])
+                leftDynamicCheckbox.rightAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: -(gap / 2)),
+                leftDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                leftDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize),
+                leftDynamicCheckbox.topAnchor.constraint(equalTo: dynamicContainer.topAnchor),
+                leftDynamicCheckbox.bottomAnchor.constraint(equalTo: dynamicContainer.bottomAnchor)
+            ])
             
             let rightDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addSubview(rightDynamicCheckbox)
@@ -493,10 +482,12 @@ extension RVS_Checkbox_TestHarness_ViewController {
             rightDynamicCheckbox.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                                        rightDynamicCheckbox.leadingAnchor.constraint(equalTo: centerDynamicCheckbox.trailingAnchor, constant: gap),
-                                        rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
-                                        rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize)
-                                        ])
+                rightDynamicCheckbox.leftAnchor.constraint(equalTo: dynamicContainer.centerXAnchor, constant: (gap / 2)),
+                rightDynamicCheckbox.widthAnchor.constraint(equalToConstant: dynamicControlSize),
+                rightDynamicCheckbox.heightAnchor.constraint(equalToConstant: dynamicControlSize),
+                rightDynamicCheckbox.topAnchor.constraint(equalTo: dynamicContainer.topAnchor),
+                rightDynamicCheckbox.bottomAnchor.constraint(equalTo: dynamicContainer.bottomAnchor)
+            ])
         }
     }
     
@@ -507,7 +498,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
     func setUpUI() {
         enabledSwitch?.isOn = checkboxObject?.isEnabled ?? false
         useOffImageSwitch?.isOn = checkboxObject?.useOffImageForClear ?? false
-        
+
         standardLabelButton?.isEnabled = stateSwitch?.isOn ?? false
         threeStateLabelButton?.isEnabled = !(stateSwitch?.isOn ?? false)
         
@@ -529,23 +520,21 @@ extension RVS_Checkbox_TestHarness_ViewController {
             var onImage: UIImage?
 
             switch imageIndex {
-            case 1:
+            case 0:
                 checkboxObject?.isUsingSFSymbols = true
-            case 2:
+            default:
+                checkboxObject?.isUsingSFSymbols = false
                 onImage = UIImage(named: "TestImage-2")
                 clearImage = UIImage(named: "TestImage-1")
                 offImage = UIImage(named: "TestImage-0")
-                fallthrough
-            default:
-                checkboxObject?.isUsingSFSymbols = false
             }
             
             checkboxObject?.offImage = offImage
             checkboxObject?.clearImage = clearImage
             checkboxObject?.onImage = onImage
             
-            useOffImageSwitch?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true)
-            useOffImageLabelButton?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true)
+            useOffImageSwitch?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true) && checkboxObject?.isThreeState ?? false
+            useOffImageLabelButton?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true) && checkboxObject?.isThreeState ?? false
         }
     }
     
