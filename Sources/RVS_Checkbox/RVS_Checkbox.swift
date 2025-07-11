@@ -323,8 +323,8 @@ open class RVS_Checkbox: UISwitch {
      */
     @IBInspectable open var clearImage: UIImage? {
         didSet {
-            if (!self.isUsingSFSymbols || !self.isThreeState),
-               (nil == self.clearImage || !self.isThreeState) {
+            if !self.isUsingSFSymbols || !self.isThreeState,
+               nil == self.clearImage || !self.isThreeState {
                 self.useOffImageForClear = true
             }
 
@@ -346,8 +346,8 @@ open class RVS_Checkbox: UISwitch {
      */
     @IBInspectable open var useOffImageForClear: Bool = true {
         didSet {
-            if (!self.isUsingSFSymbols || !self.isThreeState),
-               (nil == self.clearImage || !self.isThreeState) {
+            if !self.isUsingSFSymbols || !self.isThreeState,
+               nil == self.clearImage || !self.isThreeState {
                 self.useOffImageForClear = true
             }
             self._refresh()

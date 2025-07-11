@@ -21,13 +21,8 @@
 */
 
 import UIKit
-#if !CARTHAGE
-    import RVS_Generic_Swift_Toolbox
-#endif
-
-#if !DIRECT && !CARTHAGE
-    import RVS_Checkbox
-#endif
+import RVS_Checkbox
+import RVS_Generic_Swift_Toolbox
 
 /* ###################################################################################################################################### */
 // MARK: - Main View Controller -

@@ -24,7 +24,7 @@ import PackageDescription
 let package = Package(
     name: "RVS_Checkbox",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v17)
     ],
     products: [
         .library(name: "RVS_Checkbox",

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,7 +14,7 @@
         <!--Checkbox Test Harness View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__Framework_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RVS_Checkbox_TestHarness_ViewController" customModule="RVS_Checkbox_TestHarness__SPM_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,10 +121,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Tfj-D6-oWh"/>
-                                                    <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qL7-RS-1KA"/>
-                                                    <action selector="touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iUD-az-qOu"/>
-                                                    <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="gIq-A4-Jae"/>
                                                     <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gr5-DR-98g"/>
                                                 </connections>
                                             </view>
@@ -296,9 +293,9 @@
                     <connections>
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
-                        <outlet property="checkboxObject" destination="phe-Vk-I3J" id="FEx-g2-AZI"/>
-                        <outlet property="customCheckbox1" destination="1tR-x3-BHZ" id="FXa-cY-ZPf"/>
-                        <outlet property="customCheckbox2" destination="yG4-YB-wnq" id="WKo-Rl-BCo"/>
+                        <outlet property="checkboxObject" destination="phe-Vk-I3J" id="dcn-2x-2CS"/>
+                        <outlet property="customCheckbox1" destination="1tR-x3-BHZ" id="cKa-ni-78d"/>
+                        <outlet property="customCheckbox2" destination="yG4-YB-wnq" id="BZJ-HA-gv9"/>
                         <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
                         <outlet property="dynamicContainer" destination="Th6-R0-mtf" id="n25-on-CYW"/>
                         <outlet property="dynamicHeaderLabel" destination="7ov-ak-cTo" id="hrt-dY-YaX"/>
