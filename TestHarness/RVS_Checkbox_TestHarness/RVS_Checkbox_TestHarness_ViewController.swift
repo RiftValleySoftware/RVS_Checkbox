@@ -311,7 +311,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      - parameter: Ignored
      */
     @IBAction func tintSelectorSegmentedSwitchChanged(_: Any) {
-        setSelectedTint()
+        setUpUI()
     }
 
     /* ################################################################## */
@@ -520,8 +520,16 @@ extension RVS_Checkbox_TestHarness_ViewController {
         
         valueChangedSegmentedSwitch?.setEnabled(stateSwitch?.isOn ?? false, forSegmentAt: RVS_Checkbox.States.off.rawValue + 1)
         
-        setSelectedTint()
         setSelectedImage()
+        
+        if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
+           let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
+            self.checkboxObject?.tintColor = color
+            self.leftDynamicCheckbox?.tintColor = color
+            self.rightDynamicCheckbox?.tintColor = color
+            self.customCheckbox1?.tintColor = color
+            self.customCheckbox2?.tintColor = color
+        }
         
         self.checkboxObject?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
         self.leftDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
@@ -569,22 +577,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
             
             useOffImageSwitch?.isEnabled = checkboxObject?.isThreeState ?? false
             useOffImageLabelButton?.isEnabled = checkboxObject?.isThreeState ?? false
-        }
-    }
-    
-    /* ################################################################## */
-    /**
-     This checks the `tintSelectorSegmentedSwitch`, and sets the appropriate color for the
-     control, based on its value.
-     */
-    func setSelectedTint() {
-        if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
-           let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
-            self.checkboxObject?.tintColor = color
-            self.leftDynamicCheckbox?.tintColor = color
-            self.rightDynamicCheckbox?.tintColor = color
-            self.customCheckbox1?.tintColor = color
-            self.customCheckbox2?.tintColor = color
         }
     }
 

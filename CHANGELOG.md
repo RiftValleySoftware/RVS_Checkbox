@@ -1,4 +1,12 @@
 # RVS_Checkbox Change Log
+## 3.0.0
+- **TBD**
+
+- Big improvements/changes.
+- The "default" checkbox (circular) type is gone. Instead, the SFSymbols variant is now default.
+- I changed the way that the control dynamically reacts to settings changes.
+- Code cleanup.
+
 ## 2.0.2
 
 - **November 14, 2024**
