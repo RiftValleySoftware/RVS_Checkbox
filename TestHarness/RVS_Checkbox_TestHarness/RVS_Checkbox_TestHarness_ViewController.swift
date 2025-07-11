@@ -40,6 +40,18 @@ import UIKit
  Switches use "label buttons." This is a pattern that I use to mimic the way Web browsers work, with `<label></label>` elements, that affect the control with which they are associated.
  */
 class RVS_Checkbox_TestHarness_ViewController: UIViewController {
+    /* ################################################################## */
+    /**
+     Reference to the lefthand dynamically-generated checkbox.
+     */
+    weak var leftDynamicCheckbox: RVS_Checkbox?
+
+    /* ################################################################## */
+    /**
+     Reference to the righthand dynamically-generated checkbox.
+     */
+    weak var rightDynamicCheckbox: RVS_Checkbox?
+
     /* ################################################################################################################################## */
     // MARK: - IB Properties
     /* ################################################################################################################################## */
@@ -471,6 +483,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
                 leftDynamicCheckbox.bottomAnchor.constraint(equalTo: dynamicContainer.bottomAnchor)
             ])
             
+            self.leftDynamicCheckbox = leftDynamicCheckbox
+            
             let rightDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addSubview(rightDynamicCheckbox)
             rightDynamicCheckbox.backgroundColor = .clear
@@ -488,6 +502,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
                 rightDynamicCheckbox.topAnchor.constraint(equalTo: dynamicContainer.topAnchor),
                 rightDynamicCheckbox.bottomAnchor.constraint(equalTo: dynamicContainer.bottomAnchor)
             ])
+            
+            self.rightDynamicCheckbox = rightDynamicCheckbox
         }
     }
     
@@ -506,6 +522,24 @@ extension RVS_Checkbox_TestHarness_ViewController {
         
         setSelectedTint()
         setSelectedImage()
+        
+        self.checkboxObject?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        self.customCheckbox1?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        self.customCheckbox2?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        
+        self.checkboxObject?.isThreeState = stateSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.isThreeState = stateSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.isThreeState = stateSwitch?.isOn ?? false
+        self.customCheckbox1?.isThreeState = stateSwitch?.isOn ?? false
+        self.customCheckbox2?.isThreeState = stateSwitch?.isOn ?? false
+        
+        self.checkboxObject?.isEnabled = enabledSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.isEnabled = enabledSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.isEnabled = enabledSwitch?.isOn ?? false
+        self.customCheckbox1?.isEnabled = enabledSwitch?.isOn ?? false
+        self.customCheckbox2?.isEnabled = enabledSwitch?.isOn ?? false
     }
     
     /* ################################################################## */
@@ -533,8 +567,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
             checkboxObject?.clearImage = clearImage
             checkboxObject?.onImage = onImage
             
-            useOffImageSwitch?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true) && checkboxObject?.isThreeState ?? false
-            useOffImageLabelButton?.isEnabled = !(checkboxObject?.isUsingSFSymbols ?? true) && checkboxObject?.isThreeState ?? false
+            useOffImageSwitch?.isEnabled = checkboxObject?.isThreeState ?? false
+            useOffImageLabelButton?.isEnabled = checkboxObject?.isThreeState ?? false
         }
     }
     
@@ -544,10 +578,13 @@ extension RVS_Checkbox_TestHarness_ViewController {
      control, based on its value.
      */
     func setSelectedTint() {
-        if let index = tintSelectorSegmentedSwitch?.selectedSegmentIndex,
+        if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
            let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
-            checkboxObject?.tintColor = color
-            checkboxObject?.setNeedsDisplay()
+            self.checkboxObject?.tintColor = color
+            self.leftDynamicCheckbox?.tintColor = color
+            self.rightDynamicCheckbox?.tintColor = color
+            self.customCheckbox1?.tintColor = color
+            self.customCheckbox2?.tintColor = color
         }
     }
 
@@ -556,6 +593,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
      This simply sets the value of the `valueChangedSegmentedSwitch`, based on the control value.
      */
     func setSegmentedSwitch() {
-        valueChangedSegmentedSwitch?.selectedSegmentIndex = (checkboxObject?.value ?? 1) + 1
+        self.valueChangedSegmentedSwitch?.selectedSegmentIndex = (self.checkboxObject?.value ?? 1) + 1
     }
 }
