@@ -1,5 +1,5 @@
 /**
- © Copyright 2021, The Great Rift Valley Software Company
+ © Copyright 2021-2025, The Great Rift Valley Software Company
 
  LICENSE:
 
@@ -31,11 +31,11 @@ import UIKit
 /**
  This class provides a simple Swift-only module that implements a "checkbox" to replace the standard UISwitch.
  The switch can behave exactly like a standard UISwitch, but also has a "three-state" option, where it has definitely off, definitely on, and clear, which is a sort of "undefined" state. Default is two-state (like UISwitch).
- The class can use the SFSymbols checkbox symbols, but these are a bit awkward for UIKit (which is why UIKit doesn't use them).
- You can also supply three images to use for the control (or only two, if you are sticking with the "two-state" version).
- All images are drawn template mode, using the control `tintColor`.
- Like the UISwitch class, you can specifically call `setOn(_:animated:)`, and it will animate the transition. You can also call `setClear(animated:)`, if in three-state mode.
- This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting `useHaptics` to false.
+ By default, the class uses the SFSymbols checkbox symbols, but these are sometimes considered a bit awkward for UIKit (which is why UIKit doesn't use them).
+ You can also supply three of your own images to use for the control (or only two, if you are sticking with the "two-state" version).
+ All images are drawn template mode, using the control ``tintColor``.
+ Like the UISwitch class, you can specifically call ``setOn(_:animated:)``, and it will animate the transition. You can also call ``setClear(animated:)``, if in three-state mode.
+ This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting ``useHaptics`` to false.
  */
 @IBDesignable
 open class RVS_Checkbox: UISwitch {
@@ -101,7 +101,7 @@ open class RVS_Checkbox: UISwitch {
         /**
          This needs to be overridden.
          
-         This supplies a rendered image. It will use the myFillColor value (default myFillColor is label color).
+         This supplies a rendered image. It will use the ``myFillColor`` value (default ``myFillColor`` is label color).
          */
         var asImage: UIImage! { preconditionFailure("This Computed Property Must be Overridden by Subclasses!" ) }
     }
@@ -192,7 +192,7 @@ open class RVS_Checkbox: UISwitch {
     /**
      This returns the appropriate image to use for the current state and settings.
      
-     - parameter forState: The state that we wish to get an image for.
+     - parameter inState: The state that we wish to get an image for.
      - returns: A UIImage for the proper image. Nil, if undefined (should never happen)
      */
     private func _image(forState inState: States) -> UIImage? {
@@ -241,13 +241,22 @@ open class RVS_Checkbox: UISwitch {
      These Int-based enum values define the possible switch states.
      */
     public enum States: Int {
-        /// Control is in "off" state, which displays an "X" in the default.
+        /* ############################################################## */
+        /**
+         Control is in "off" state, which displays a 􀂒 in the default.
+         */
         case off = -1
         
-        /// Control is in "clear" state, which displays an empty circle in the default.
+        /* ############################################################## */
+        /**
+         Control is in "clear" state, which displays a 􀃞 in the default.
+         */
         case clear
         
-        /// Control is in "on" state, which displays a "√" in the default.
+        /* ############################################################## */
+        /**
+         Control is in "on" state, which displays a 􀃳 in the default.
+         */
         case on
     }
     
@@ -266,10 +275,8 @@ open class RVS_Checkbox: UISwitch {
      */
     open var checkboxState: States = .clear {
         didSet {
-            if nil != self._selectionFeedbackGenerator { // This is because we don't want to short out any animations.
-                self._selectionFeedbackGenerator?.selectionChanged()
-                self._refresh()
-            }
+            self._selectionFeedbackGenerator?.selectionChanged()
+            self._refresh()
         }
     }
 
@@ -295,7 +302,7 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      This is the image to be displayed in an "ON" state.
-     > NOTE: If either offImage or onImage is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
+     > NOTE: If either ``offImage`` or ``onImage`` is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
      */
     @IBInspectable open override var onImage: UIImage? {
         didSet {
@@ -307,7 +314,7 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      This is the image to be displayed in an "OFF" state.
-     > NOTE: If either offImage or onImage is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
+     > NOTE: If either ``offImage`` or ``onImage`` is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
      */
     @IBInspectable open override var offImage: UIImage? {
         didSet {
@@ -319,7 +326,7 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      This is the image to be displayed in a "CLEAR" ("OFF," if two-state) state.
-     > NOTE: If a clear image is not provided, then useOffImageForClear is forced on.
+     > NOTE: If a clear image is not avaialable, then ``useOffImageForClear`` is forced on. ``isUsingSFSymbols`` mode (default) will always have the image avaialable.
      */
     @IBInspectable open var clearImage: UIImage? {
         didSet {
@@ -335,14 +342,14 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      If this is true, then control is three state (OFF-CLEAR-ON). Otherwise (default), it is two state (OFF-ON).
-     > NOTE: If a clear image is not avaialable, then useOffImageForClear is forced on. isUsingSFSymbols will always have the image avaialable.
+     > NOTE: If a clear image is not avaialable, then ``useOffImageForClear`` is forced on. ``isUsingSFSymbols`` mode (default) will always have the image avaialable.
      */
     @IBInspectable open var isThreeState: Bool = false { didSet { self._refresh() } }
 
     /* ################################################################## */
     /**
      If this is true (default is false), then CLEAR will use the image supplied for the three-state OFF.
-     > NOTE: If a clear image is not avaialable, then useOffImageForClear is forced on. isUsingSFSymbols will always have the image avaialable.
+     > NOTE: If a clear image is not avaialable, then ``useOffImageForClear`` is forced on. ``isUsingSFSymbols`` mode (default) will always have the image avaialable.
      */
     @IBInspectable open var useOffImageForClear: Bool = true {
         didSet {
@@ -386,12 +393,14 @@ extension RVS_Checkbox {
     public var value: Int {
         get { self.checkboxState.rawValue }
         set {
-            let lowerBound = self.isThreeState ? States.off.rawValue : States.clear.rawValue
+            let lowerBound = States.off.rawValue
             let upperBound = States.on.rawValue
             
-            precondition((lowerBound...upperBound).contains(newValue), "Value Out of Range!")
+            precondition((lowerBound...upperBound).contains(newValue), "Value (\(newValue)) is not in the range \(lowerBound)...\(upperBound).")
             
-            self.checkboxState = States(rawValue: newValue) ?? .clear
+            let newValueTemp = (newValue == States.clear.rawValue && !self.isThreeState) ? States.off.rawValue : newValue
+
+            self.checkboxState = States(rawValue: newValueTemp) ?? .clear
         }
     }
 
@@ -407,7 +416,7 @@ extension RVS_Checkbox {
      This returns true, if the control is in "OFF" state (three state), or either "off" or "clear" (two-state).
      READ-ONLY
      */
-    public var isOff: Bool { self.isThreeState ? .off == self.checkboxState : .on != self.checkboxState }
+    public var isOff: Bool { .off == self.checkboxState }
 }
 
 /* ################################################################################################################################## */
@@ -421,7 +430,7 @@ extension RVS_Checkbox {
      */
     open override var isOn: Bool {
         get { .on == self.checkboxState }
-        set { self.checkboxState = newValue ? .on : !self.isThreeState ? .clear : .off }
+        set { self.checkboxState = newValue ? .on : .off }
     }
 }
 

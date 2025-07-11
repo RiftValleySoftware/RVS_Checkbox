@@ -47,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CenterImage" width="1066" height="1066"/>
+        <image name="CenterImage" width="919" height="912"/>
         <image name="background-gradient" width="1" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

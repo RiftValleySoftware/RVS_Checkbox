@@ -1,5 +1,5 @@
 /**
- © Copyright 2021, The Great Rift Valley Software Company
+ © Copyright 2021-2025, The Great Rift Valley Software Company
 
  LICENSE:
 
@@ -202,6 +202,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
      */
     @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
         checkboxObject?.isThreeState = inSwitch.isOn
+        useOffImageSwitch?.setOn(!inSwitch.isOn, animated: true)
+        useOffImageSwitch?.sendActions(for: .valueChanged)
         setSegmentedSwitch()
         setUpUI()
     }
@@ -408,7 +410,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.label], for: .normal)
             valueChangedSegmentedSwitch.setTitleTextAttributes([.foregroundColor: UIColor.label.withAlphaComponent(0.25)], for: .disabled)
-            valueChangedSegmentedSwitch.setEnabled(checkboxObject?.isThreeState ?? false, forSegmentAt: RVS_Checkbox.States.off.rawValue + 1)
             for index in 0..<valueChangedSegmentedSwitch.numberOfSegments {
                 valueChangedSegmentedSwitch.setTitle((valueChangedSegmentedSwitch.titleForSegment(at: index) ?? "ERROR").localizedVariant, forSegmentAt: index)
             }
@@ -513,7 +514,14 @@ extension RVS_Checkbox_TestHarness_ViewController {
         standardLabelButton?.isEnabled = stateSwitch?.isOn ?? false
         threeStateLabelButton?.isEnabled = !(stateSwitch?.isOn ?? false)
         
-        valueChangedSegmentedSwitch?.setEnabled(stateSwitch?.isOn ?? false, forSegmentAt: RVS_Checkbox.States.off.rawValue + 1)
+        if stateSwitch?.isOn ?? false {
+            valueChangedSegmentedSwitch?.setEnabled(true, forSegmentAt: RVS_Checkbox.States.clear.rawValue + 1)
+        } else {
+            if valueChangedSegmentedSwitch?.selectedSegmentIndex == RVS_Checkbox.States.clear.rawValue + 1 {
+                valueChangedSegmentedSwitch?.selectedSegmentIndex = RVS_Checkbox.States.off.rawValue + 1
+            }
+            valueChangedSegmentedSwitch?.setEnabled(false, forSegmentAt: RVS_Checkbox.States.clear.rawValue + 1)
+        }
         
         setSelectedImage()
         

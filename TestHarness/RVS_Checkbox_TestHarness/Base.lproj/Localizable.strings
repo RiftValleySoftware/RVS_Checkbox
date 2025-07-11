@@ -21,8 +21,8 @@
 */
 "SLUG-STANDARD-STATE"   =   "Two-State";
 "SLUG-THREE-STATE"      =   "Three-State";
-"SLUG-USE-OFF-IMAGE"    =   "Off Image       ";
-"SLUG-ANIMATED"         =   "Animated        ";
+"SLUG-USE-OFF-IMAGE"    =   "Off Image for Clear ";
+"SLUG-ANIMATED"         =   "Animated            ";
 "SLUG-OFF"              =   "OFF";
 "SLUG-CLEAR"            =   "CLEAR";
 "SLUG-ON"               =   "ON";
