@@ -1,4 +1,10 @@
 # RVS_Checkbox Change Log
+## 3.0.1
+
+- **July 12, 2025**
+
+- Fixed the docc generator.
+
 ## 3.0.0
 
 - **July 12, 2025**

@@ -1,6 +1,6 @@
 # ``RVS_Checkbox``
 
-![Icon](img/icon.png)
+![Icon](icon.png)
 
 ## Overview
 This project is a robust, Swift-only, high-quality, "drop-in replacement" for the traditional [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), provided by Apple. It derives from [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), and provides almost exactly the same API as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
@@ -14,26 +14,26 @@ You may also create instances of [`RVS_Checkbox`](https://github.com/RiftValleyS
 ## WHAT PROBLEM DOES THIS SOLVE?
 The classic [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch):
 
-![The Standard UISwitch Control](img/UISwitch.png)
+![The Standard UISwitch Control](UISwitch.png)
 
 Is a great UI element, and is used in place of the classic ["checkbox"](https://developer.apple.com/documentation/appkit/nsbutton) for Mac:
 
-![The Standard Mac Checkbox Control](img/CheckBoxes_Selected.png)
+![The Standard Mac Checkbox Control](CheckBoxes_Selected.png)
 
 Which doesn't actually work as well, in the "fat finger" world of iOS UI.
 ### So, What's the Problem?
 The issue is that the [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
 
 Because of the horizontal aspect of the control, it is fairly "natural" to have the label to the left:
-![A Switch, With the Label on the Left](img/UISwitchLabels-Left.png)
+![A Switch, With the Label on the Left](UISwitchLabels-Left.png)
 
 ...or the right:
 
-![A Switch, With the Label on the Right](img/UISwitchLabels-Right.png)
+![A Switch, With the Label on the Right](UISwitchLabels-Right.png)
 
 But it looks "awkward" to have it below the switch:
 
-![A Switch, With the Label on the Bottom](img/UISwitchLabels-Bottom.png)
+![A Switch, With the Label on the Bottom](UISwitchLabels-Bottom.png)
 
 This is especially true, if you use "label buttons," like I do (run the test harness, to see them in action).
 It is also a bit "weird," as the slider appearance seems to ask for a swipe gesture, as opposed to a tap gesture (which is really what we want). That means that the gesture also requires some "mental runway."
@@ -63,21 +63,21 @@ Here are what the images look like (the color is controlled by the [`tintColor` 
     <tbody>
     <tr>
         <td><strong>ON</strong></td>
-        <td><img src="img/SFOn.png" alt="The SF Symbols Image for the ON State." /></td>
-        <td><img src="img/TestImage-2.png" alt="An Example Customer-Supplied Image for the ON State." /></td>
-        <td><img src="img/CHICK.png" alt="An Example Customer-Supplied Image for the ON State." /></td>
+        <td><img src="SFOn.png" alt="The SF Symbols Image for the ON State." /></td>
+        <td><img src="TestImage-2.png" alt="An Example Customer-Supplied Image for the ON State." /></td>
+        <td><img src="CHICK.png" alt="An Example Customer-Supplied Image for the ON State." /></td>
     </tr>
     <tr>
         <td><strong>OFF</strong></td>
-        <td><img src="img/SFOff.png" alt="The SF Symbols Image for the OFF State." /></td>
-        <td><img src="img/TestImage-0.png" alt="An Example Customer-Supplied Image for the OFF State." /></td>
-        <td><img src="img/EGG.png" alt="An Example Customer-Supplied Image for the OFF State." /></td>
+        <td><img src="SFOff.png" alt="The SF Symbols Image for the OFF State." /></td>
+        <td><img src="TestImage-0.png" alt="An Example Customer-Supplied Image for the OFF State." /></td>
+        <td><img src="EGG.png" alt="An Example Customer-Supplied Image for the OFF State." /></td>
     </tr>
     <tr>
         <td><strong>CLEAR</strong></td>
-        <td><img src="img/SFClear.png" alt="The SF Symbols Image for the CLEAR State." /></td>
-        <td><img src="img/TestImage-1.png" alt="An Example Customer-Supplied Image for the CLEAR State." /></td>
-        <td><img src="img/HATCHING.png" alt="An Example Customer-Supplied Image for the CLEAR State." /></td>
+        <td><img src="SFClear.png" alt="The SF Symbols Image for the CLEAR State." /></td>
+        <td><img src="TestImage-1.png" alt="An Example Customer-Supplied Image for the CLEAR State." /></td>
+        <td><img src="HATCHING.png" alt="An Example Customer-Supplied Image for the CLEAR State." /></td>
     </tr>
     </tbody>
 </table>
@@ -128,7 +128,7 @@ Once you have the reference, then you won't need to import the module.
 
 In Interface Builder/Storyboard Editor, simply drag in a [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) or [`UIView`](https://developer.apple.com/documentation/uikit/uiview) reference, and rename the class to ``RVS_Checkbox``. The inspectable elements should be immediately available in the Attributes Inspector.
 
-![The Attributes Inspector](img/Attributes.png)
+![The Attributes Inspector](Attributes.png)
 
 A "Clear" image is not required, unless Is Three State is On.
 
