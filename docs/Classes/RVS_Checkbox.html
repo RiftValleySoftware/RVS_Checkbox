@@ -81,9 +81,8 @@
               </div>
             <p>This class provides a simple Swift-only module that implements a &ldquo;checkbox&rdquo; to replace the standard UISwitch.
 The switch can behave exactly like a standard UISwitch, but also has a &ldquo;three-state&rdquo; option, where it has definitely off, definitely on, and clear, which is a sort of &ldquo;undefined&rdquo; state. Default is two-state (like UISwitch).
-The class can use the SFSymbols checkbox symbols, but these are a bit awkward for UIKit (which is why UIKit doesn&rsquo;t use them), so we have three dynamically-generated &ldquo;artisanal&rdquo; images that can be used to
-implement a round checkbox, which is friendlier for fat fingers.
-You can also supply three images to use for the control (or only two, if you are sticking with the &ldquo;two-state&rdquo; version).
+By default, the class uses the SFSymbols checkbox symbols, but these are sometimes considered a bit awkward for UIKit (which is why UIKit doesn&rsquo;t use them).
+You can also supply three of your own images to use for the control (or only two, if you are sticking with the &ldquo;two-state&rdquo; version).
 All images are drawn template mode, using the control <code>tintColor</code>.
 Like the UISwitch class, you can specifically call <code>setOn(_:animated:)</code>, and it will animate the transition. You can also call <code>setClear(animated:)</code>, if in three-state mode.
 This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting <code>useHaptics</code> to false.</p>
@@ -201,6 +200,40 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RVS_CheckboxAAC16isUsingSFSymbolsSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isUsingSFSymbols" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RVS_CheckboxAAC16isUsingSFSymbolsSbvp">isUsingSFSymbols</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If true, then the control will not use the dynamically-generated images, and will, instead, use standard SFSymbols square images.
+If the user supplies images, then this will be ignored.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If either offImage or onImage is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">isUsingSFSymbols</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -228,6 +261,11 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This is the image to be displayed in an &ldquo;ON&rdquo; state.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If either <code><a href="../Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)offImage">offImage</a></code> or <code>onImage</code> is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -257,6 +295,11 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This is the image to be displayed in an &ldquo;OFF&rdquo; state.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If either <code>offImage</code> or <code><a href="../Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)onImage">onImage</a></code> is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -286,6 +329,11 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This is the image to be displayed in a &ldquo;CLEAR&rdquo; (&ldquo;OFF,&rdquo; if two-state) state.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If a clear image is not avaialable, then <code><a href="../Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)useOffImageForClear">useOffImageForClear</a></code> is forced on. <code><a href="../Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC16isUsingSFSymbolsSbvp">isUsingSFSymbols</a></code> mode (default) will always have the image avaialable.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -315,6 +363,11 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If this is true, then control is three state (OFF-CLEAR-ON). Otherwise (default), it is two state (OFF-ON).</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If a clear image is not avaialable, then <code><a href="../Classes/RVS_Checkbox.html#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)useOffImageForClear">useOffImageForClear</a></code> is forced on. <code><a href="../Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC16isUsingSFSymbolsSbvp">isUsingSFSymbols</a></code> mode (default) will always have the image avaialable.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -324,36 +377,6 @@ This uses haptics, in the same manner as UISwitch, except that you can turn them
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
 <span class="kd">@MainActor</span>
 <span class="kd">open</span> <span class="k">var</span> <span class="nv">isThreeState</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)isUsingSFSymbols"></a>
-                    <a name="//apple_ref/swift/Property/isUsingSFSymbols" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RVS_Checkbox@objc(cs)RVS_Checkbox(py)isUsingSFSymbols">isUsingSFSymbols</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>If true, then the control will not use the dynamically-generated images, and will, instead, use standard SFSymbols square images.
-If the user supplies images, then this will be ignored.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">@MainActor</span>
-<span class="kd">open</span> <span class="k">var</span> <span class="nv">isUsingSFSymbols</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -373,8 +396,12 @@ If the user supplies images, then this will be ignored.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>If this is true (default is false), then CLEAR will use the image supplied for the three-state OFF.
-This is ignored in three-state mode, or SFSymbols mode (which already does that).</p>
+                        <p>If this is true (default is false), then CLEAR will use the image supplied for the three-state OFF.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If a clear image is not avaialable, then <code>useOffImageForClear</code> is forced on. <code><a href="../Classes/RVS_Checkbox.html#/s:12RVS_CheckboxAAC16isUsingSFSymbolsSbvp">isUsingSFSymbols</a></code> mode (default) will always have the image avaialable.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -449,7 +476,7 @@ This is ignored in three-state mode, or SFSymbols mode (which already does that)
 
 <ul>
 <li>-1: OFF</li>
-<li>0: CLEAR (Or OFF, in two-state)</li>
+<li>0: CLEAR (if two-state, this is not returned -OFF is returned, instead)</li>
 <li>1: ON</li>
 </ul>
 
@@ -623,7 +650,7 @@ If explicitly set to false, the checkbox is set to OFF (or CLEAR for two  state)
                             <tr>
                               <td>
                                 <code>
-                                <em>animated</em>
+                                <em>inIsAnimated</em>
                                 </code>
                               </td>
                               <td>
@@ -670,7 +697,7 @@ If explicitly set to false, the checkbox is set to OFF (or CLEAR for two  state)
                             <tr>
                               <td>
                                 <code>
-                                <em>animated</em>
+                                <em>inIsAnimated</em>
                                 </code>
                               </td>
                               <td>
@@ -729,7 +756,7 @@ If explicitly set to false, the checkbox is set to OFF (or CLEAR for two  state)
                             <tr>
                               <td>
                                 <code>
-                                <em>animated</em>
+                                <em>inIsAnimated</em>
                                 </code>
                               </td>
                               <td>
@@ -790,7 +817,7 @@ If in two-state, negative numbers are the same as 0.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>animated</em>
+                                <em>inIsAnimated</em>
                                 </code>
                               </td>
                               <td>
@@ -818,6 +845,34 @@ If in two-state, negative numbers are the same as 0.</p>
                 </div>
               </div>
               <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@RVS_Checkbox@objc(cs)RVS_Checkbox(py)tintColor"></a>
+                    <a name="//apple_ref/swift/Property/tintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@RVS_Checkbox@objc(cs)RVS_Checkbox(py)tintColor">tintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The property is overridden, so we will trigger a redraw, if it changes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="k">override</span> <span class="kd">open</span> <span class="k">var</span> <span class="nv">tintColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -937,7 +992,7 @@ If in two-state, negative numbers are the same as 0.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>with</em>
+                                <em>inEvent</em>
                                 </code>
                               </td>
                               <td>
@@ -1000,7 +1055,7 @@ If in two-state, negative numbers are the same as 0.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>with</em>
+                                <em>inEvent</em>
                                 </code>
                               </td>
                               <td>
@@ -1064,7 +1119,7 @@ If the touch ends inside the control, the value is changed, and messages are sen
                             <tr>
                               <td>
                                 <code>
-                                <em>with</em>
+                                <em>inEvent</em>
                                 </code>
                               </td>
                               <td>
@@ -1111,7 +1166,7 @@ If the touch ends inside the control, the value is changed, and messages are sen
                             <tr>
                               <td>
                                 <code>
-                                <em>with</em>
+                                <em>inEvent</em>
                                 </code>
                               </td>
                               <td>
@@ -1134,7 +1189,7 @@ If the touch ends inside the control, the value is changed, and messages are sen
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2025 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2025-05-31)</p>
+      <p>&copy; 2025 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2025-07-12)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

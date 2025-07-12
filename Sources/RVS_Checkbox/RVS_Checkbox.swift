@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 3.0.2
+ Version 3.0.3
 */
 
 import UIKit
@@ -544,6 +544,10 @@ extension RVS_Checkbox {
 // MARK: - PUBLIC BASE CLASS OVERRIDES -
 /* ###################################################################################################################################### */
 extension RVS_Checkbox {
+    /* ################################################################## */
+    /**
+     The property is overridden, so we will trigger a redraw, if it changes.
+     */
     override open var tintColor: UIColor! {
         didSet {
             super.tintColor = self.tintColor

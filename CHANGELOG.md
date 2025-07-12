@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 3.0.3
+
+- **July 12, 2025**
+
+- Had to add code documentation for one overridden property.
+
 ## 3.0.2
 
 - **July 12, 2025**

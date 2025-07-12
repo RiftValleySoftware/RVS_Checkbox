@@ -88,41 +88,11 @@ The images will resize with the control, but will retain their aspect (Aspect fi
 
 > NOTE: Only "always template" images will be displayed as tinted.
 
-## REQUIREMENTS
-
-``RVS_Checkbox`` is an [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)-only [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol), designed for use by [Swift](https://swift.org) language applications.
-
-It is designed for native Swift iOS application development.
-
-This requires [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados) version 17.0 or above.
-
 ## DEPENDENCIES
 
 There are no dependencies for the module. If you will be running [the test harness](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness), you will need to load [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox), as well.
 
 > NOTE: The [the RVS_Generic_Swift_Toolbox project](https://github.com/RiftValleySoftware/RVS_Generic_Swift_Toolbox) is only for the test harness. The control, itself, has no dependencies.
-
-## INSTALLATION
-
-The control is provided as a [Swift Package Manager](https://swift.org/package-manager/) package, and can also be installed using [Carthage](https://github.com/Carthage/Carthage).
-
-The URL for the SPM module, is [git@github.com:RiftValleySoftware/RVS_Checkbox.git](git@github.com:RiftValleySoftware/RVS_Checkbox.git).
-
-Once the package has been added to your project, remember to import it, when you use it:
-
-    import RVS_Checkbox
-
-If you are using Carthage, then you should add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
-
-    github "RiftValleySoftware/RVS_Checkbox"
-
-Then, open Terminal, and navigate to the top of the project directory, and type this into Terminal:
-
-    carthage update
-    
-It will create a directory at the same level as the Cartfile, called "Carthage." Inside of this directory, will be another directory, called "Checkouts." Inside of that directory, will be another one, called "RVS_Checkbox." You want to go into "Sources/RVS_Checkout," and access [the RVS_Checkbox.swift file](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift). Drag a reference to this into your project, and associate it with your app build target.
-
-Once you have the reference, then you won't need to import the module.
 
 ## USAGE
 
