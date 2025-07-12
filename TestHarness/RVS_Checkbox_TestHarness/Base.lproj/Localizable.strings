@@ -21,13 +21,13 @@
 */
 "SLUG-STANDARD-STATE"   =   "Two-State";
 "SLUG-THREE-STATE"      =   "Three-State";
-"SLUG-USE-OFF-IMAGE"    =   "Off Image for Clear ";
-"SLUG-ANIMATED"         =   "Animated            ";
+"SLUG-USE-OFF-IMAGE"    =   "Off Image";
+"SLUG-ANIMATED"         =   "Animated";
+"SLUG-ENABLED"          =   "Enabled";
+"SLUG-HAPTICS"          =   "Haptics";
 "SLUG-OFF"              =   "OFF";
 "SLUG-CLEAR"            =   "CLEAR";
 "SLUG-ON"               =   "ON";
-"SLUG-ENABLED"          =   "Enabled";
-"SLUG-HAPTICS"          =   "Haptics";
 "SLUG-CUSTOM-HEADER"    =   "Custom Image (Storyboard) Example:";
 "SLUG-DYNAMIC-HEADER"   =   "Dynamic Creation Examples:";
 

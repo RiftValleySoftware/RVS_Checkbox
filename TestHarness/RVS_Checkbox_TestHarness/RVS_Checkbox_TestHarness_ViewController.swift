@@ -215,7 +215,17 @@ extension RVS_Checkbox_TestHarness_ViewController {
         self.setSegmentedSwitch()
         self.setUpUI()
     }
-    
+
+    /* ################################################################## */
+    /**
+     Called when any switch changes.
+     
+     - parameter: The switch instance (ignored).
+     */
+    @IBAction func switchChanged(_: UISwitch) {
+        self.setUpUI()
+    }
+
     /* ################################################################## */
     /**
      Called when the `useOffImageSwitch` label button is hit. It just toggles the control, and also calls its handler.
@@ -223,30 +233,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
       - parameter: Ignored
      */
     @IBAction func useOffImageLabelButtonHit(_: Any) {
-        guard let useOffImageSwitch = self.useOffImageSwitch else { return }
-        useOffImageSwitch.setOn(!useOffImageSwitch.isOn, animated: true)
-        self.useOffImageSwitchChanged(useOffImageSwitch)
-   }
-
-    /* ################################################################## */
-    /**
-     Called when the switch, controlling the use of the OFF image as the CLEAR image is requested.
-     
-     - parameter inSwitch: The switch instance.
-     */
-    @IBAction func useOffImageSwitchChanged(_ inSwitch: UISwitch) {
-        self.checkboxObject?.useOffImageForClear = inSwitch.isOn
-        self.setUpUI()
-    }
-
-    /* ################################################################## */
-    /**
-     Called when the switch, controlling the use of haptics is requested.
-     
-     - parameter inSwitch: The switch instance.
-     */
-    @IBAction func useHapticsSwitchChanged(_ inSwitch: UISwitch) {
-        self.setUpUI()
+        self.useOffImageSwitch?.setOn(!(self.useOffImageSwitch?.isOn ?? true), animated: true)
+        self.useOffImageSwitch?.sendActions(for: .valueChanged)
     }
     
     /* ################################################################## */
@@ -256,20 +244,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
      - parameter: Ignored
      */
     @IBAction func useHapticsLabelButtonHit(_: Any) {
-        guard let useHapticsSwitch = self.useHapticsSwitch else { return }
-        useHapticsSwitch.setOn(!useHapticsSwitch.isOn, animated: true)
-        self.useHapticsSwitchChanged(useHapticsSwitch)
-    }
-
-    /* ################################################################## */
-    /**
-     Called when the switch, controlling the enabled state of the control is changed.
-     
-     - parameter inSwitch: The switch instance.
-     */
-    @IBAction func enabledSwitchChanged(_ inSwitch: UISwitch) {
-        self.checkboxObject?.isEnabled = inSwitch.isOn
-        self.setUpUI()
+        self.useHapticsSwitch?.setOn(!(self.useHapticsSwitch?.isOn ?? true), animated: true)
+        self.useHapticsSwitch?.sendActions(for: .valueChanged)
     }
     
     /* ################################################################## */
@@ -279,9 +255,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
      - parameter: Ignored
      */
     @IBAction func enabledSwitchLabelButtonHit(_: Any) {
-        guard let enabledSwitch = self.enabledSwitch else { return }
-        enabledSwitch.setOn(!enabledSwitch.isOn, animated: true)
-        self.enabledSwitchChanged(enabledSwitch)
+        self.enabledSwitch?.setOn(!(self.enabledSwitch?.isOn ?? true), animated: true)
+        self.enabledSwitch?.sendActions(for: .valueChanged)
     }
 
     /* ################################################################## */
@@ -292,6 +267,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      */
     @IBAction func animatedSwitchLabelButtonHit(_: Any) {
         self.animatedSwitch?.setOn(!(self.animatedSwitch?.isOn ?? true), animated: true)
+        self.animatedSwitch?.sendActions(for: .valueChanged)
     }
 
     /* ################################################################## */
@@ -500,9 +476,9 @@ extension RVS_Checkbox_TestHarness_ViewController {
             let centerDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addArrangedSubview(centerDynamicCheckbox)
             centerDynamicCheckbox.tintColor = checkboxObject?.tintColor
-            centerDynamicCheckbox.offImage = UIImage(named: "OFF")
-            centerDynamicCheckbox.clearImage = UIImage(named: "CLEAR")
-            centerDynamicCheckbox.onImage = UIImage(named: "ON")
+            centerDynamicCheckbox.offImage = UIImage(named: "SLUG-OFF".localizedVariant)
+            centerDynamicCheckbox.clearImage = UIImage(named: "SLUG-CLEAR".localizedVariant)
+            centerDynamicCheckbox.onImage = UIImage(named: "SLUG-ON".localizedVariant)
             
             self.centerDynamicCheckbox = centerDynamicCheckbox
 
@@ -522,9 +498,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
      This sets up a few of the displayed controls and whatnot.
      */
     func setUpUI() {
-        enabledSwitch?.isOn = checkboxObject?.isEnabled ?? false
-        useOffImageSwitch?.isOn = checkboxObject?.useOffImageForClear ?? false
-
         standardLabelButton?.isEnabled = stateSwitch?.isOn ?? false
         threeStateLabelButton?.isEnabled = !(stateSwitch?.isOn ?? false)
         
@@ -539,6 +512,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
         
         setSelectedImage()
         
+        self.tintSelectorSegmentedSwitch?.isEnabled = 1 != self.imageSelectorSegmentedSwitch?.selectedSegmentIndex
+
         if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
            let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
             self.checkboxObject?.tintColor = color
@@ -593,9 +568,9 @@ extension RVS_Checkbox_TestHarness_ViewController {
             case 0:
                 self.checkboxObject?.isUsingSFSymbols = true
             case 1:
-                onImage = UIImage(named: "ON")
-                clearImage = UIImage(named: "CLEAR")
-                offImage = UIImage(named: "OFF")
+                onImage = UIImage(named: "SLUG-ON".localizedVariant)
+                clearImage = UIImage(named: "SLUG-CLEAR".localizedVariant)
+                offImage = UIImage(named: "SLUG-OFF".localizedVariant)
             default:
                 onImage = UIImage(named: "TestImage-2")
                 clearImage = UIImage(named: "TestImage-1")
