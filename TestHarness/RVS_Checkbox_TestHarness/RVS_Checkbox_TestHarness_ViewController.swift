@@ -257,7 +257,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      */
     @IBAction func useHapticsLabelButtonHit(_: Any) {
         guard let useHapticsSwitch = self.useHapticsSwitch else { return }
-        useHapticsSwitch.setOn(useHapticsSwitch.isOn, animated: true)
+        useHapticsSwitch.setOn(!useHapticsSwitch.isOn, animated: true)
         self.useHapticsSwitchChanged(useHapticsSwitch)
     }
 

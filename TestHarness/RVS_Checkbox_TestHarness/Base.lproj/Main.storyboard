@@ -175,7 +175,7 @@
                                                 <rect key="frame" x="272" y="9.5" width="102" height="30"/>
                                                 <state key="normal" title="SLUG-HAPTICS"/>
                                                 <connections>
-                                                    <action selector="useHapticsLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rs-FR-ngD"/>
+                                                    <action selector="useHapticsLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9mC-ZF-f93"/>
                                                 </connections>
                                             </button>
                                         </subviews>
