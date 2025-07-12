@@ -199,17 +199,24 @@ open class RVS_Checkbox: UISwitch {
         var ret: UIImage?
         let color = self.isEnabled ? self.tintColor ?? .label : .lightGray
         
-        let offImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFOff, withConfiguration: Self._sSFConfig) : self.offImage ?? UIImage(systemName: "nosign")
-        let clearImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFClear, withConfiguration: Self._sSFConfig) : self.clearImage ?? UIImage(systemName: "nosign")
-        let onImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFOn, withConfiguration: Self._sSFConfig) : self.onImage ?? UIImage(systemName: "nosign")
+        let offImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFOff, withConfiguration: Self._sSFConfig)?.withRenderingMode(.alwaysTemplate)
+                                                : self.offImage ?? UIImage(systemName: "nosign")
+        let clearImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFClear, withConfiguration: Self._sSFConfig)?.withRenderingMode(.alwaysTemplate)
+                                                : self.clearImage ?? UIImage(systemName: "nosign")
+        let onImage = self.isUsingSFSymbols ? UIImage(systemName: Self._sSFOn, withConfiguration: Self._sSFConfig)?.withRenderingMode(.alwaysTemplate)
+                                                : self.onImage ?? UIImage(systemName: "nosign")
 
         switch inState {
         case .clear:
-            ret = (self.useOffImageForClear ? offImage : clearImage)?.withTintColor(color)
+            ret = (self.useOffImageForClear ? offImage : clearImage)
         case .on:
-            ret = onImage?.withTintColor(color)
+            ret = onImage
         case .off:
-            ret = offImage?.withTintColor(color)
+            ret = offImage
+        }
+        
+        if .alwaysTemplate == ret?.renderingMode {
+            ret = ret?.withTintColor(color)
         }
         
         return ret
@@ -387,18 +394,29 @@ extension RVS_Checkbox {
     /**
      This is the control value, as an Int:
         - -1: OFF
-        -  0: CLEAR (Or OFF, in two-state)
+        -  0: CLEAR (if two-state, this is not returned -OFF is returned, instead)
         -  1: ON
      */
     public var value: Int {
-        get { self.checkboxState.rawValue }
+        get {
+            switch self.checkboxState {
+            case .off:
+                return States.off.rawValue
+                
+            case .clear:
+                return self.isThreeState ? States.clear.rawValue : States.off.rawValue
+                
+            case .on:
+                return States.on.rawValue
+            }
+        }
         set {
             let lowerBound = States.off.rawValue
             let upperBound = States.on.rawValue
             
             precondition((lowerBound...upperBound).contains(newValue), "Value (\(newValue)) is not in the range \(lowerBound)...\(upperBound).")
             
-            let newValueTemp = (newValue == States.clear.rawValue && !self.isThreeState) ? States.off.rawValue : newValue
+            let newValueTemp = (States.clear.rawValue == newValue && !self.isThreeState) ? States.off.rawValue : newValue
 
             self.checkboxState = States(rawValue: newValueTemp) ?? .clear
         }
