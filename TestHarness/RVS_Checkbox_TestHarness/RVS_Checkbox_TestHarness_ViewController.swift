@@ -495,7 +495,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
     
     /* ################################################################## */
     /**
-     This sets up a few of the displayed controls and whatnot.
+     This sets up the screen to reflect the current settings.
      */
     func setUpUI() {
         standardLabelButton?.isEnabled = stateSwitch?.isOn ?? false
