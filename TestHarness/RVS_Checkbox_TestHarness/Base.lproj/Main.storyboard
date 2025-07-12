@@ -22,25 +22,38 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJm-MP-JeU">
-                                <rect key="frame" x="20" y="96" width="374" height="562"/>
+                                <rect key="frame" x="20" y="96" width="374" height="619"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
+                                        <rect key="frame" x="11.5" y="0.0" width="351" height="50"/>
                                         <segments>
                                             <segment title="">
-                                                <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             </segment>
                                             <segment title="">
-                                                <imageReference key="image" image="ON" symbolScale="large" renderingMode="template"/>
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             </segment>
                                             <segment title="">
-                                                <imageReference key="image" image="triangleshape.fill" catalog="system" symbolScale="large"/>
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             </segment>
                                         </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="selectedSegmentTintColor" name="AccentColor"/>
                                         <connections>
-                                            <action selector="imageSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAt-ye-1Aj"/>
+                                            <action selector="tintSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3b9-sz-SEk"/>
                                         </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-h9-cEo">
@@ -84,71 +97,8 @@
                                             <constraint firstAttribute="trailing" secondItem="yOf-Mt-tfX" secondAttribute="trailing" id="ilj-Qs-CLg"/>
                                         </constraints>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VgL-Fb-Tkz">
-                                        <rect key="frame" x="11.5" y="114" width="351" height="50"/>
-                                        <segments>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                            <segment title="">
-                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            </segment>
-                                        </segments>
-                                        <connections>
-                                            <action selector="tintSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3b9-sz-SEk"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-p0-4oB">
-                                        <rect key="frame" x="0.0" y="171" width="374" height="49"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufe-KA-51k" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="49"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Ufe-KA-51k" secondAttribute="height" multiplier="1:1" id="rNH-EL-0MO"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="bek-vL-CpW"/>
-                                                    <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="PgS-n5-Oju"/>
-                                                    <action selector="touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9a-Pr-6j7"/>
-                                                    <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="7Kk-Du-6eO"/>
-                                                    <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PFo-4M-Umj"/>
-                                                </connections>
-                                            </switch>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
-                                                <rect key="frame" x="65" y="0.0" width="309" height="50"/>
-                                                <segments>
-                                                    <segment title="SLUG-OFF"/>
-                                                    <segment title="SLUG-CLEAR" enabled="NO"/>
-                                                    <segment title="SLUG-ON"/>
-                                                </segments>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="selectedSegmentTintColor" name="AccentColor"/>
-                                                <connections>
-                                                    <action selector="valueChangeSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0dX-pK-19c"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-C1-8IB">
-                                        <rect key="frame" x="0.0" y="228" width="374" height="49"/>
+                                        <rect key="frame" x="0.0" y="114" width="374" height="49"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-SI-n9X">
                                                 <rect key="frame" x="0.0" y="9" width="51" height="31"/>
@@ -188,7 +138,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="goN-l8-EUH">
-                                        <rect key="frame" x="0.0" y="285" width="374" height="49"/>
+                                        <rect key="frame" x="0.0" y="171" width="374" height="49"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-CW-dFG">
                                                 <rect key="frame" x="0.0" y="9" width="51" height="31"/>
@@ -229,13 +179,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-CUSTOM-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7w-2n-L7t">
-                                        <rect key="frame" x="85" y="342" width="204" height="49"/>
+                                        <rect key="frame" x="85" y="228" width="204" height="49"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-AA-Fo0">
-                                        <rect key="frame" x="132" y="399" width="110" height="49"/>
+                                        <rect key="frame" x="132" y="285" width="110" height="49"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-cB-LEg" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="49"/>
@@ -277,13 +227,69 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DYNAMIC-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ov-ak-cTo">
-                                        <rect key="frame" x="82" y="456" width="210" height="49"/>
+                                        <rect key="frame" x="82" y="342" width="210" height="49"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cE1-uY-bBc">
-                                        <rect key="frame" x="87" y="513" width="200" height="49"/>
+                                        <rect key="frame" x="87" y="399" width="200" height="49"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-IMAGE-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-sB-uwT" userLabel="SLUG-IMAGE-HEADER">
+                                        <rect key="frame" x="95" y="456" width="184.5" height="49"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
+                                        <rect key="frame" x="0.0" y="513" width="374" height="50"/>
+                                        <segments>
+                                            <segment title="">
+                                                <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="ON" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="triangleshape.fill" catalog="system" symbolScale="large"/>
+                                            </segment>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                        <connections>
+                                            <action selector="imageSelectorSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iAt-ye-1Aj"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j3G-p0-4oB">
+                                        <rect key="frame" x="0.0" y="570" width="374" height="49"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufe-KA-51k" customClass="RVS_Checkbox" customModule="RVS_Checkbox">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Ufe-KA-51k" secondAttribute="height" multiplier="1:1" id="rNH-EL-0MO"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="primaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="bek-vL-CpW"/>
+                                                    <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="PgS-n5-Oju"/>
+                                                    <action selector="touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9a-Pr-6j7"/>
+                                                    <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="7Kk-Du-6eO"/>
+                                                    <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PFo-4M-Umj"/>
+                                                </connections>
+                                            </switch>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-XU-KER">
+                                                <rect key="frame" x="65" y="0.0" width="309" height="50"/>
+                                                <segments>
+                                                    <segment title="SLUG-OFF"/>
+                                                    <segment title="SLUG-CLEAR" enabled="NO"/>
+                                                    <segment title="SLUG-ON"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                                <connections>
+                                                    <action selector="valueChangeSegmentedSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0dX-pK-19c"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -312,7 +318,6 @@
                     <connections>
                         <outlet property="animatedSwitch" destination="vyc-CW-dFG" id="jgo-E1-diH"/>
                         <outlet property="animatedSwitchLabelButton" destination="zki-4x-DS8" id="jNi-kC-2jU"/>
-                        <outlet property="checkboxObject" destination="Ufe-KA-51k" id="JF5-jD-orQ"/>
                         <outlet property="customCheckbox1" destination="XIA-cB-LEg" id="bfM-5g-zD8"/>
                         <outlet property="customCheckbox2" destination="aUg-U6-0of" id="8EO-Wl-um0"/>
                         <outlet property="customHeaderLabel" destination="x7w-2n-L7t" id="IvM-LE-1uj"/>
@@ -320,6 +325,8 @@
                         <outlet property="dynamicHeaderLabel" destination="7ov-ak-cTo" id="hrt-dY-YaX"/>
                         <outlet property="enabledSwitch" destination="q6a-wX-FrB" id="c3c-Nu-Cmc"/>
                         <outlet property="enabledSwitchLabelButton" destination="CTp-HU-W79" id="mE9-fK-gvT"/>
+                        <outlet property="imageCheckboxInstance" destination="Ufe-KA-51k" id="JF5-jD-orQ"/>
+                        <outlet property="imageHeaderLabel" destination="ghj-sB-uwT" id="d5L-93-wdr"/>
                         <outlet property="imageSelectorSegmentedSwitch" destination="o5b-o8-qQT" id="sUa-lJ-Bkt"/>
                         <outlet property="standardLabelButton" destination="Gxu-eg-w9Y" id="emg-p9-cm4"/>
                         <outlet property="stateSwitch" destination="Uqx-16-VTp" id="8cy-zz-AOY"/>

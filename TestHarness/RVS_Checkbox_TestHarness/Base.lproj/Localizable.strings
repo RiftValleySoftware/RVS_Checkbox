@@ -28,6 +28,7 @@
 "SLUG-OFF"              =   "OFF";
 "SLUG-CLEAR"            =   "CLEAR";
 "SLUG-ON"               =   "ON";
-"SLUG-CUSTOM-HEADER"    =   "Custom Image (Storyboard) Example:";
+"SLUG-CUSTOM-HEADER"    =   "Storyboard Custom Image Example:";
 "SLUG-DYNAMIC-HEADER"   =   "Dynamic Creation Examples:";
+"SLUG-IMAGE-HEADER"     =   "Dynamic Change Image Example:";
 

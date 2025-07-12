@@ -64,12 +64,6 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
     
     /* ################################################################## */
     /**
-     The main checkbox instance to be tested.
-     */
-    @IBOutlet weak var checkboxObject: RVS_Checkbox?
-    
-    /* ################################################################## */
-    /**
      This is the label button for the two-state side of the`stateSwitch`. It is disabled, when the switch is in two-state mode.
      */
     @IBOutlet weak var standardLabelButton: UIButton?
@@ -145,18 +139,13 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
      This switch selects the checkbox tinc color.
      */
     @IBOutlet weak var tintSelectorSegmentedSwitch: UISegmentedControl?
-    
-    /* ################################################################## */
-    /**
-     */
-    @IBOutlet weak var imageSelectorSegmentedSwitch: UISegmentedControl?
 
     /* ################################################################## */
     /**
      The label for the customized IB switches.
      */
     @IBOutlet weak var customHeaderLabel: UILabel?
-    
+
     /* ################################################################## */
     /**
      The first custom checkbox
@@ -174,6 +163,23 @@ class RVS_Checkbox_TestHarness_ViewController: UIViewController {
      The label for the dynamically-instantiated switches.
      */
     @IBOutlet weak var dynamicHeaderLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     The label for the changeable image section.
+     */
+    @IBOutlet weak var imageHeaderLabel: UILabel?
+    
+    /* ################################################################## */
+    /**
+     */
+    @IBOutlet weak var imageSelectorSegmentedSwitch: UISegmentedControl?
+    
+    /* ################################################################## */
+    /**
+     The image-display checkbox instance to be tested.
+     */
+    @IBOutlet weak var imageCheckboxInstance: RVS_Checkbox?
 }
 
 /* ###################################################################################################################################### */
@@ -209,7 +215,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      Called when the three-state switch changes value. The `checkboxObject.isThreeState` state is set, according to the switch value.
      */
     @IBAction func stateSwitchChanged(_ inSwitch: UISwitch) {
-        self.checkboxObject?.isThreeState = inSwitch.isOn
+        self.imageCheckboxInstance?.isThreeState = inSwitch.isOn
         self.useOffImageSwitch?.setOn(!inSwitch.isOn, animated: true)
         self.useOffImageSwitch?.sendActions(for: .valueChanged)
         self.setSegmentedSwitch()
@@ -282,7 +288,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
         let value = inSegmentedSwitch.selectedSegmentIndex - 1
         if let state = RVS_Checkbox.States(rawValue: value) {
             print("Setting a value of (\(state)), and it is \(self.animatedSwitch?.isOn ?? false ? "" : "not ")animated.")
-            self.checkboxObject?.setState(state, animated: self.animatedSwitch?.isOn ?? false)
+            self.imageCheckboxInstance?.setState(state, animated: self.animatedSwitch?.isOn ?? false)
         } else {
             print("ERROR! Value (\(value)) is out of range.")
         }
@@ -407,7 +413,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
         self.useHapticsSwitchLabelButton?.setTitle((self.useHapticsSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         self.customHeaderLabel?.text = (self.customHeaderLabel?.text ?? "ERROR").localizedVariant
         self.dynamicHeaderLabel?.text = (self.dynamicHeaderLabel?.text ?? "ERROR").localizedVariant
-        
+        self.imageHeaderLabel?.text = (self.imageHeaderLabel?.text ?? "ERROR").localizedVariant
+
         _imageAspectCoerce(self.imageSelectorSegmentedSwitch)
 
         // Set up the colors for the value segmented switch, and localize.
@@ -440,7 +447,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
             tintSelectorSegmentedSwitch.selectedSegmentIndex = tintSelectorSegmentedSwitch.numberOfSegments - 2
         }
         
-        self.checkboxObject?.isEnabled = true
+        self.imageCheckboxInstance?.isEnabled = true
         self.customCheckbox1?.isEnabled = true
         self.customCheckbox2?.isEnabled = true
         
@@ -468,14 +475,14 @@ extension RVS_Checkbox_TestHarness_ViewController {
 
             let leftDynamicCheckbox = RVS_Checkbox()  // Create the instance
             dynamicContainer.addArrangedSubview(leftDynamicCheckbox)  // Add it to the container.
-            leftDynamicCheckbox.tintColor = checkboxObject?.tintColor // We steal the tint color from the IB-instantiated checkbox.
+            leftDynamicCheckbox.tintColor = imageCheckboxInstance?.tintColor // We steal the tint color from the IB-instantiated checkbox.
             leftDynamicCheckbox.isUsingSFSymbols = true
             
             self.leftDynamicCheckbox = leftDynamicCheckbox
 
             let centerDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addArrangedSubview(centerDynamicCheckbox)
-            centerDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            centerDynamicCheckbox.tintColor = imageCheckboxInstance?.tintColor
             centerDynamicCheckbox.offImage = UIImage(named: "SLUG-OFF".localizedVariant)
             centerDynamicCheckbox.clearImage = UIImage(named: "SLUG-CLEAR".localizedVariant)
             centerDynamicCheckbox.onImage = UIImage(named: "SLUG-ON".localizedVariant)
@@ -484,7 +491,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
 
             let rightDynamicCheckbox = RVS_Checkbox()
             dynamicContainer.addArrangedSubview(rightDynamicCheckbox)
-            rightDynamicCheckbox.tintColor = checkboxObject?.tintColor
+            rightDynamicCheckbox.tintColor = imageCheckboxInstance?.tintColor
             rightDynamicCheckbox.offImage = UIImage(named: String(format: testImageFormat, 0))
             rightDynamicCheckbox.clearImage = UIImage(named: String(format: testImageFormat, 1))
             rightDynamicCheckbox.onImage = UIImage(named: String(format: testImageFormat, 2))
@@ -511,12 +518,10 @@ extension RVS_Checkbox_TestHarness_ViewController {
         }
         
         setSelectedImage()
-        
-        self.tintSelectorSegmentedSwitch?.isEnabled = 1 != self.imageSelectorSegmentedSwitch?.selectedSegmentIndex
 
         if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
            let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
-            self.checkboxObject?.tintColor = color
+            self.imageCheckboxInstance?.tintColor = color
             self.customCheckbox1?.tintColor = color
             self.customCheckbox2?.tintColor = color
             self.leftDynamicCheckbox?.tintColor = color
@@ -524,28 +529,28 @@ extension RVS_Checkbox_TestHarness_ViewController {
             self.rightDynamicCheckbox?.tintColor = color
         }
         
-        self.checkboxObject?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.imageCheckboxInstance?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         self.customCheckbox1?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         self.customCheckbox2?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         self.leftDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         self.centerDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         self.rightDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         
-        self.checkboxObject?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.imageCheckboxInstance?.isThreeState = self.stateSwitch?.isOn ?? false
         self.customCheckbox1?.isThreeState = self.stateSwitch?.isOn ?? false
         self.customCheckbox2?.isThreeState = self.stateSwitch?.isOn ?? false
         self.leftDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
         self.centerDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
         self.rightDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
         
-        self.checkboxObject?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.imageCheckboxInstance?.isEnabled = self.enabledSwitch?.isOn ?? false
         self.customCheckbox1?.isEnabled = self.enabledSwitch?.isOn ?? false
         self.customCheckbox2?.isEnabled = self.enabledSwitch?.isOn ?? false
         self.leftDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
         self.centerDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
         self.rightDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
         
-        self.checkboxObject?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.imageCheckboxInstance?.useHaptics = self.useHapticsSwitch?.isOn ?? false
         self.customCheckbox1?.useHaptics = self.useHapticsSwitch?.isOn ?? false
         self.customCheckbox2?.useHaptics = self.useHapticsSwitch?.isOn ?? false
         self.leftDynamicCheckbox?.useHaptics = self.useHapticsSwitch?.isOn ?? false
@@ -566,7 +571,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
 
             switch imageIndex {
             case 0:
-                self.checkboxObject?.isUsingSFSymbols = true
+                self.imageCheckboxInstance?.isUsingSFSymbols = true
             case 1:
                 onImage = UIImage(named: "SLUG-ON".localizedVariant)
                 clearImage = UIImage(named: "SLUG-CLEAR".localizedVariant)
@@ -577,12 +582,12 @@ extension RVS_Checkbox_TestHarness_ViewController {
                 offImage = UIImage(named: "TestImage-0")
             }
             
-            self.checkboxObject?.offImage = offImage
-            self.checkboxObject?.clearImage = clearImage
-            self.checkboxObject?.onImage = onImage
+            self.imageCheckboxInstance?.offImage = offImage
+            self.imageCheckboxInstance?.clearImage = clearImage
+            self.imageCheckboxInstance?.onImage = onImage
             
-            self.useOffImageSwitch?.isEnabled = self.checkboxObject?.isThreeState ?? false
-            self.useOffImageLabelButton?.isEnabled = self.checkboxObject?.isThreeState ?? false
+            self.useOffImageSwitch?.isEnabled = self.imageCheckboxInstance?.isThreeState ?? false
+            self.useOffImageLabelButton?.isEnabled = self.imageCheckboxInstance?.isThreeState ?? false
         }
     }
 
@@ -591,6 +596,6 @@ extension RVS_Checkbox_TestHarness_ViewController {
      This simply sets the value of the `valueChangedSegmentedSwitch`, based on the control value.
      */
     func setSegmentedSwitch() {
-        self.valueChangedSegmentedSwitch?.selectedSegmentIndex = (self.checkboxObject?.value ?? 1) + 1
+        self.valueChangedSegmentedSwitch?.selectedSegmentIndex = (self.imageCheckboxInstance?.value ?? 1) + 1
     }
 }
