@@ -1,4 +1,11 @@
 # RVS_Checkbox Change Log
+
+## 3.0.2
+
+- **July 12, 2025**
+
+- Had to increase the tools version.
+
 ## 3.0.1
 
 - **July 12, 2025**
