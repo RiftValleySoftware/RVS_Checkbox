@@ -25,13 +25,16 @@
                                 <rect key="frame" x="20" y="96" width="374" height="562"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-o8-qQT">
-                                        <rect key="frame" x="141" y="0.0" width="92" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <segments>
                                             <segment title="">
                                                 <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                                             </segment>
                                             <segment title="">
-                                                <imageReference key="image" image="triangleshape.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                <imageReference key="image" image="ON" symbolScale="large" renderingMode="template"/>
+                                            </segment>
+                                            <segment title="">
+                                                <imageReference key="image" image="triangleshape.fill" catalog="system" symbolScale="large"/>
                                             </segment>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,6 +255,7 @@
                                                 <rect key="frame" x="61" y="0.0" width="51" height="49"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aUg-U6-0of" secondAttribute="height" multiplier="1:1" id="FON-f0-JZm"/>
+                                                    <constraint firstAttribute="width" secondItem="aUg-U6-0of" secondAttribute="height" multiplier="1:1" id="pJJ-3d-rIs"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="TestImage-2"/>
@@ -267,9 +271,6 @@
                                                 </connections>
                                             </switch>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="aUg-U6-0of" firstAttribute="width" secondItem="aUg-U6-0of" secondAttribute="height" multiplier="1:1" id="pJJ-3d-rIs"/>
-                                        </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLUG-DYNAMIC-HEADER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ov-ak-cTo">
                                         <rect key="frame" x="82" y="456" width="210" height="49"/>

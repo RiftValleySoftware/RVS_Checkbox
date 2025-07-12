@@ -377,7 +377,6 @@ open class RVS_Checkbox: UISwitch {
             if self.useHaptics {
                 self._selectionFeedbackGenerator = self._selectionFeedbackGenerator ?? UISelectionFeedbackGenerator()
                 self._selectionFeedbackGenerator?.prepare()
-                self._selectionFeedbackGenerator?.selectionChanged()
             } else {
                 self._selectionFeedbackGenerator = nil
             }
@@ -487,14 +486,16 @@ extension RVS_Checkbox {
     public func setState(_ inState: States, animated inIsAnimated: Bool = false) {
         if inIsAnimated {
             let state = !self.isThreeState && .off == inState ? .clear : inState
-            var finalImage: UIImage?
-            if let tint = self.tintColor,
-               isEnabled {
-                self._drawingImage = self._image(forState: self.checkboxState)?.withTintColor(tint.withAlphaComponent(Self._sDimmedAlpha))
-                finalImage = self._image(forState: state)?.withTintColor(tint)
-            } else {
-                self._drawingImage = self._image(forState: self.checkboxState)
-                finalImage = self._image(forState: state)
+            var finalImage = self._image(forState: state)
+            self._drawingImage = self._image(forState: self.checkboxState)
+
+            if let color = self.tintColor {
+                if .alwaysTemplate == self._drawingImage?.renderingMode {
+                    self._drawingImage = self._image(forState: self.checkboxState)?.withTintColor(color.withAlphaComponent(Self._sDimmedAlpha))
+                }
+                if .alwaysTemplate == finalImage?.renderingMode {
+                    finalImage = finalImage?.withTintColor(color)
+                }
             }
 
             setNeedsDisplay()
@@ -617,6 +618,8 @@ extension RVS_Checkbox {
         super.endTracking(inTouch, with: inEvent)
         if self.isTouchInside {
             self.checkboxState = self._nextState
+            self._selectionFeedbackGenerator?.selectionChanged()
+            self._selectionFeedbackGenerator?.prepare()
             self.sendActions(for: .valueChanged)
             self.sendActions(for: .primaryActionTriggered)
         }

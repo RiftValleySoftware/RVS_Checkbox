@@ -246,7 +246,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
      - parameter inSwitch: The switch instance.
      */
     @IBAction func useHapticsSwitchChanged(_ inSwitch: UISwitch) {
-        self.checkboxObject?.useHaptics = inSwitch.isOn
+        self.setUpUI()
     }
     
     /* ################################################################## */
@@ -305,7 +305,7 @@ extension RVS_Checkbox_TestHarness_ViewController {
     @IBAction func valueChangeSegmentedSwitchChanged(_ inSegmentedSwitch: UISegmentedControl) {
         let value = inSegmentedSwitch.selectedSegmentIndex - 1
         if let state = RVS_Checkbox.States(rawValue: value) {
-            print("Setting a value of (\(state)), and it is \(animatedSwitch?.isOn ?? false ? "" : "not ")animated.")
+            print("Setting a value of (\(state)), and it is \(self.animatedSwitch?.isOn ?? false ? "" : "not ")animated.")
             self.checkboxObject?.setState(state, animated: self.animatedSwitch?.isOn ?? false)
         } else {
             print("ERROR! Value (\(value)) is out of range.")
@@ -404,6 +404,22 @@ extension RVS_Checkbox_TestHarness_ViewController {
      We use this to set up the screen.
      */
     override func viewDidLoad() {
+        /* ############################################################## */
+        /**
+         A simple recursive function for coercing image views to always display aspectFit.
+         
+         - paremeter inView: The view we are coercing. It will also recursively descend into its subviews.
+         */
+        func _imageAspectCoerce(_ inView: UIView?) {
+            inView?.subviews.forEach { inView in
+                _imageAspectCoerce(inView)
+            }
+            // We filter for just image views, so we don't pooch anything else.
+            if let imageView = inView as? UIImageView {
+                imageView.contentMode = .scaleAspectFit
+            }
+        }
+        
         super.viewDidLoad()
         
         // Localizations
@@ -415,6 +431,8 @@ extension RVS_Checkbox_TestHarness_ViewController {
         self.useHapticsSwitchLabelButton?.setTitle((self.useHapticsSwitchLabelButton?.title(for: .normal) ?? "ERROR").localizedVariant, for: .normal)
         self.customHeaderLabel?.text = (self.customHeaderLabel?.text ?? "ERROR").localizedVariant
         self.dynamicHeaderLabel?.text = (self.dynamicHeaderLabel?.text ?? "ERROR").localizedVariant
+        
+        _imageAspectCoerce(self.imageSelectorSegmentedSwitch)
 
         // Set up the colors for the value segmented switch, and localize.
         if let valueChangedSegmentedSwitch = self.valueChangedSegmentedSwitch {
@@ -450,9 +468,9 @@ extension RVS_Checkbox_TestHarness_ViewController {
         self.customCheckbox1?.isEnabled = true
         self.customCheckbox2?.isEnabled = true
         
-        self.setUpUI()
         self.setSegmentedSwitch()
         self.setUpDynamicCheckBoxes()
+        self.setUpUI()
     }
 }
 
@@ -524,33 +542,40 @@ extension RVS_Checkbox_TestHarness_ViewController {
         if let index = self.tintSelectorSegmentedSwitch?.selectedSegmentIndex,
            let color = 0 == index ? UIColor(named: "AccentColor") : 1 == index ? .label : UIColor(named: "Tint-\(index)") {
             self.checkboxObject?.tintColor = color
+            self.customCheckbox1?.tintColor = color
+            self.customCheckbox2?.tintColor = color
             self.leftDynamicCheckbox?.tintColor = color
             self.centerDynamicCheckbox?.tintColor = color
             self.rightDynamicCheckbox?.tintColor = color
-            self.customCheckbox1?.tintColor = color
-            self.customCheckbox2?.tintColor = color
         }
         
-        self.checkboxObject?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
-        self.leftDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
-        self.centerDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
-        self.rightDynamicCheckbox?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
-        self.customCheckbox1?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
-        self.customCheckbox2?.useOffImageForClear = useOffImageSwitch?.isOn ?? false
+        self.checkboxObject?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.customCheckbox1?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.customCheckbox2?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.centerDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.useOffImageForClear = self.useOffImageSwitch?.isOn ?? false
         
-        self.checkboxObject?.isThreeState = stateSwitch?.isOn ?? false
-        self.leftDynamicCheckbox?.isThreeState = stateSwitch?.isOn ?? false
-        self.centerDynamicCheckbox?.isThreeState = stateSwitch?.isOn ?? false
-        self.rightDynamicCheckbox?.isThreeState = stateSwitch?.isOn ?? false
-        self.customCheckbox1?.isThreeState = stateSwitch?.isOn ?? false
-        self.customCheckbox2?.isThreeState = stateSwitch?.isOn ?? false
+        self.checkboxObject?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.customCheckbox1?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.customCheckbox2?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.centerDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.isThreeState = self.stateSwitch?.isOn ?? false
         
-        self.checkboxObject?.isEnabled = enabledSwitch?.isOn ?? false
-        self.leftDynamicCheckbox?.isEnabled = enabledSwitch?.isOn ?? false
-        self.centerDynamicCheckbox?.isEnabled = enabledSwitch?.isOn ?? false
-        self.rightDynamicCheckbox?.isEnabled = enabledSwitch?.isOn ?? false
-        self.customCheckbox1?.isEnabled = enabledSwitch?.isOn ?? false
-        self.customCheckbox2?.isEnabled = enabledSwitch?.isOn ?? false
+        self.checkboxObject?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.customCheckbox1?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.customCheckbox2?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.centerDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.isEnabled = self.enabledSwitch?.isOn ?? false
+        
+        self.checkboxObject?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.customCheckbox1?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.customCheckbox2?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.leftDynamicCheckbox?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.centerDynamicCheckbox?.useHaptics = self.useHapticsSwitch?.isOn ?? false
+        self.rightDynamicCheckbox?.useHaptics = self.useHapticsSwitch?.isOn ?? false
     }
     
     /* ################################################################## */
@@ -559,27 +584,30 @@ extension RVS_Checkbox_TestHarness_ViewController {
      control, based on its value.
      */
     func setSelectedImage() {
-        if let imageIndex = imageSelectorSegmentedSwitch?.selectedSegmentIndex {
+        if let imageIndex = self.imageSelectorSegmentedSwitch?.selectedSegmentIndex {
             var offImage: UIImage?
             var clearImage: UIImage?
             var onImage: UIImage?
 
             switch imageIndex {
             case 0:
-                checkboxObject?.isUsingSFSymbols = true
+                self.checkboxObject?.isUsingSFSymbols = true
+            case 1:
+                onImage = UIImage(named: "ON")
+                clearImage = UIImage(named: "CLEAR")
+                offImage = UIImage(named: "OFF")
             default:
-                checkboxObject?.isUsingSFSymbols = false
                 onImage = UIImage(named: "TestImage-2")
                 clearImage = UIImage(named: "TestImage-1")
                 offImage = UIImage(named: "TestImage-0")
             }
             
-            checkboxObject?.offImage = offImage
-            checkboxObject?.clearImage = clearImage
-            checkboxObject?.onImage = onImage
+            self.checkboxObject?.offImage = offImage
+            self.checkboxObject?.clearImage = clearImage
+            self.checkboxObject?.onImage = onImage
             
-            useOffImageSwitch?.isEnabled = checkboxObject?.isThreeState ?? false
-            useOffImageLabelButton?.isEnabled = checkboxObject?.isThreeState ?? false
+            self.useOffImageSwitch?.isEnabled = self.checkboxObject?.isThreeState ?? false
+            self.useOffImageLabelButton?.isEnabled = self.checkboxObject?.isThreeState ?? false
         }
     }
 
