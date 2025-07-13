@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 3.0.3
+ Version 3.0.4
 */
 
 import UIKit
@@ -29,13 +29,21 @@ import UIKit
 // MARK: - Three-State UIKit Checkbox -
 /* ###################################################################################################################################### */
 /**
- This class provides a simple Swift-only module that implements a "checkbox" to replace the standard UISwitch.
- The switch can behave exactly like a standard UISwitch, but also has a "three-state" option, where it has definitely off, definitely on, and clear, which is a sort of "undefined" state. Default is two-state (like UISwitch).
+ This class provides a simple Swift-only module that implements a "checkbox" to replace the standard [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
+ 
+ The switch can behave exactly like a standard [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch),
+ but also has a "three-state" option, where it has definitely off, definitely on, and clear, which is a sort of "undefined" state.
+ Default is two-state (like [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch)).
+ 
  By default, the class uses the SFSymbols checkbox symbols, but these are sometimes considered a bit awkward for UIKit (which is why UIKit doesn't use them).
+ 
  You can also supply three of your own images to use for the control (or only two, if you are sticking with the "two-state" version).
- All images are drawn template mode, using the control ``tintColor``.
- Like the UISwitch class, you can specifically call ``setOn(_:animated:)``, and it will animate the transition. You can also call ``setClear(animated:)``, if in three-state mode.
- This uses haptics, in the same manner as UISwitch, except that you can turn them off, by setting ``useHaptics`` to false.
+ 
+ Images that specify [`.alwaysTemplate`](https://developer.apple.com/documentation/uikit/uiimage/renderingmode-swift.enum/alwaystemplate) are drawn using the control ``tintColor``.
+ 
+ Like the [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) class, you can specifically call ``setOn(_:animated:)``, and it will animate the transition. You can also call ``setClear(animated:)``, if in three-state mode.
+ 
+ This uses haptics, in the same manner as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch), except that you can turn them off, by setting ``useHaptics`` to false.
  */
 @IBDesignable
 open class RVS_Checkbox: UISwitch {
