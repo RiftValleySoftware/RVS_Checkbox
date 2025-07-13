@@ -287,6 +287,8 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      This holds the control's current state (before any changes).
+     
+     Default is clear.
      */
     open var checkboxState: States = .clear {
         didSet {
@@ -298,8 +300,8 @@ open class RVS_Checkbox: UISwitch {
     /* ################################################################## */
     /**
      If true, then the control will not use the dynamically-generated images, and will, instead, use standard SFSymbols square images.
-     If the user supplies images, then this will be ignored.
-     > NOTE: If either offImage or onImage is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
+     If the user supplies images, then this is assumed false, but it can be forced true, programmatically.
+     > NOTE: If either ``offImage`` or ``onImage`` is nil, then the checkbox will use SFSymbols. It must have BOTH to allow custom images.
      */
     open var isUsingSFSymbols: Bool = true {
         didSet {

@@ -76,6 +76,8 @@
 <p>Integrating RVS_Checkbox into your application is as simple as adding a <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a> or <a href="https://developer.apple.com/documentation/uikit/uiview"><code>UIView</code></a> in <a href="https://developer.apple.com/xcode/interface-builder/https://developer.apple.com/xcode/interface-builder/">Interface Builder</a>, and specifying it to be an instance of <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a>.</p>
 
 <p>You may also create instances of <a href="https://github.com/RiftValleySoftware/RVS_Checkbox"><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code></a> programmatically.</p>
+
+<p><a href="https://riftvalleysoftware.github.io/RVS_Checkbox/">This is the online project documentation for this project</a></p>
 <h2 id='what-problem-does-this-solve' class='heading'>WHAT PROBLEM DOES THIS SOLVE?</h2>
 
 <p>The classic <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>:</p>
@@ -91,8 +93,9 @@
 
 <p>The issue is that the <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a> is a big, rather awkwardly-shaped element. It is &ldquo;lozenge&rdquo;-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize <em>(to be fair, Apple doesn&rsquo;t encourage us to customize **ANY</em>* UI, so that&rsquo;s no surprise).*</p>
 
-<p>Because of the horizontal aspect of the control, it is fairly &ldquo;natural&rdquo; to have the label to the left:
-<img src="img/UISwitchLabels-Left.png" alt="A Switch, With the Label on the Left"></p>
+<p>Because of the horizontal aspect of the control, it is fairly &ldquo;natural&rdquo; to have the label to the left:</p>
+
+<p><img src="img/UISwitchLabels-Left.png" alt="A Switch, With the Label on the Left"></p>
 
 <p>&hellip;or the right:</p>
 
@@ -109,11 +112,9 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 <p><a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a> also has a strictly &ldquo;binary&rdquo; action. If you have three choices, you are expected to use a <a href="https://developer.apple.com/documentation/uikit/uisegmentedcontrol"><code>UISegmentedControl</code></a>, which is actually quite sensible. Apple obviously put a lot of research into their UX, and there&rsquo;s a good reason for this. Mobile interfaces are a compromise, at best.</p>
 <h3 id='why-does-the-rvs_checkbox-solve-this-problem' class='heading'>Why Does the RVS_Checkbox Solve This Problem?</h3>
 
-<p>Glad you asked. The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> comes with two &ldquo;built-in&rdquo; appearances: A default, circular checkbox, and a fairly &ldquo;classic&rdquo; appearance that uses the built-in <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">SF Symbols</a> to mimic the way the Mac checkboxes appear.</p>
+<p>Glad you asked. The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> comes with a &ldquo;built-in&rdquo; appearance: A fairly &ldquo;classic&rdquo; appearance that uses the built-in <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">SF Symbols</a> to mimic the way the Mac checkboxes appear.</p>
 
 <p>You can also add your own images.</p>
-
-<p>Images are simple. They are always rendered in <a href="https://developer.apple.com/documentation/uikit/uiimage/renderingmode/alwaystemplate">&ldquo;template&rdquo; mode</a>, so they are &ldquo;silhouettes,&rdquo; and are colored by the control&rsquo;s tint.</p>
 
 <p>Additionally, <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> brings the &ldquo;three-state&rdquo; checkbox that is found in the Mac, to iOS. That means it is possible to have an &ldquo;OFF,&rdquo; &ldquo;ON,&rdquo; and &ldquo;indeterminate&rdquo; mode (I call it &ldquo;CLEAR&rdquo;). The default appearence is the circular checkbox, and the default mode is &ldquo;binary,&rdquo; like <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>.</p>
 
@@ -150,19 +151,19 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
     </tbody>
 </table>
 
-<p>The &ldquo;Default&rdquo; images are <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> images, that are &ldquo;baked into&rdquo; the class, and the &ldquo;User-Provided&rdquo; images are three arbitrary images that can be added in the storyboard, or assinged directly. They can be template, or full-color.</p>
+<p>The &ldquo;Default&rdquo; images are <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> images, that are &ldquo;baked into&rdquo; the class, and the &ldquo;User-Provided&rdquo; images are three arbitrary images that can be added in the storyboard, or assigned directly. They can be template, or full-color.</p>
 
 <p>The images will resize with the control, but will retain their aspect (Aspect fit mode).</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p>Only &ldquo;always template&rdquo; images will be displayed as tinted.</p>
+    <p>Only <a href="https://developer.apple.com/documentation/uikit/uiimage/renderingmode-swift.enum/alwaystemplate"><code>.alwaysTemplate</code></a> images will be displayed as tinted.</p>
 
 </div>
 <h2 id='requirements' class='heading'>REQUIREMENTS</h2>
 
-<p><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> is an <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a>-only <a href="https://developer.apple.com/documentation/uikit"><code>UIKit</code></a>/<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html">Cocoa Touch</a> <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html">framework</a> <a href="https://developer.apple.com/documentation/uikit/uicontrol">UIControl</a>, designed for use by <a href="https://swift.org">Swift</a> language applications.</p>
+<p><code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> is a <a href="https://developer.apple.com/documentation/uikit"><code>UIKit</code></a>/<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html">Cocoa Touch</a> <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html">framework</a> <a href="https://developer.apple.com/documentation/uikit/uicontrol">UIControl</a>.</p>
 
-<p>It is designed for native Swift iOS application development.</p>
+<p>It is designed for native <a href="https://swift.org">Swift</a> application development.</p>
 
 <p>This requires <a href="https://apple.com/ios">iOS</a>/<a href="https://apple.com/ipados">iPadOS</a> version 17.0 or above.</p>
 <h2 id='dependencies' class='heading'>DEPENDENCIES</h2>
@@ -195,19 +196,72 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
 
 <p>Once you have the reference, then you won&rsquo;t need to import the module.</p>
 <h2 id='usage' class='heading'>USAGE</h2>
+<h3 id='storyboard-usage' class='heading'>Storyboard Usage</h3>
 
 <p>In Interface Builder/Storyboard Editor, simply drag in a <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a> or <a href="https://developer.apple.com/documentation/uikit/uiview"><code>UIView</code></a> reference, and rename the class to <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code>. The inspectable elements should be immediately available in the Attributes Inspector.</p>
 
 <p><img src="img/Attributes.png" alt="The Attributes Inspector"></p>
+<h3 id='manifest-for-the-attributes-inspector-screen' class='heading'>Manifest for the Attributes Inspector Screen:</h3>
 
-<p>A &ldquo;Clear&rdquo; image is not required, unless Is Three State is On.</p>
+<ul>
+<li><p>On Image: An image that is displayed as the control, when it is &ldquo;On.&rdquo;</p></li>
+<li><p>Off Image: An image that is displayed as the control, when it is &ldquo;Off.&rdquo;</p></li>
+<li><p>Clear Image: An image that is displayed as the control, when it is &ldquo;Clear&rdquo; (as a three-state).</p></li>
+<li><p>Is Three-State: If this is On (default is Off), then the switch will have three states: &ldquo;On,&rdquo; &ldquo;Off,&rdquo; and &ldquo;Clear.&rdquo; If it is off, then the control will only have &ldquo;On,&rdquo; and &ldquo;Off.&rdquo;</p></li>
+<li><p>Use Off Image: If this is On (default is Off, unless no Clear Image is provided), then, when a three-state control displays a &ldquo;Clear&rdquo; state, it will use the &ldquo;Off&rdquo; Image.</p></li>
+<li><p>Use Haptics: If this is On (Default is On), then the control will use subtle haptics, just like the <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>. If set programmatically, haptics are not executed.</p></li>
+</ul>
 
-<p>If you do not supply any images, then the default SF Symbols will be used.</p>
+<p>If you do not supply at least both an On Image and an Off Image, the default SF Symbols will be used.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p>It is also possible to <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift#L296">programmatically disable display of custom images</a>.</p>
+    <p>A &ldquo;Clear&rdquo; image is not required, and is only used when in three-state. If it is not supplied, and the control is in three-state, Use Off Image will be On.</p>
+
+<p>It is also possible to <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift#L302">programmatically disable display of custom images</a>.</p>
 
 </div>
+
+<p>It also has the standard <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a> attributes, but &ldquo;On Tint&rdquo; and &ldquo;Thumb Tint&rdquo; are ignored.</p>
+
+<p><img src="img/UISwitchAttributes.png" alt="The UISwitch Attributes Inspector"></p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>You can&rsquo;t set a &ldquo;Clear&rdquo; state from the Attributes Inspector. That must be done programmatically. You can set &ldquo;On&rdquo; or &ldquo;Off,&rdquo; however, using the &ldquo;State&rdquo; attribute.</p>
+
+</div>
+
+<p>You use the <a href="https://developer.apple.com/documentation/uikit/uiview/tintcolor"><code>UIView.tintColor</code></a> to set the color of template images (or the default SF Symbols version).</p>
+
+<p>You cannot set different colors, for different states (but you can use custom full-color images).</p>
+<h3 id='programmatic-usage' class='heading'>Programmatic Usage</h3>
+
+<p>You should create an instance of the <code>RVS_CheckBox</code> class (or a subclass that you define). It can have the same init arguments as <a href="https://developer.apple.com/documentation/uikit/uiswitch"><code>UISwitch</code></a>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>We do not save or load extra parameters for the coder init. It is the same as for <a href="https://developer.apple.com/documentation/uikit/uiswitch/init(coder:)"><code>UISwitch</code></a>.</p>
+
+</div>
+
+<p>Once the class has been instantiated, you can add images, set states, or set it into an AutoLayout position (as with any other <a href="https://developer.apple.com/documentation/uikit/uiview"><code>UIView</code></a> subclass).</p>
+
+<p>Examples of both types of usage are available in <a href="https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness">the test harness app</a>.</p>
+<h2 id='license' class='heading'>LICENSE</h2>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
+files (the &ldquo;Software&rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p><a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company: https://riftvalleysoftware.com</a></p>
 
           </div>
         </section>
@@ -216,7 +270,7 @@ The <code><a href="Classes/RVS_Checkbox.html">RVS_Checkbox</a></code> allows a s
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2025 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2025-07-12)</p>
+      <p>&copy; 2025 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external noopener">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2025-07-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

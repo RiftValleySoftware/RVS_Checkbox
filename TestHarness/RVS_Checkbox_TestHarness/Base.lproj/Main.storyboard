@@ -68,7 +68,7 @@
                                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="standardLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PV-km-UPl"/>
+                                                    <action selector="twoStateLabelButtonHit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PV-km-UPl"/>
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-16-VTp">
@@ -328,10 +328,10 @@
                         <outlet property="imageCheckboxInstance" destination="Ufe-KA-51k" id="JF5-jD-orQ"/>
                         <outlet property="imageHeaderLabel" destination="ghj-sB-uwT" id="d5L-93-wdr"/>
                         <outlet property="imageSelectorSegmentedSwitch" destination="o5b-o8-qQT" id="sUa-lJ-Bkt"/>
-                        <outlet property="standardLabelButton" destination="Gxu-eg-w9Y" id="emg-p9-cm4"/>
                         <outlet property="stateSwitch" destination="Uqx-16-VTp" id="8cy-zz-AOY"/>
                         <outlet property="threeStateLabelButton" destination="yOf-Mt-tfX" id="w7q-Fj-Icy"/>
                         <outlet property="tintSelectorSegmentedSwitch" destination="VgL-Fb-Tkz" id="hnx-tm-wbd"/>
+                        <outlet property="twoStateLabelButton" destination="Gxu-eg-w9Y" id="emg-p9-cm4"/>
                         <outlet property="useHapticsSwitch" destination="FrX-hF-MrD" id="j1W-Ye-CPr"/>
                         <outlet property="useHapticsSwitchLabelButton" destination="Ooi-nj-Qbj" id="Yw8-ZY-qug"/>
                         <outlet property="useOffImageLabelButton" destination="Z5X-Dw-GHh" id="d5c-V6-3ho"/>

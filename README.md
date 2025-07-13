@@ -11,6 +11,8 @@ Integrating RVS_Checkbox into your application is as simple as adding a [`UISwit
 
 You may also create instances of [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox) programmatically.
 
+[This is the online project documentation for this project](https://riftvalleysoftware.github.io/RVS_Checkbox/)
+
 ## WHAT PROBLEM DOES THIS SOLVE?
 The classic [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch):
 
@@ -85,13 +87,13 @@ The "Default" images are [SF Symbols](https://developer.apple.com/sf-symbols/) i
 
 The images will resize with the control, but will retain their aspect (Aspect fit mode).
 
-> NOTE: Only "always template" images will be displayed as tinted.
+> NOTE: Only [`.alwaysTemplate`](https://developer.apple.com/documentation/uikit/uiimage/renderingmode-swift.enum/alwaystemplate) images will be displayed as tinted.
 
 ## REQUIREMENTS
 
-``RVS_Checkbox`` is an [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados)-only [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol), designed for use by [Swift](https://swift.org) language applications.
+``RVS_Checkbox`` is a [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol).
 
-It is designed for native Swift iOS application development.
+It is designed for native [Swift](https://swift.org) application development.
 
 This requires [iOS](https://apple.com/ios)/[iPadOS](https://apple.com/ipados) version 17.0 or above.
 
@@ -125,18 +127,54 @@ Once you have the reference, then you won't need to import the module.
 
 ## USAGE
 
+### Storyboard Usage
+
 In Interface Builder/Storyboard Editor, simply drag in a [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) or [`UIView`](https://developer.apple.com/documentation/uikit/uiview) reference, and rename the class to ``RVS_Checkbox``. The inspectable elements should be immediately available in the Attributes Inspector.
 
 ![The Attributes Inspector](img/Attributes.png)
 
-A "Clear" image is not required, unless Is Three State is On.
+### Manifest for the Attributes Inspector Screen:
 
-If you do not supply any images, then the default SF Symbols will be used.
+- On Image: An image that is displayed as the control, when it is "On."
 
-> NOTE: It is also possible to [programmatically disable display of custom images](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift#L296).
+- Off Image: An image that is displayed as the control, when it is "Off."
 
-# LICENSE
-=
+- Clear Image: An image that is displayed as the control, when it is "Clear" (as a three-state).
+
+- Is Three-State: If this is On (default is Off), then the switch will have three states: "On," "Off," and "Clear." If it is off, then the control will only have "On," and "Off."
+
+- Use Off Image: If this is On (default is Off, unless no Clear Image is provided), then, when a three-state control displays a "Clear" state, it will use the "Off" Image.
+
+- Use Haptics: If this is On (Default is On), then the control will use subtle haptics, just like the [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch). If set programmatically, haptics are not executed.
+
+If you do not supply at least both an On Image and an Off Image, the default SF Symbols will be used.
+
+> NOTE: A "Clear" image is not required, and is only used when in three-state. If it is not supplied, and the control is in three-state, Use Off Image will be On.
+>
+> It is also possible to [programmatically disable display of custom images](https://github.com/RiftValleySoftware/RVS_Checkbox/blob/main/Sources/RVS_Checkbox/RVS_Checkbox.swift#L302).
+
+It also has the standard [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) attributes, but "On Tint" and "Thumb Tint" are ignored.
+
+![The UISwitch Attributes Inspector](img/UISwitchAttributes.png)
+
+> NOTE: You can't set a "Clear" state from the Attributes Inspector. That must be done programmatically. You can set "On" or "Off," however, using the "State" attribute.
+
+You use the [`UIView.tintColor`](https://developer.apple.com/documentation/uikit/uiview/tintcolor) to set the color of template images (or the default SF Symbols version).
+
+You cannot set different colors, for different states (but you can use custom full-color images).
+
+### Programmatic Usage
+
+You should create an instance of the ``RVS_CheckBox`` class (or a subclass that you define). It can have the same init arguments as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
+
+> NOTE: We do not save or load extra parameters for the coder init. It is the same as for [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch/init\(coder:\)).
+
+Once the class has been instantiated, you can add images, set states, or set it into an AutoLayout position (as with any other [`UIView`](https://developer.apple.com/documentation/uikit/uiview) subclass).
+
+Examples of both types of usage are available in [the test harness app](https://github.com/RiftValleySoftware/RVS_Checkbox/tree/main/TestHarness/RVS_Checkbox_TestHarness).
+
+## LICENSE
+
 MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
