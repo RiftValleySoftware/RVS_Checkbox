@@ -11,7 +11,7 @@
       location = "group:CODEOWNERS">
    </FileRef>
    <FileRef
-      location = "group:../RVS_GeneralObserver/LICENSE">
+      location = "group:LICENSE">
    </FileRef>
    <FileRef
       location = "group:Example Cartfile">
