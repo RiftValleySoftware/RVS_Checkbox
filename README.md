@@ -1,4 +1,4 @@
-![Icon](img/icon.png)
+![Icon](icon.png)
 
 # RVS_Checkbox
 
@@ -82,7 +82,7 @@ Here are what the images look like (the color is controlled by the [`tintColor` 
     </tbody>
 </table>
 
-The "Default" images are [SF Symbols](https://developer.apple.com/sf-symbols/) images, that are "baked into" the class, and the "User-Provided" images are three arbitrary images that can be added in the storyboard, or assinged directly. They can be template, or full-color.
+The "Default" images are [SF Symbols](https://developer.apple.com/sf-symbols/) images, that are "baked into" the class, and the "User-Provided" images are three arbitrary images that can be added in the storyboard, or assigned directly. They can be template, or full-color.
 
 The images will resize with the control, but will retain their aspect (Aspect fit mode).
 
