@@ -25,6 +25,7 @@ Which doesn't actually work as well, in the "fat finger" world of iOS UI.
 The issue is that the [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) is a big, rather awkwardly-shaped element. It is "lozenge"-shaped, and always horizontal, so can require a bit of creativity, when it comes to fitting it into a UI. Also, it has a specific design aesthetic, and can be difficult to customize *(to be fair, Apple doesn't encourage us to customize **ANY** UI, so that's no surprise).*
 
 Because of the horizontal aspect of the control, it is fairly "natural" to have the label to the left:
+
 ![A Switch, With the Label on the Left](img/UISwitchLabels-Left.png)
 
 ...or the right:
