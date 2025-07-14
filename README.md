@@ -40,16 +40,16 @@ But it looks "awkward" to have it below the switch:
 
 This is especially true, if you use "label buttons," like I do (run the test harness, to see them in action).
 It is also a bit "weird," as the slider appearance seems to ask for a swipe gesture, as opposed to a tap gesture (which is really what we want). That means that the gesture also requires some "mental runway."
-The `RVS_Checkbox` allows a square aspect, and a directionless (tap) affordance, like a regular checkbox.
+The [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox) allows a square aspect, and a directionless (tap) affordance, like a regular checkbox.
 
 [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) also has a strictly "binary" action. If you have three choices, you are expected to use a [`UISegmentedControl`](https://developer.apple.com/documentation/uikit/uisegmentedcontrol), which is actually quite sensible. Apple obviously put a lot of research into their UX, and there's a good reason for this. Mobile interfaces are a compromise, at best.
 
 ### Why Does the RVS_Checkbox Solve This Problem?
-Glad you asked. The `RVS_Checkbox` comes with a "built-in" appearance: A fairly "classic" appearance that uses the built-in [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) to mimic the way the Mac checkboxes appear.
+Glad you asked. The [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox) comes with a "built-in" appearance: A fairly "classic" appearance that uses the built-in [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) to mimic the way the Mac checkboxes appear.
 
 You can also add your own images.
 
-Additionally, `RVS_Checkbox` brings the "three-state" checkbox that is found in the Mac, to iOS. That means it is possible to have an "OFF," "ON," and "indeterminate" mode (I call it "CLEAR"). The default appearence is the circular checkbox, and the default mode is "binary," like [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
+Additionally, [`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox) brings the "three-state" checkbox that is found in the Mac, to iOS. That means it is possible to have an "OFF," "ON," and "indeterminate" mode (I call it "CLEAR"). The default appearence is the circular checkbox, and the default mode is "binary," like [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
 
 Here are what the images look like (the color is controlled by the [`tintColor` property](https://developer.apple.com/documentation/uikit/uiview/1622467-tintcolor) of the control):
 <table style="text-align:center">
@@ -91,7 +91,7 @@ The images will resize with the control, but will retain their aspect (Aspect fi
 
 ## REQUIREMENTS
 
-``RVS_Checkbox`` is a [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol).
+[`RVS_Checkbox`](https://github.com/RiftValleySoftware/RVS_Checkbox) is a [`UIKit`](https://developer.apple.com/documentation/uikit)/[Cocoa Touch](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html) [framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html) [UIControl](https://developer.apple.com/documentation/uikit/uicontrol).
 
 It is designed for native [Swift](https://swift.org) application development.
 
@@ -129,7 +129,7 @@ Once you have the reference, then you won't need to import the module.
 
 ### Storyboard Usage
 
-In Interface Builder/Storyboard Editor, simply drag in a [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) or [`UIView`](https://developer.apple.com/documentation/uikit/uiview) reference, and rename the class to ``RVS_Checkbox``. The inspectable elements should be immediately available in the Attributes Inspector.
+In Interface Builder/Storyboard Editor, simply drag in a [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch) or [`UIView`](https://developer.apple.com/documentation/uikit/uiview) reference, and rename the class to "`RVS_Checkbox`." The inspectable elements should be immediately available in the Attributes Inspector.
 
 ![The Attributes Inspector](img/Attributes.png)
 
@@ -165,7 +165,7 @@ You cannot set different colors, for different states (but you can use custom fu
 
 ### Programmatic Usage
 
-You should create an instance of the ``RVS_CheckBox`` class (or a subclass that you define). It can have the same init arguments as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
+You should create an instance of [the `RVS_Checkbox` class](https://github.com/RiftValleySoftware/RVS_Checkbox) (or a subclass that you define). It can have the same init arguments as [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch).
 
 > NOTE: We do not save or load extra parameters for the coder init. It is the same as for [`UISwitch`](https://developer.apple.com/documentation/uikit/uiswitch/init\(coder:\)).
 
