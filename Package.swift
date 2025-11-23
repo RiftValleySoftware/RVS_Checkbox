@@ -28,7 +28,7 @@ let package = Package(
     ],
     products: [
         .library(name: "RVS_Checkbox",
-                 targets: ["RVS_Checkbox"]
+            targets: ["RVS_Checkbox"]
         )
     ],
     targets: [
