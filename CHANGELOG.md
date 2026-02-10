@@ -1,5 +1,11 @@
 # RVS_Checkbox Change Log
 
+## 3.0.5
+
+- **February 10, 2026**
+
+- Documentation improvements. No functional changes.
+
 ## 3.0.4
 
 - **July 13, 2025**

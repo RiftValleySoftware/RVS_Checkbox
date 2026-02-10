@@ -1,5 +1,5 @@
 /**
- © Copyright 2021-2025, The Great Rift Valley Software Company
+ © Copyright 2021-2026, The Great Rift Valley Software Company
 
  LICENSE:
 
@@ -19,7 +19,7 @@
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 3.0.4
+ Version 3.0.5
 */
 
 import UIKit
